@@ -40,13 +40,13 @@ const ContactDetails = () => {
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white shadow-md group-hover:bg-blue-500 transition-colors duration-300">
                 <Icon size={24} />
               </div>
-              <h1 className="text-xl font-semibold text-richblack-5 group-hover:text-blue-400 transition-colors duration-300">
+              <h1 className="text-xl font-semibold text-slate-900 group-hover:text-blue-400 transition-colors duration-300">
                 {ele?.heading}
               </h1>
             </div>
 
-            <p className="font-medium text-richblack-300 ml-16">{ele?.description}</p>
-            <p className="font-semibold text-richblack-100 ml-16 text-sm leading-relaxed">{ele?.details}</p>
+            <p className="font-medium text-slate-600 ml-16">{ele?.description}</p>
+            <p className="font-semibold text-slate-700 ml-16 text-sm leading-relaxed">{ele?.details}</p>
           </div>
         )
       })}

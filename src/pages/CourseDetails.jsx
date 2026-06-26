@@ -154,10 +154,10 @@ function CourseDetails() {
     <div className="overflow-x-hidden">
       <div className="max-w-7xl mx-auto p-10">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-richblack-5 mb-2">
+          <h1 className="text-4xl font-bold text-slate-900 mb-2">
             {courseName}
           </h1>
-          <p className="text-richblack-300">
+          <p className="text-slate-600">
             Explore the course information and curriculum
           </p>
         </div>
@@ -166,8 +166,8 @@ function CourseDetails() {
         <div className="relative w-full bg-richblack-800 rounded-lg p-6 mb-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 min-h-[300px]">
             <div className="flex flex-col justify-center order-2 lg:order-1">
-              <div className="flex flex-col gap-4 py-5 text-lg text-richblack-5">
-                <p className="text-richblack-200">{courseDescription}</p>
+              <div className="flex flex-col gap-4 py-5 text-lg text-slate-900">
+                <p className="text-slate-600">{courseDescription}</p>
                 <div className="text-md flex flex-wrap items-center gap-2">
                   <span className="text-blue-400">{avgReviewCount || 0}</span>
                   <RatingStars Review_Count={avgReviewCount} Star_Size={24} />
@@ -208,7 +208,7 @@ function CourseDetails() {
                     className={`flex items-center gap-2 px-4 py-2 rounded-md transition-all duration-200 ${
                       activeTab === tab.id
                         ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold shadow-lg"
-                        : "text-richblack-300 hover:text-richblack-5 hover:bg-richblack-700"
+                        : "text-slate-600 hover:text-slate-900 hover:bg-richblack-700"
                     }`}
                   >
                     <Icon className="text-lg" />
@@ -221,18 +221,18 @@ function CourseDetails() {
             <div className="space-y-6">
               {activeTab === "overview" && (
                 <div className="animate-fade-in">
-                  <div className="text-richblack-5">
+                  <div className="text-slate-900">
                     <h2 className="text-2xl font-semibold mb-4">
                       Course Overview
                     </h2>
-                    <p className="text-richblack-300">{courseDescription}</p>
+                    <p className="text-slate-600">{courseDescription}</p>
                   </div>
                 </div>
               )}
               {activeTab === "learn" && (
                 <div className="animate-fade-in">
                   <div className="border border-richblack-600 p-6 rounded-lg">
-                    <p className="text-2xl font-semibold mb-4 text-richblack-5">
+                    <p className="text-2xl font-semibold mb-4 text-slate-900">
                       What you'll learn
                     </p>
                     <div className="space-y-2">
@@ -242,7 +242,7 @@ function CourseDetails() {
                             <span className="text-blue-400 font-bold">
                               {index + 1}.
                             </span>
-                            <p className="text-richblack-5">{line}</p>
+                            <p className="text-slate-900">{line}</p>
                           </div>
                         ))}
                     </div>
@@ -252,7 +252,7 @@ function CourseDetails() {
               {activeTab === "tags" && (
                 <div className="animate-fade-in">
                   <div className="flex flex-col gap-4">
-                    <p className="text-xl font-bold text-richblack-5">Tags</p>
+                    <p className="text-xl font-bold text-slate-900">Tags</p>
                     <div className="flex flex-wrap gap-2">
                       {tag &&
                         tag.map((item, ind) => (
@@ -271,11 +271,11 @@ function CourseDetails() {
                 <div className="animate-fade-in">
                   <div className="max-w-full">
                     <div className="flex flex-col gap-3">
-                      <p className="text-2xl font-semibold text-richblack-5">
+                      <p className="text-2xl font-semibold text-slate-900">
                         Course Content
                       </p>
                       <div className="flex flex-wrap justify-between gap-2">
-                        <div className="flex gap-2 text-sm text-richblack-300">
+                        <div className="flex gap-2 text-sm text-slate-600">
                           <span>{courseContent.length} section(s)</span>
                           <span>{totalNoOfLectures} lecture(s)</span>
                           <span>{response.data?.totalDuration} Total Time</span>
@@ -317,7 +317,7 @@ function CourseDetails() {
                   className={`flex items-center gap-2 px-4 py-2 rounded-md transition-all duration-200 ${
                     activeTab === tab.id
                       ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold shadow-lg"
-                      : "text-richblack-300 hover:text-richblack-5 hover:bg-richblack-700"
+                      : "text-slate-600 hover:text-slate-900 hover:bg-richblack-700"
                   }`}
                 >
                   <Icon className="text-lg" />
@@ -330,18 +330,18 @@ function CourseDetails() {
           <div className="space-y-6">
             {activeTab === "overview" && (
               <div className="animate-fade-in">
-                <div className="text-richblack-5">
+                <div className="text-slate-900">
                   <h2 className="text-2xl font-semibold mb-4">
                     Course Overview
                   </h2>
-                  <p className="text-richblack-300">{courseDescription}</p>
+                  <p className="text-slate-600">{courseDescription}</p>
                 </div>
               </div>
             )}
             {activeTab === "learn" && (
               <div className="animate-fade-in">
                 <div className="border border-richblack-600 p-6 rounded-lg">
-                  <p className="text-2xl font-semibold mb-4 text-richblack-5">
+                  <p className="text-2xl font-semibold mb-4 text-slate-900">
                     What you'll learn
                   </p>
                   <div className="space-y-2">
@@ -351,7 +351,7 @@ function CourseDetails() {
                           <span className="text-yellow-25 font-bold">
                             {index + 1}.
                           </span>
-                          <p className="text-richblack-5">{line}</p>
+                          <p className="text-slate-900">{line}</p>
                         </div>
                       ))}
                   </div>
@@ -361,7 +361,7 @@ function CourseDetails() {
             {activeTab === "tags" && (
               <div className="animate-fade-in">
                 <div className="flex flex-col gap-4">
-                  <p className="text-xl font-bold text-richblack-5">Tags</p>
+                  <p className="text-xl font-bold text-slate-900">Tags</p>
                   <div className="flex flex-wrap gap-2">
                     {tag &&
                       tag.map((item, ind) => (
@@ -380,11 +380,11 @@ function CourseDetails() {
               <div className="animate-fade-in">
                 <div className="max-w-full">
                   <div className="flex flex-col gap-3">
-                    <p className="text-2xl font-semibold text-richblack-5">
+                    <p className="text-2xl font-semibold text-slate-900">
                       Course Content
                     </p>
                     <div className="flex flex-wrap justify-between gap-2">
-                      <div className="flex gap-2 text-sm text-richblack-300">
+                      <div className="flex gap-2 text-sm text-slate-600">
                         <span>{courseContent.length} section(s)</span>
                         <span>{totalNoOfLectures} lecture(s)</span>
                         <span>{response.data?.totalDuration} Total Time</span>
@@ -421,3 +421,4 @@ function CourseDetails() {
 }
 
 export default CourseDetails;
+

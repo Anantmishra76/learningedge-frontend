@@ -50,10 +50,10 @@ function ReviewSlider() {
       <div className="max-w-maxContent mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-richblack-800 mb-3 tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-800 mb-3 tracking-tight">
             <HighlightText text={"What Our Students Say"} />
           </h2>
-          <p className="text-base md:text-lg lg:text-xl text-richblack-200 max-w-2xl mx-auto leading-relaxed font-medium">
+          <p className="text-base md:text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed font-medium">
             Discover how our courses have transformed learning experiences for
             thousands of students
           </p>
@@ -101,17 +101,17 @@ function ReviewSlider() {
           >
             {reviews.map((review, i) => {
               const cardStyles = [
-                "bg-gradient-to-br from-richblack-800 to-richblack-900 border-l-4 border-blue-400",
-                "bg-gradient-to-br from-richblack-800 to-richblack-900 border-l-4 border-purple-400",
-                "bg-gradient-to-br from-richblack-800 to-richblack-900 border-l-4 border-green-400",
-                "bg-gradient-to-br from-richblack-800 to-richblack-900 border-l-4 border-blue-400",
+                "bg-white border-l-4 border-blue-400",
+                "bg-white border-l-4 border-purple-400",
+                "bg-white border-l-4 border-green-400",
+                "bg-white border-l-4 border-blue-400",
               ]
               const currentStyle = cardStyles[i % cardStyles.length]
 
               return (
                 <SwiperSlide key={i} className="h-auto">
                   <div
-                    className={`${currentStyle} rounded-2xl shadow-lg hover:shadow-blue-500/20 transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 p-5 flex flex-col h-full relative overflow-hidden group`}
+                    className={`${currentStyle} rounded-2xl border border-richblack-100 shadow-sm hover:shadow-md transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 p-5 flex flex-col h-full relative overflow-hidden group`}
                   >
                     {/* Pattern Overlay */}
                     <div className="absolute top-0 right-0 w-16 h-16 md:w-20 md:h-20 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
@@ -148,8 +148,8 @@ function ReviewSlider() {
 
                     {/* Review Text */}
                     <div className="flex-1 mb-4">
-                      <div className="bg-richblack-700/60 rounded-lg p-4 shadow-inner border border-white/10 backdrop-blur-sm h-full">
-                        <p className="text-richblack-100 text-sm md:text-base font-medium leading-relaxed group-hover:text-white transition-colors duration-500 line-clamp-4">
+                      <div className="bg-richblack-5 rounded-lg p-4 border border-richblack-100 h-full">
+                        <p className="text-slate-700 text-sm md:text-base font-medium leading-relaxed transition-colors duration-500 line-clamp-4">
                           {review?.review.split(" ").length > truncateWords
                             ? `${review?.review
                                 .split(" ")
@@ -161,7 +161,7 @@ function ReviewSlider() {
                     </div>
 
                     {/* Student Info */}
-                    <div className="flex flex-wrap items-center gap-3 bg-richblack-700/60 rounded-lg p-3 border border-white/10 backdrop-blur-sm">
+                    <div className="flex flex-wrap items-center gap-3 bg-richblack-5 rounded-lg p-3 border border-richblack-100">
                       <div className="relative">
                         <Img
                           src={
@@ -188,10 +188,10 @@ function ReviewSlider() {
                         </div>
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h3 className="font-bold text-white text-sm md:text-base truncate">
+                        <h3 className="font-bold text-slate-900 text-sm md:text-base truncate">
                           {`${review?.user?.firstName}`}
                         </h3>
-                        <p className="text-richblack-300 text-xs md:text-sm font-medium">
+                        <p className="text-slate-600 text-xs md:text-sm font-medium">
                           Verified Student
                         </p>
                       </div>
@@ -227,9 +227,9 @@ function ReviewSlider() {
 
         {/* Bottom Stats */}
         <div className="text-center mt-6">
-          <p className="text-sm md:text-base text-richblack-300 font-medium">
+          <p className="text-sm md:text-base text-slate-600 font-medium">
             Showing{" "}
-            <span className="font-bold text-richblack-500">
+            <span className="font-bold text-slate-500">
               {reviews?.length}
             </span>{" "}
             verified reviews from our students
@@ -241,3 +241,4 @@ function ReviewSlider() {
 }
 
 export default ReviewSlider
+

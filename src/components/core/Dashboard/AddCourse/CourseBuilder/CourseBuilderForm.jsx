@@ -86,12 +86,12 @@ export default function CourseBuilderForm() {
 
   return (
     <div className="space-y-8 rounded-2xl border-[1px] border-richblack-700 bg-richblack-800 p-6">
-      <p className="text-2xl font-semibold text-richblack-5">Course Builder</p>
+      <p className="text-2xl font-semibold text-slate-900">Course Builder</p>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         {/* Section Name */}
         <div className="flex flex-col space-y-2">
-          <label className="text-sm text-richblack-5" htmlFor="sectionName">
+          <label className="text-sm text-slate-900" htmlFor="sectionName">
             Section Name <sup className="text-pink-200">*</sup>
           </label>
           <input
@@ -123,7 +123,7 @@ export default function CourseBuilderForm() {
             <button
               type="button"
               onClick={cancelEdit}
-              className="text-sm text-richblack-300 underline"
+              className="text-sm text-slate-600 underline"
             >
               Cancel Edit
             </button>
@@ -140,7 +140,7 @@ export default function CourseBuilderForm() {
       <div className="flex justify-end gap-x-3">
         <button
           onClick={goBack}
-          className={`rounded-md bg-richblack-300 py-[8px] px-[20px] font-semibold text-richblack-900`}
+          className={`rounded-md bg-richblack-300 py-[8px] px-[20px] font-semibold text-slate-900`}
         >
           Back
         </button>

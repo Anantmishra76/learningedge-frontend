@@ -29,10 +29,10 @@ export default function RenderCartCourses() {
             {/* Course Details */}
             <div className="flex-1 flex flex-col justify-between">
               <div className="space-y-2">
-                <h3 className="text-xl font-semibold text-richblack-5 group-hover:text-white transition-colors duration-200">
+                <h3 className="text-xl font-semibold text-slate-900 group-hover:text-white transition-colors duration-200">
                   {course?.courseName}
                 </h3>
-                <p className="text-sm text-richblack-400 font-medium">
+                <p className="text-sm text-slate-500 font-medium">
                   {course?.category?.name}
                 </p>
                 <div className="flex items-center gap-2">
@@ -45,7 +45,7 @@ export default function RenderCartCourses() {
                       items={5}
                     />
                   </div>
-                  <span className="text-richblack-400 text-sm">
+                  <span className="text-slate-500 text-sm">
                     ({course?.ratingAndReviews?.length || 0} reviews)
                   </span>
                 </div>
@@ -71,3 +71,4 @@ export default function RenderCartCourses() {
     </div>
   )
 }
+

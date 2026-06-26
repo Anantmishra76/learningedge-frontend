@@ -34,18 +34,18 @@ export default function UpdatePassword() {
       <div className="bg-gradient-to-br from-richblack-800 to-richblack-900 rounded-xl border border-richblack-700 p-8 shadow-lg hover:shadow-xl transition-all duration-300">
         <div className="flex items-center gap-4 mb-8">
           <div className="p-3 bg-green-50 rounded-full">
-            <AiOutlineLock className="text-2xl text-richblack-900" />
+            <AiOutlineLock className="text-2xl text-slate-900" />
           </div>
           <div>
-            <h2 className="text-xl font-semibold text-richblack-5">Change Password</h2>
-            <p className="text-richblack-300 text-sm">Update your account password</p>
+            <h2 className="text-xl font-semibold text-slate-900">Change Password</h2>
+            <p className="text-slate-600 text-sm">Update your account password</p>
           </div>
         </div>
 
         <div className="space-y-6">
           {/* Current Password */}
           <div className="space-y-2">
-            <label htmlFor="oldPassword" className="block text-sm font-medium text-richblack-5">
+            <label htmlFor="oldPassword" className="block text-sm font-medium text-slate-900">
               Current Password <span className="text-pink-200">*</span>
             </label>
             <div className="relative">
@@ -54,13 +54,13 @@ export default function UpdatePassword() {
                 name="oldPassword"
                 id="oldPassword"
                 placeholder="Enter Current Password"
-                className="w-full rounded-lg bg-richblack-700 p-3 pr-12 text-richblack-5 border border-richblack-600 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors"
+                className="w-full rounded-lg bg-richblack-700 p-3 pr-12 text-slate-900 border border-richblack-600 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors"
                 {...register("oldPassword", { required: true })}
               />
               <button
                 type="button"
                 onClick={() => setShowOldPassword((prev) => !prev)}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-richblack-400 hover:text-richblack-5 transition-colors"
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-500 hover:text-slate-900 transition-colors"
               >
                 {showOldPassword ? (
                   <AiOutlineEyeInvisible fontSize={20} />
@@ -76,7 +76,7 @@ export default function UpdatePassword() {
 
           {/* New Password */}
           <div className="space-y-2">
-            <label htmlFor="newPassword" className="block text-sm font-medium text-richblack-5">
+            <label htmlFor="newPassword" className="block text-sm font-medium text-slate-900">
               New Password <span className="text-pink-200">*</span>
             </label>
             <div className="relative">
@@ -85,13 +85,13 @@ export default function UpdatePassword() {
                 name="newPassword"
                 id="newPassword"
                 placeholder="Enter New Password"
-                className="w-full rounded-lg bg-richblack-700 p-3 pr-12 text-richblack-5 border border-richblack-600 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors"
+                className="w-full rounded-lg bg-richblack-700 p-3 pr-12 text-slate-900 border border-richblack-600 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors"
                 {...register("newPassword", { required: true })}
               />
               <button
                 type="button"
                 onClick={() => setShowNewPassword((prev) => !prev)}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-richblack-400 hover:text-richblack-5 transition-colors"
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-500 hover:text-slate-900 transition-colors"
               >
                 {showNewPassword ? (
                   <AiOutlineEyeInvisible fontSize={20} />
@@ -107,7 +107,7 @@ export default function UpdatePassword() {
 
           {/* Confirm New Password */}
           <div className="space-y-2">
-            <label htmlFor="confirmNewPassword" className="block text-sm font-medium text-richblack-5">
+            <label htmlFor="confirmNewPassword" className="block text-sm font-medium text-slate-900">
               Confirm New Password <span className="text-pink-200">*</span>
             </label>
             <div className="relative">
@@ -116,13 +116,13 @@ export default function UpdatePassword() {
                 name="confirmNewPassword"
                 id="confirmNewPassword"
                 placeholder="Confirm New Password"
-                className="w-full rounded-lg bg-richblack-700 p-3 pr-12 text-richblack-5 border border-richblack-600 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors"
+                className="w-full rounded-lg bg-richblack-700 p-3 pr-12 text-slate-900 border border-richblack-600 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors"
                 {...register("confirmNewPassword", { required: true })}
               />
               <button
                 type="button"
                 onClick={() => setShowConfirmNewPassword((prev) => !prev)}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-richblack-400 hover:text-richblack-5 transition-colors"
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-500 hover:text-slate-900 transition-colors"
               >
                 {showConfirmNewPassword ? (
                   <AiOutlineEyeInvisible fontSize={20} />
@@ -141,7 +141,7 @@ export default function UpdatePassword() {
           <button
             type="button"
             onClick={() => navigate("/dashboard/my-profile")}
-            className="px-6 py-2 bg-richblack-700 hover:bg-richblack-600 text-richblack-5 rounded-lg transition-colors duration-200"
+            className="px-6 py-2 bg-richblack-700 hover:bg-richblack-600 text-slate-900 rounded-lg transition-colors duration-200"
           >
             Cancel
           </button>

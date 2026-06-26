@@ -186,10 +186,10 @@ const VideoDetails = () => {
   }
 
   return (
-    <div className="flex flex-col gap-5 text-white max-w-4xl mx-auto px-4 py-6">
+    <div className="flex flex-col gap-5 text-slate-900 max-w-4xl mx-auto px-4 py-6">
 
       {/* Mobile sidebar toggle */}
-      <div className="sm:hidden text-white absolute left-4 top-4 z-10 cursor-pointer bg-richblack-800 p-2 rounded-full shadow-lg" onClick={() => dispatch(setCourseViewSidebar(!courseViewSidebar))}>
+      <div className="sm:hidden text-slate-700 absolute left-4 top-4 z-10 cursor-pointer bg-white p-2 rounded-full shadow-lg border border-slate-200" onClick={() => dispatch(setCourseViewSidebar(!courseViewSidebar))}>
         {!courseViewSidebar && <HiMenuAlt1 size={24} />}
       </div>
 
@@ -203,10 +203,10 @@ const VideoDetails = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-xl"></div>
         </div>
       ) : !videoData?.videoUrl ? (
-        <div className="flex items-center justify-center h-64 bg-richblack-800 rounded-xl">
+        <div className="flex items-center justify-center h-64 bg-white border border-slate-200 rounded-xl">
           <div className="text-center">
-            <p className="text-white text-lg mb-4">Video URL not available</p>
-            <p className="text-richblack-300 text-sm">Video Data: {JSON.stringify(videoData, null, 2)}</p>
+            <p className="text-slate-900 text-lg mb-4">Video URL not available</p>
+            <p className="text-slate-600 text-sm">Video Data: {JSON.stringify(videoData, null, 2)}</p>
           </div>
         </div>
       ) : (
@@ -312,12 +312,12 @@ const VideoDetails = () => {
 
       {/* Video Information */}
       <div className="space-y-4">
-        <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight">
+        <h1 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
           {videoData?.title}
         </h1>
-        <div className="bg-richblack-800/50 backdrop-blur-sm rounded-lg p-6 border border-richblack-700">
-          <h3 className="text-lg font-semibold text-richblack-100 mb-3">Description</h3>
-          <p className="text-richblack-200 leading-relaxed text-base">
+        <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm">
+          <h3 className="text-lg font-semibold text-slate-900 mb-3">Description</h3>
+          <p className="text-slate-600 leading-relaxed text-base">
             {videoData?.description}
           </p>
         </div>
@@ -327,3 +327,4 @@ const VideoDetails = () => {
 }
 
 export default VideoDetails
+

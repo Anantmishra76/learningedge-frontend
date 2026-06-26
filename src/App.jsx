@@ -95,13 +95,13 @@ function App() {
   }, []);
 
   return (
-    <div className="w-full min-h-screen bg-richblack-900 flex flex-col font-poppins pt-14 overflow-x-hidden">
+    <div className="w-full min-h-screen bg-slate-50 text-slate-600 flex flex-col font-poppins pt-14 overflow-x-hidden">
       <Navbar />
 
       {/* Scroll to top button - appears when scrolled down */}
       <button
         onClick={() => window.scrollTo(0, 0)}
-        className={`bg-yellow-25 hover:bg-yellow-50 hover:scale-110 p-3 text-lg text-black rounded-2xl fixed right-3 z-10 duration-500 ease-in-out ${showArrow ? 'bottom-6' : '-bottom-24'}`}
+        className={`bg-brand-500 hover:bg-brand-600 hover:scale-110 p-3 text-lg text-white rounded-2xl fixed right-3 z-10 shadow-lg duration-500 ease-in-out ${showArrow ? 'bottom-6' : '-bottom-24'}`}
       >
         <HiArrowNarrowUp />
       </button>
@@ -221,3 +221,4 @@ function App() {
 }
 
 export default App;
+

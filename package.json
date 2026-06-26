@@ -39,7 +39,7 @@
     "react-simple-star-rating": "^5.1.7",
     "react-super-responsive-table": "^5.2.2",
     "react-type-animation": "^3.1.0",
-    "swiper": "^12.1.2"
+    "swiper": "^12.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.3",

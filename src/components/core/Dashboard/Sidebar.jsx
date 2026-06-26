@@ -53,7 +53,7 @@ export default function Sidebar() {
     <>
       {/* Mobile menu toggle */}
       <div
-        className="lg:hidden text-white fixed left-4 top-[4.5rem] z-30 cursor-pointer bg-richblack-800 p-2 rounded-full shadow-lg border border-richblack-600 hover:bg-richblack-700 transition-colors duration-200"
+        className="lg:hidden text-slate-700 fixed left-4 top-[4.5rem] z-30 cursor-pointer bg-white p-2 rounded-full shadow-lg border border-slate-200 hover:bg-slate-100 transition-colors duration-200"
         onClick={() => dispatch(setOpenSideMenu(!openSideMenu))}
       >
         {openSideMenu ? <IoMdClose size={24} /> : <HiMenuAlt1 size={24} />}
@@ -62,7 +62,7 @@ export default function Sidebar() {
       {/* Mobile overlay */}
       {openSideMenu && screenSize <= 1024 && (
         <div
-          className="lg:hidden fixed inset-0 z-10 bg-black/60 backdrop-blur-md"
+          className="lg:hidden fixed inset-0 z-10 bg-slate-900/30 backdrop-blur-md"
           onClick={() => dispatch(setOpenSideMenu(false))}
         ></div>
       )}
@@ -71,15 +71,15 @@ export default function Sidebar() {
       <div
         className={`fixed top-14 z-20 flex h-[calc(100vh-3.5rem)] 
         w-[80vw] sm:w-[260px] md:w-[280px] lg:w-[300px] max-w-[320px] 
-        flex-col border-r border-r-richblack-600 bg-richblack-800 
+        flex-col border-r border-r-slate-200 bg-white 
         shadow-2xl lg:shadow-none transform transition-transform duration-300 
         ${openSideMenu ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
       >
         {/* Header */}
-        <div className="flex items-center justify-center p-6 border-b border-richblack-700 bg-richblack-900/50">
+        <div className="flex items-center justify-center p-6 border-b border-slate-200 bg-slate-50">
           <div className="text-center">
-            <h2 className="text-xl font-bold text-richblack-100">Dashboard</h2>
-            <p className="text-sm text-richblack-400 mt-1">Welcome back!</p>
+            <h2 className="text-xl font-bold text-slate-900">Dashboard</h2>
+            <p className="text-sm text-slate-500 mt-1">Welcome back!</p>
           </div>
         </div>
 
@@ -100,7 +100,7 @@ export default function Sidebar() {
           </div>
 
           {/* Divider */}
-          <div className="mx-3 my-6 h-[1px] bg-gradient-to-r from-transparent via-richblack-600 to-transparent" />
+          <div className="mx-3 my-6 h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
           {/* Settings & Logout */}
           <div className="space-y-1 px-3">
@@ -123,10 +123,10 @@ export default function Sidebar() {
               }
               className="w-full group relative overflow-hidden"
             >
-              <div className="flex items-center gap-x-3 px-4 py-3 text-sm font-medium text-richblack-300 hover:bg-gradient-to-r hover:from-red-900/30 hover:via-red-800/25 hover:to-red-700/20 hover:text-red-200 rounded-lg transition-all duration-300 border border-transparent hover:border-red-600/30 hover:shadow-lg hover:shadow-red-900/20 active:scale-[0.98] active:transition-transform active:duration-100">
+              <div className="flex items-center gap-x-3 px-4 py-3 text-sm font-medium text-slate-600 hover:bg-danger-500/10 hover:text-danger-500 rounded-lg transition-all duration-300 border border-transparent hover:border-danger-500/20 active:scale-[0.98] active:transition-transform active:duration-100">
                 <VscSignOut className="text-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
                 <span className="group-hover:font-semibold">Logout</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-red-600/0 via-red-500/5 to-red-600/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
+                <div className="absolute inset-0 bg-danger-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
               </div>
             </button>
           </div>
@@ -134,16 +134,16 @@ export default function Sidebar() {
 
         {/* User Info Footer */}
         {user && (
-          <div className="p-4 border-t border-richblack-700 bg-richblack-900/30">
+          <div className="p-4 border-t border-slate-200 bg-slate-50">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center text-richblack-900 font-bold text-lg">
+              <div className="w-10 h-10 bg-accent-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
                 {user.firstName?.[0]?.toUpperCase()}{user.lastName?.[0]?.toUpperCase()}
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium text-richblack-100 truncate">
+                <p className="text-sm font-medium text-slate-900 truncate">
                   {user.firstName} {user.lastName}
                 </p>
-                <p className="text-xs text-richblack-400 capitalize">
+                <p className="text-xs text-slate-500 capitalize">
                   {user.accountType?.toLowerCase()}
                 </p>
               </div>
@@ -156,3 +156,4 @@ export default function Sidebar() {
     </>
   )
 }
+

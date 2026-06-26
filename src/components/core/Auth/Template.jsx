@@ -16,10 +16,10 @@ function Template({ title, description1, description2, formType }) {
       <div className="max-w-xl w-full relative z-10">
         {/* Form Section */}
         <div className="bg-richblack-800/60 backdrop-blur-md rounded-3xl p-6 shadow-2xl border border-richblack-700/50 hover:border-richblack-600/70 transition-all duration-300 hover:shadow-yellow-400/10">
-          <h1 className="text-2xl lg:text-3xl font-bold leading-tight text-richblack-5 mb-2 bg-gradient-to-r from-richblack-5 to-richblack-100 bg-clip-text">
+          <h1 className="text-2xl lg:text-3xl font-bold leading-tight text-slate-900 mb-2 bg-gradient-to-r from-richblack-5 to-richblack-100 bg-clip-text">
             {title}
           </h1>
-          <p className="text-base leading-relaxed text-richblack-100 mb-4">
+          <p className="text-base leading-relaxed text-slate-700 mb-4">
             <span>{description1}</span>{" "}
             <span className="font-edu-sa font-bold italic text-blue-100">
               {description2}

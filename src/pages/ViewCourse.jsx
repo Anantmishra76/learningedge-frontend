@@ -69,7 +69,7 @@ export default function ViewCourse() {
 
   return (
     <>
-      <div className="relative flex min-h-[calc(100vh-3.5rem)] bg-richblack-900">
+      <div className="relative flex min-h-[calc(100vh-3.5rem)] bg-slate-50">
         {/* Course sidebar */}
         {courseViewSidebar && (
           <div className="hidden sm:block">
@@ -79,7 +79,7 @@ export default function ViewCourse() {
 
         {/* Mobile sidebar overlay */}
         {courseViewSidebar && (
-          <div className="sm:hidden fixed inset-0 z-40 bg-black/50 backdrop-blur-sm" onClick={() => dispatch(setCourseViewSidebar(false))}>
+          <div className="sm:hidden fixed inset-0 z-40 bg-slate-900/30 backdrop-blur-sm" onClick={() => dispatch(setCourseViewSidebar(false))}>
             <div className="absolute left-0 top-0 h-full">
               <VideoDetailsSidebar setReviewModal={setReviewModal} />
             </div>
@@ -87,7 +87,7 @@ export default function ViewCourse() {
         )}
 
         {/* Main content area */}
-        <div className="flex-1 overflow-auto bg-gradient-to-br from-richblack-900 via-richblack-800 to-richblack-900">
+        <div className="flex-1 overflow-auto bg-slate-50">
           <div className="min-h-full">
             <Outlet />
           </div>
@@ -99,3 +99,4 @@ export default function ViewCourse() {
     </>
   )
 }
+

@@ -49,17 +49,17 @@ function UpdatePassword() {
         <div className="spinner"></div>
       ) : (
         <div className="max-w-[500px] p-4 lg:p-8">
-          <h1 className="text-[1.875rem] font-semibold leading-[2.375rem] text-richblack-5">
+          <h1 className="text-[1.875rem] font-semibold leading-[2.375rem] text-slate-900">
             Reset your password
           </h1>
 
-          <p className="my-4 text-[1.125rem] leading-[1.625rem] text-richblack-100">
+          <p className="my-4 text-[1.125rem] leading-[1.625rem] text-slate-700">
             Enter your email, the OTP sent to your email, and your new password.
           </p>
 
           <form onSubmit={handleOnSubmit}>
             <label className="w-full">
-              <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
+              <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-slate-900">
                 Email Address <sup className="text-pink-200">*</sup>
               </p>
               <input
@@ -72,12 +72,12 @@ function UpdatePassword() {
                 style={{
                   boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
                 }}
-                className="w-full rounded-[0.5rem] bg-richblack-800 p-[12px] text-richblack-5"
+                className="w-full rounded-[0.5rem] bg-richblack-800 p-[12px] text-slate-900"
               />
             </label>
 
             <label className="w-full mt-3">
-              <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
+              <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-slate-900">
                 OTP <sup className="text-pink-200">*</sup>
               </p>
               <input
@@ -90,12 +90,12 @@ function UpdatePassword() {
                 style={{
                   boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
                 }}
-                className="w-full rounded-[0.5rem] bg-richblack-800 p-[12px] text-richblack-5"
+                className="w-full rounded-[0.5rem] bg-richblack-800 p-[12px] text-slate-900"
               />
             </label>
 
             <label className="relative mt-3">
-              <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
+              <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-slate-900">
                 New Password <sup className="text-pink-200">*</sup>
               </p>
               <input
@@ -108,7 +108,7 @@ function UpdatePassword() {
                 style={{
                   boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
                 }}
-                className="w-full rounded-[0.5rem] bg-richblack-800 p-[12px] text-richblack-5"
+                className="w-full rounded-[0.5rem] bg-richblack-800 p-[12px] text-slate-900"
               />
               <span
                 onClick={() => setShowPassword((prev) => !prev)}
@@ -123,7 +123,7 @@ function UpdatePassword() {
             </label>
 
             <label className="relative mt-3 block">
-              <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
+              <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-slate-900">
                 Confirm New Password <sup className="text-pink-200">*</sup>
               </p>
               <input
@@ -136,7 +136,7 @@ function UpdatePassword() {
                 style={{
                   boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
                 }}
-                className="w-full rounded-[0.5rem] bg-richblack-800 p-[12px] text-richblack-5"
+                className="w-full rounded-[0.5rem] bg-richblack-800 p-[12px] text-slate-900"
               />
               <span
                 onClick={() => setShowConfirmPassword((prev) => !prev)}
@@ -160,7 +160,7 @@ function UpdatePassword() {
 
           <div className="mt-6 flex items-center justify-between">
             <Link to="/login">
-              <p className="flex items-center gap-x-2 text-richblack-5">
+              <p className="flex items-center gap-x-2 text-slate-900">
                 <BiArrowBack /> Back To Login
               </p>
             </Link>
@@ -172,3 +172,4 @@ function UpdatePassword() {
 }
 
 export default UpdatePassword
+

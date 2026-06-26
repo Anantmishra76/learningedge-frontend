@@ -10,7 +10,7 @@ export default function Tab({ tabData, field, setField }) {
             className={`${
               field === tab.type
                 ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg"
-                : "bg-transparent text-richblack-200 hover:text-richblack-100"
+                : "bg-transparent text-slate-600 hover:text-slate-700"
             } py-2 px-6 rounded-full transition-all duration-300 font-medium text-sm hover:scale-105`}
           >
             {tab?.tabName}

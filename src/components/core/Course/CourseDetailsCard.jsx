@@ -52,7 +52,7 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
   return (  
     <>
       <div
-        className={`flex flex-col gap-4 rounded-2xl bg-richblack-700 p-3 sm:p-4 text-richblack-5 w-full max-w-sm mx-auto`}
+        className={`flex flex-col gap-4 rounded-2xl bg-richblack-700 p-3 sm:p-4 text-slate-900 w-full max-w-sm mx-auto`}
       >
         {/* Course Image */}
         <Img
@@ -115,3 +115,4 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
 }
 
 export default CourseDetailsCard
+

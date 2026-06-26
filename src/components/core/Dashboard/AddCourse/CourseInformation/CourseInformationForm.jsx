@@ -161,7 +161,7 @@ export default function CourseInformationForm() {
     >
       {/* Course Title */}
       <div className="flex flex-col space-y-2">
-        <label className="text-sm text-richblack-5" htmlFor="courseTitle">
+        <label className="text-sm text-slate-900" htmlFor="courseTitle">
           Course Title <sup className="text-pink-200">*</sup>
         </label>
         <input
@@ -179,7 +179,7 @@ export default function CourseInformationForm() {
 
       {/* Course Short Description */}
       <div className="flex flex-col space-y-2">
-        <label className="text-sm text-richblack-5" htmlFor="courseShortDesc">
+        <label className="text-sm text-slate-900" htmlFor="courseShortDesc">
           Course Short Description <sup className="text-pink-200">*</sup>
         </label>
         <textarea
@@ -197,7 +197,7 @@ export default function CourseInformationForm() {
 
       {/* Course Price */}
       <div className="flex flex-col space-y-2">
-        <label className="text-sm text-richblack-5" htmlFor="coursePrice">
+        <label className="text-sm text-slate-900" htmlFor="coursePrice">
           Course Price <sup className="text-pink-200">*</sup>
         </label>
         <div className="relative">
@@ -214,7 +214,7 @@ export default function CourseInformationForm() {
             className="form-style w-full !pl-12"
 
           />
-          <HiOutlineCurrencyRupee className="absolute left-3 top-1/2 inline-block -translate-y-1/2 text-2xl text-richblack-400" />
+          <HiOutlineCurrencyRupee className="absolute left-3 top-1/2 inline-block -translate-y-1/2 text-2xl text-slate-500" />
         </div>
         {errors.coursePrice && (
           <span className="ml-2 text-xs tracking-wide text-pink-200">
@@ -225,7 +225,7 @@ export default function CourseInformationForm() {
 
       {/* Course Category */}
       <div className="flex flex-col space-y-2 ">
-        <label className="text-sm text-richblack-5" htmlFor="courseCategory">
+        <label className="text-sm text-slate-900" htmlFor="courseCategory">
           Course Category <sup className="text-pink-200">*</sup>
         </label>
         <select
@@ -273,7 +273,7 @@ export default function CourseInformationForm() {
 
       {/* Benefits of the course */}
       <div className="flex flex-col space-y-2">
-        <label className="text-sm text-richblack-5" htmlFor="courseBenefits">
+        <label className="text-sm text-slate-900" htmlFor="courseBenefits">
           Benefits of the course <sup className="text-pink-200">*</sup>
         </label>
         <textarea
@@ -305,7 +305,7 @@ export default function CourseInformationForm() {
             onClick={() => dispatch(setStep(2))}
             disabled={loading}
             className={`flex cursor-pointer items-center gap-x-2 rounded-md py-[8px] px-[20px] font-semibold
-              text-richblack-900 bg-richblack-300 hover:bg-richblack-900 hover:text-richblack-300 duration-300`}
+              text-slate-900 bg-richblack-300 hover:bg-richblack-900 hover:text-slate-600 duration-300`}
           >
             Continue Wihout Saving
           </button>
@@ -320,4 +320,5 @@ export default function CourseInformationForm() {
     </form>
   )
 }
+
 

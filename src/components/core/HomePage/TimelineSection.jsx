@@ -59,7 +59,7 @@ const TimelineSection = () => {
 
                                     <div className="flex-1">
                                         <h2 className='font-bold text-[18px] md:text-[20px] text-richblue-300 mb-1 md:mb-2 group-hover:text-richblue-200 transition-colors duration-300'>{element.heading}</h2>
-                                        <p className='text-sm md:text-base text-richblack-300 leading-relaxed group-hover:text-richblack-200 transition-colors duration-300'>{element.Description}</p>
+                                        <p className='text-sm md:text-base text-slate-600 leading-relaxed group-hover:text-slate-600 transition-colors duration-300'>{element.Description}</p>
                                     </div>
 
                                 </div>
@@ -108,3 +108,4 @@ const TimelineSection = () => {
 }
 
 export default TimelineSection
+

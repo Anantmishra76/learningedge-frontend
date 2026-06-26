@@ -22,7 +22,7 @@ const CodeBlocks = ({
                 {heading}
 
                 {/* Sub Heading */}
-                <div className="text-richblack-300 text-base font-bold w-[85%] -mt-3">
+                <div className="text-slate-600 text-base font-bold w-[85%] -mt-3">
                     {subheading}
                 </div>
 
@@ -50,7 +50,7 @@ const CodeBlocks = ({
             <div className="h-fit code-border border border-richblack-700 rounded-xl flex flex-row py-3 text-[10px] sm:text-sm leading-[18px] sm:leading-6 relative w-[100%] lg:w-[470px]">
 
                 {/* Indexing */}
-                <div className="text-center flex flex-col  w-[10%] select-none text-richblack-400 font-poppins font-bold ">
+                <div className="text-center flex flex-col  w-[10%] select-none text-slate-500 font-poppins font-bold ">
                     <p>1</p>
                     <p>2</p>
                     <p>3</p>
@@ -102,3 +102,4 @@ const CodeBlocks = ({
 };
 
 export default CodeBlocks;
+

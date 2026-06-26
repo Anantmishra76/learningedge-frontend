@@ -54,27 +54,27 @@ function Catalog() {
 
   if (!loading && !catalogPageData) {
     return (
-      <div className="text-white text-4xl flex justify-center items-center mt-[20%]">
+      <div className="text-slate-900 text-4xl flex justify-center items-center mt-[20%]">
         No Courses found for selected Category
       </div>
     )
   }
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden bg-slate-50">
       {/* Hero Section */}
-      <div className="box-content bg-richblack-800 px-4">
+      <div className="box-content bg-white px-4 border-b border-slate-200">
         <div className="mx-auto flex min-h-[260px] max-w-maxContentTab flex-col justify-center gap-4 lg:max-w-maxContent">
-          <p className="text-sm text-richblack-300">
+          <p className="text-sm text-slate-500">
             {`Home / Catalog / `}
-            <span className="text-yellow-25">
+            <span className="text-accent-500">
               {catalogPageData?.selectedCategory?.name}
             </span>
           </p>
-          <p className="text-3xl text-richblack-5">
+          <p className="text-3xl font-bold text-slate-900">
             {catalogPageData?.selectedCategory?.name}
           </p>
-          <p className="max-w-[870px] text-richblack-200">
+          <p className="max-w-[870px] text-slate-600">
             {catalogPageData?.selectedCategory?.description}
           </p>
         </div>
@@ -83,12 +83,12 @@ function Catalog() {
       {/* Courses Section */}
       <div className="mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
         <div className="section_heading">Courses to get you started</div>
-        <div className="my-4 flex border-b border-b-richblack-600 text-sm">
+        <div className="my-4 flex border-b border-b-slate-200 text-sm">
           <p
             className={`px-4 py-2 ${
               active === 1
-                ? "border-b border-b-blue-500 text-blue-500"
-                : "text-richblack-50"
+                ? "border-b border-b-brand-500 text-brand-500"
+                : "text-slate-600"
             } cursor-pointer`}
             onClick={() => setActive(1)}
           >
@@ -97,8 +97,8 @@ function Catalog() {
           <p
             className={`px-4 py-2 ${
               active === 2
-                ? "border-b border-b-blue-500 text-blue-500"
-                : "text-richblack-50"
+                ? "border-b border-b-brand-500 text-brand-500"
+                : "text-slate-600"
             } cursor-pointer`}
             onClick={() => setActive(2)}
           >
@@ -118,3 +118,4 @@ function Catalog() {
 }
 
 export default Catalog
+

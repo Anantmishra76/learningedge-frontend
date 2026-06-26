@@ -76,3 +76,4 @@ function Course_Slider({ Courses }) {
 }
 
 export default Course_Slider
+

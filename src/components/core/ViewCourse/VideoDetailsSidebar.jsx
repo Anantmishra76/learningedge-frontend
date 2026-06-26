@@ -71,7 +71,7 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
             {/* Back to dashboard button */}
             <button
               onClick={() => { navigate(`/dashboard/enrolled-courses`) }}
-              className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-richblack-100 text-richblack-700 hover:bg-richblack-200 hover:scale-110 transition-all duration-200 shadow-lg"
+              className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-richblack-100 text-slate-700 hover:bg-richblack-200 hover:scale-110 transition-all duration-200 shadow-lg"
               title="Back to Dashboard"
             >
               <IoIosArrowBack size={20} />
@@ -86,7 +86,7 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
                 <div className="flex-shrink-0">
                   <MdOutlineSchool className="text-blue-400 text-2xl" />
                 </div>
-                <h2 className="text-xl font-bold text-richblack-25 leading-tight">
+                <h2 className="text-xl font-bold text-slate-800 leading-tight">
                   {courseEntireData?.courseName}
                 </h2>
               </div>
@@ -95,7 +95,7 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
               {/* Progress Section */}
               <div className="space-y-2">
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-richblack-300 font-medium">Progress</span>
+                  <span className="text-slate-600 font-medium">Progress</span>
                   <span className="text-blue-400 font-semibold">
                     {completedLectures?.length} / {totalNoOfLectures} ({totalNoOfLectures > 0 ? Math.round((completedLectures?.length / totalNoOfLectures) * 100) : 0}%)
                   </span>
@@ -115,7 +115,7 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
         <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-richblack-600 scrollbar-track-richblack-800">
           {courseSectionData.map((section, index) => (
             <div
-              className="mt-1 text-sm text-richblack-5"
+              className="mt-1 text-sm text-slate-900"
               key={index}
             >
               {/* Section Header */}
@@ -132,18 +132,18 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
                   })
                 }}
               >
-                <div className="w-[70%] font-semibold text-richblack-100">
+                <div className="w-[70%] font-semibold text-slate-700">
                   {section?.sectionName}
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-xs font-medium text-richblack-400 bg-richblack-800 px-3 py-1 rounded-full flex items-center justify-center whitespace-nowrap">
+                  <span className="text-xs font-medium text-slate-500 bg-richblack-800 px-3 py-1 rounded-full flex items-center justify-center whitespace-nowrap">
                     {section?.subSection.length} video{section?.subSection.length !== 1 ? 's' : ''}
                   </span>
                   <span
                     className={`transform transition-transform duration-300 ${activeStatus.includes(section?._id) ? "rotate-0" : "rotate-180"
                       }`}
                   >
-                    <BsChevronDown className="text-richblack-400" />
+                    <BsChevronDown className="text-slate-500" />
                   </span>
                 </div>
               </div>
@@ -154,8 +154,8 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
                   {section.subSection.map((topic, i) => (
                     <div
                       className={`flex items-center gap-3 px-5 py-2 cursor-pointer transition-all duration-200 ${videoBarActive === topic._id
-                          ? "bg-blue-200 font-semibold text-richblack-800 border-r-4 border-blue-400"
-                          : "hover:bg-richblack-700 text-richblack-200 hover:text-white"
+                          ? "bg-blue-200 font-semibold text-slate-800 border-r-4 border-blue-400"
+                          : "hover:bg-richblack-700 text-slate-600 hover:text-white"
                         }`}
                       key={i}
                       onClick={(e) => {
@@ -217,3 +217,4 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
     </>
   )
 }
+

@@ -9,22 +9,22 @@ const CourseCard = ({ cardData, currentCard, setCurrentCard }) => {
   return (
     <div
       className={`w-[360px] lg:w-[30%] ${currentCard === cardData?.heading
-        ? "bg-white shadow-[12px_12px_0_0] shadow-yellow-50"
-        : "bg-richblack-800"
-        }  text-richblack-25 h-[300px] box-border cursor-pointer`}
+        ? "bg-white shadow-[12px_12px_0_0] shadow-yellow-50 border-blue-100"
+        : "bg-white border-richblack-100 shadow-sm"
+        } border text-slate-700 h-[300px] box-border cursor-pointer`}
       onClick={() => setCurrentCard(cardData?.heading)}
     >
       <div className="border-b-[2px] border-richblack-400 border-dashed h-[80%] p-6 flex flex-col gap-3">
-        <div className={` ${currentCard === cardData?.heading && "text-richblack-800"} font-semibold text-[20px]`}
+        <div className="font-semibold text-[20px] text-slate-900"
         >
           {cardData?.heading}
         </div>
 
-        <div className="text-richblack-400">{cardData?.description}</div>
+        <div className="text-slate-600">{cardData?.description}</div>
       </div>
 
       <div
-        className={`flex justify-between ${currentCard === cardData?.heading ? "text-blue-300" : "text-richblack-300"
+        className={`flex justify-between ${currentCard === cardData?.heading ? "text-blue-300" : "text-slate-600"
           } px-6 py-3 font-medium`}
       >
         {/* Level */}
@@ -44,3 +44,4 @@ const CourseCard = ({ cardData, currentCard, setCurrentCard }) => {
 };
 
 export default CourseCard;
+

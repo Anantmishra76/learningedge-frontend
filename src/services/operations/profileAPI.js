@@ -109,3 +109,4 @@ export async function getPaymentHistory(token) {
   }
   return result
 }
+

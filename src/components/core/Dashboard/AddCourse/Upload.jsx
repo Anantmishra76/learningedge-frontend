@@ -55,7 +55,7 @@ export default function Upload({ name, label, register, setValue, errors, video 
 
   return (
     <div className="flex flex-col space-y-2">
-      <label className="text-sm text-richblack-5" htmlFor={name}>
+      <label className="text-sm text-slate-900" htmlFor={name}>
         {label} {!viewData && <sup className="text-pink-200">*</sup>}
       </label>
 
@@ -89,7 +89,7 @@ export default function Upload({ name, label, register, setValue, errors, video 
                   setSelectedFile(null)
                   setValue(name, null)
                 }}
-                className="mt-3 text-richblack-400 underline"
+                className="mt-3 text-slate-500 underline"
               >
                 Cancel
               </button>
@@ -105,7 +105,7 @@ export default function Upload({ name, label, register, setValue, errors, video 
             <div className="grid aspect-square w-14 place-items-center rounded-full bg-pure-greys-800">
               <FiUploadCloud className="text-2xl text-yellow-50" />
             </div>
-            <p className="mt-2 max-w-[200px] text-center text-sm text-richblack-200">
+            <p className="mt-2 max-w-[200px] text-center text-sm text-slate-600">
               Drag and drop an {!video ? "image" : "video"}, or click to{" "}
               <span 
                 className="font-semibold text-yellow-50 cursor-pointer hover:underline"
@@ -115,7 +115,7 @@ export default function Upload({ name, label, register, setValue, errors, video 
               </span> a
               file
             </p>
-            <ul className="mt-10 flex list-disc justify-between space-x-12 text-center  text-xs text-richblack-200">
+            <ul className="mt-10 flex list-disc justify-between space-x-12 text-center  text-xs text-slate-600">
               <li>Aspect ratio 16:9</li>
               <li>Recommended size 1024x576</li>
             </ul>
@@ -131,3 +131,4 @@ export default function Upload({ name, label, register, setValue, errors, video 
     </div>
   )
 }
+

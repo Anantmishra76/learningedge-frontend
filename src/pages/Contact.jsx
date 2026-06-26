@@ -71,20 +71,20 @@ const Contact = () => {
   }
 
   const inputBase =
-    "rounded-lg bg-richblack-800 border border-richblack-600 px-4 py-3 text-sm text-richblack-5 placeholder-richblack-400 outline-none transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+    "rounded-lg bg-white border border-slate-200 px-4 py-3 text-sm text-slate-900 placeholder-slate-500 outline-none transition-all duration-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20"
   const inputClass = `w-full ${inputBase}`
 
   return (
-    <div className="min-h-screen bg-richblack-900">
+    <div className="min-h-screen bg-slate-50">
       {/* ─── Hero ─── */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-richblack-800 to-richblack-900 py-16 text-center">
-        <div className="absolute -top-32 -right-32 h-64 w-64 rounded-full bg-blue-600/10 blur-3xl" />
-        <div className="absolute -bottom-32 -left-32 h-64 w-64 rounded-full bg-purple-600/10 blur-3xl" />
+      <section className="relative overflow-hidden bg-white py-16 text-center">
+        <div className="absolute -top-32 -right-32 h-64 w-64 rounded-full bg-brand-500/10 blur-3xl" />
+        <div className="absolute -bottom-32 -left-32 h-64 w-64 rounded-full bg-accent-500/10 blur-3xl" />
         <div className="relative mx-auto max-w-2xl px-4">
-          <h1 className="text-4xl font-bold text-richblack-5 sm:text-5xl">
-            Contact <span className="text-blue-400">Us</span>
+          <h1 className="text-4xl font-bold text-slate-900 sm:text-5xl">
+            Contact <span className="text-brand-500">Us</span>
           </h1>
-          <p className="mt-4 text-base text-richblack-300 sm:text-lg">
+          <p className="mt-4 text-base text-slate-600 sm:text-lg">
             Have a question or feedback? Fill out the form and our team will get
             back to you within 24 hours.
           </p>
@@ -101,16 +101,16 @@ const Contact = () => {
               return (
                 <div
                   key={i}
-                  className="group flex items-start gap-4 rounded-xl border border-richblack-700 bg-richblack-800/60 p-5 backdrop-blur transition-all duration-300 hover:border-blue-500/40 hover:shadow-lg hover:shadow-blue-500/5"
+                  className="group flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:border-brand-500/40 hover:shadow-lg"
                 >
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blue-600/20 text-blue-400 transition-colors group-hover:bg-blue-600/30">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-500 transition-colors group-hover:bg-brand-100">
                     <Icon size={22} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-richblack-5">
+                    <h3 className="font-semibold text-slate-900">
                       {item.title}
                     </h3>
-                    <p className="mt-1 text-sm text-richblack-300">
+                    <p className="mt-1 text-sm text-slate-600">
                       {item.text}
                     </p>
                   </div>
@@ -121,7 +121,7 @@ const Contact = () => {
 
           {/* ── Right: Form ── */}
           <div className="lg:col-span-3">
-            <div className="rounded-2xl border border-richblack-700 bg-richblack-800/60 p-6 backdrop-blur sm:p-8">
+            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
               {submitted ? (
                 <div className="flex flex-col items-center justify-center py-12 text-center">
                   <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-600/20 text-green-400">
@@ -129,10 +129,10 @@ const Contact = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-semibold text-richblack-5">
+                  <h3 className="text-xl font-semibold text-slate-900">
                     Thank you!
                   </h3>
-                  <p className="mt-2 text-richblack-300">
+                  <p className="mt-2 text-slate-600">
                     Your message has been sent. We'll respond shortly.
                   </p>
                 </div>
@@ -144,7 +144,7 @@ const Contact = () => {
                   {/* Name row */}
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div>
-                      <label className="mb-1 block text-sm font-medium text-richblack-100">
+                      <label className="mb-1 block text-sm font-medium text-slate-700">
                         First Name <span className="text-pink-300">*</span>
                       </label>
                       <input
@@ -154,14 +154,14 @@ const Contact = () => {
                         {...register("firstname", { required: true })}
                       />
                       {errors.firstname && (
-                        <p className="mt-1 text-xs text-yellow-400">
+                        <p className="mt-1 text-xs text-accent-600">
                           First name is required
                         </p>
                       )}
                     </div>
 
                     <div>
-                      <label className="mb-1 block text-sm font-medium text-richblack-100">
+                      <label className="mb-1 block text-sm font-medium text-slate-700">
                         Last Name
                       </label>
                       <input
@@ -175,7 +175,7 @@ const Contact = () => {
 
                   {/* Email */}
                   <div>
-                    <label className="mb-1 block text-sm font-medium text-richblack-100">
+                    <label className="mb-1 block text-sm font-medium text-slate-700">
                       Email <span className="text-pink-300">*</span>
                     </label>
                     <input
@@ -185,7 +185,7 @@ const Contact = () => {
                       {...register("email", { required: true })}
                     />
                     {errors.email && (
-                      <p className="mt-1 text-xs text-yellow-400">
+                      <p className="mt-1 text-xs text-accent-600">
                         Email is required
                       </p>
                     )}
@@ -193,7 +193,7 @@ const Contact = () => {
 
                   {/* Phone */}
                   <div>
-                    <label className="mb-1 block text-sm font-medium text-richblack-100">
+                    <label className="mb-1 block text-sm font-medium text-slate-700">
                       Phone Number <span className="text-pink-300">*</span>
                     </label>
                     <div className="flex items-center gap-3">
@@ -206,7 +206,7 @@ const Contact = () => {
                           <option
                             key={i}
                             value={c.code}
-                            className="bg-richblack-800"
+                            className="bg-white"
                           >
                             {c.code}
                           </option>
@@ -226,7 +226,7 @@ const Contact = () => {
                       />
                     </div>
                     {errors.phoneNo && (
-                      <p className="mt-1 text-xs text-yellow-400">
+                      <p className="mt-1 text-xs text-accent-600">
                         {errors.phoneNo.message}
                       </p>
                     )}
@@ -234,7 +234,7 @@ const Contact = () => {
 
                   {/* Message */}
                   <div>
-                    <label className="mb-1 block text-sm font-medium text-richblack-100">
+                    <label className="mb-1 block text-sm font-medium text-slate-700">
                       Message <span className="text-pink-300">*</span>
                     </label>
                     <textarea
@@ -244,7 +244,7 @@ const Contact = () => {
                       {...register("message", { required: true })}
                     />
                     {errors.message && (
-                      <p className="mt-1 text-xs text-yellow-400">
+                      <p className="mt-1 text-xs text-accent-600">
                         Message is required
                       </p>
                     )}
@@ -254,7 +254,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="mt-2 flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 to-blue-500 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-200 hover:from-blue-500 hover:to-blue-400 hover:shadow-xl active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
+                    className="mt-2 flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-200 hover:bg-brand-600 hover:shadow-xl active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     {loading ? (
                       <>
@@ -281,3 +281,4 @@ const Contact = () => {
 }
 
 export default Contact
+

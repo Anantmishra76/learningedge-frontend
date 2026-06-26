@@ -18,8 +18,8 @@ export default function Settings() {
   return (
     <div className="max-w-6xl mx-auto">
       <div className="mb-8">
-        <h1 className="text-4xl font-bold text-richblack-5 mb-2">Settings</h1>
-        <p className="text-richblack-300">Manage your account settings and preferences</p>
+        <h1 className="text-4xl font-bold text-slate-900 mb-2">Settings</h1>
+        <p className="text-slate-600">Manage your account settings and preferences</p>
       </div>
 
       {/* Tab Navigation */}
@@ -33,7 +33,7 @@ export default function Settings() {
               className={`flex items-center gap-2 px-4 py-2 rounded-md transition-all duration-200 ${
                 activeTab === tab.id
                   ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold shadow-lg"
-                  : "text-richblack-300 hover:text-richblack-5 hover:bg-richblack-700"
+                  : "text-slate-600 hover:text-slate-900 hover:bg-richblack-700"
               }`}
             >
               <Icon className="text-lg" />

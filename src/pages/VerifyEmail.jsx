@@ -46,11 +46,11 @@ function VerifyEmail() {
       ) : (
         <div className="max-w-[500px] w-full relative z-10">
           <div className="bg-richblack-800/60 backdrop-blur-md rounded-3xl p-8 shadow-2xl border border-richblack-700/50">
-            <h1 className="text-richblack-5 font-semibold text-[1.875rem] leading-[2.375rem] text-center mb-4">
+            <h1 className="text-slate-900 font-semibold text-[1.875rem] leading-[2.375rem] text-center mb-4">
               Verify Email
             </h1>
 
-            <p className="text-[1.125rem] leading-[1.625rem] my-4 text-richblack-100 text-center">
+            <p className="text-[1.125rem] leading-[1.625rem] my-4 text-slate-700 text-center">
               A verification code has been sent to you. Enter the code below
             </p>
 
@@ -67,7 +67,7 @@ function VerifyEmail() {
                       style={{
                         boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
                       }}
-                      className="w-[48px] lg:w-[60px] border-0 bg-richblack-800 rounded-xl text-richblack-5 aspect-square text-center focus:border-0 focus:outline-2 focus:outline-blue-500 transition-all duration-200 hover:bg-richblack-700"
+                      className="w-[48px] lg:w-[60px] border-0 bg-richblack-800 rounded-xl text-slate-900 aspect-square text-center focus:border-0 focus:outline-2 focus:outline-blue-500 transition-all duration-200 hover:bg-richblack-700"
                     />
                   )}
                   containerStyle={{
@@ -87,7 +87,7 @@ function VerifyEmail() {
 
             <div className="mt-8 flex items-center justify-between">
               <Link to="/signup">
-                <p className="text-richblack-5 flex items-center gap-x-2 hover:text-richblack-100 transition-colors duration-200">
+                <p className="text-slate-900 flex items-center gap-x-2 hover:text-slate-700 transition-colors duration-200">
                   <BiArrowBack /> Back To Signup
                 </p>
               </Link>
@@ -108,3 +108,4 @@ function VerifyEmail() {
 }
 
 export default VerifyEmail
+

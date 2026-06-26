@@ -126,13 +126,13 @@ export default function SubSectionModal({ modalData, setModalData, add = false, 
         {/* Modal Header */}
         <div className="flex items-center justify-between rounded-t-lg bg-richblack-700 p-5">
           <div className="flex items-center gap-2">
-            <MdVideoLibrary className="text-2xl text-richblack-5" />
-            <p className="text-xl font-semibold text-richblack-5">
+            <MdVideoLibrary className="text-2xl text-slate-900" />
+            <p className="text-xl font-semibold text-slate-900">
               {view && "Viewing"} {add && "Adding"} {edit && "Editing"} Lecture
             </p>
           </div>
           <button onClick={() => (!loading ? setModalData(null) : {})} className="hover:bg-richblack-600 p-2 rounded-full transition-colors">
-            <RxCross2 className="text-2xl text-richblack-5" />
+            <RxCross2 className="text-2xl text-slate-900" />
           </button>
         </div>
         {/* Modal Form */}
@@ -153,7 +153,7 @@ export default function SubSectionModal({ modalData, setModalData, add = false, 
           />
           {/* Lecture Title */}
           <div className="flex flex-col space-y-2">
-            <label className="text-sm text-richblack-5" htmlFor="lectureTitle">
+            <label className="text-sm text-slate-900" htmlFor="lectureTitle">
               Lecture Title {!view && <sup className="text-pink-200">*</sup>}
             </label>
             <input
@@ -172,7 +172,7 @@ export default function SubSectionModal({ modalData, setModalData, add = false, 
           
           {/* Lecture Description */}
           <div className="flex flex-col space-y-2">
-            <label className="text-sm text-richblack-5" htmlFor="lectureDesc">
+            <label className="text-sm text-slate-900" htmlFor="lectureDesc">
               Lecture Description{" "}
               {!view && <sup className="text-pink-200">*</sup>}
             </label>
@@ -202,3 +202,4 @@ export default function SubSectionModal({ modalData, setModalData, add = false, 
     </div>
   )
 }
+

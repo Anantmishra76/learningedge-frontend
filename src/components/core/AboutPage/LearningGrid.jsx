@@ -72,15 +72,15 @@ const LearningGrid = () => {
                   </span>
                   <HighlightText text={card.highlightText} />
                 </div>
-                <p className="text-richblack-300 font-medium">
+                <p className="text-slate-600 font-medium">
                   {card.description}
                 </p>
               </div>
             ) : (
               <div className="p-8 flex flex-col gap-8">
-                <h1 className="text-richblack-5 text-lg bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent font-bold">{card.heading}</h1>
+                <h1 className="text-slate-900 text-lg bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent font-bold">{card.heading}</h1>
 
-                <p className="text-richblack-300 font-medium">
+                <p className="text-slate-600 font-medium">
                   {card.description}
                 </p>
               </div>
@@ -93,3 +93,4 @@ const LearningGrid = () => {
 };
 
 export default LearningGrid;
+

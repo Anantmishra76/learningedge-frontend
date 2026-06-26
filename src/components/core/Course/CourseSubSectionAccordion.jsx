@@ -16,3 +16,4 @@ function CourseSubSectionAccordion({ subSec }) {
 }
 
 export default CourseSubSectionAccordion
+

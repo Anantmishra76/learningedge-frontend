@@ -27,15 +27,15 @@ export default function MobileProfileDropDown() {
                     className={'aspect-square w-[50px] rounded-full object-cover'}
                 />
                 <div className="flex flex-col">
-                    <span className="text-richblack-5 font-semibold">{user?.firstName} {user?.lastName}</span>
-                    <span className="text-richblack-300 text-sm">{user?.email}</span>
+                    <span className="text-slate-900 font-semibold">{user?.firstName} {user?.lastName}</span>
+                    <span className="text-slate-600 text-sm">{user?.email}</span>
                 </div>
             </div>
 
             {/* Menu Options */}
             <div className="flex flex-col space-y-2">
                 <Link to="/dashboard/my-profile">
-                    <div className="flex w-full items-center gap-x-3 py-3 px-4 text-base text-richblack-100 hover:bg-richblack-700 rounded-lg transition-all">
+                    <div className="flex w-full items-center gap-x-3 py-3 px-4 text-base text-slate-700 hover:bg-richblack-700 rounded-lg transition-all">
                         <VscDashboard className="text-xl" />
                         Dashboard
                     </div>
@@ -45,7 +45,7 @@ export default function MobileProfileDropDown() {
                     onClick={() => {
                         dispatch(logout(navigate))
                     }}
-                    className="flex w-full items-center gap-x-3 py-3 px-4 text-base text-richblack-100 hover:bg-richblack-700 rounded-lg transition-all cursor-pointer"
+                    className="flex w-full items-center gap-x-3 py-3 px-4 text-base text-slate-700 hover:bg-richblack-700 rounded-lg transition-all cursor-pointer"
                 >
                     <VscSignOut className="text-xl" />
                     Logout
@@ -54,3 +54,4 @@ export default function MobileProfileDropDown() {
         </div>
     )
 }
+

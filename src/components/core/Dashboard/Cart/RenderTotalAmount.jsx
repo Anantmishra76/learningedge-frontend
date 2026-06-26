@@ -22,17 +22,17 @@ export default function RenderTotalAmount() {
   return (
     <div className="sticky top-6">
       <div className="bg-richblack-800/50 backdrop-blur-sm border border-richblack-700 rounded-xl p-6 shadow-lg">
-        <h2 className="text-xl font-semibold text-richblack-5 mb-6">Order Summary</h2>
+        <h2 className="text-xl font-semibold text-slate-900 mb-6">Order Summary</h2>
 
         <div className="space-y-4 mb-6">
           <div className="flex justify-between items-center">
-            <span className="text-richblack-300">Subtotal ({cart.length} items)</span>
-            <span className="text-richblack-5 font-medium">₹{subtotal}</span>
+            <span className="text-slate-600">Subtotal ({cart.length} items)</span>
+            <span className="text-slate-900 font-medium">₹{subtotal}</span>
           </div>
  
           <div className="border-t border-richblack-600 pt-4">
             <div className="flex justify-between items-center">
-              <span className="text-lg font-semibold text-richblack-5">Total</span>
+              <span className="text-lg font-semibold text-slate-900">Total</span>
               <span className="text-2xl font-bold text-yellow-400">₹{total}</span>
             </div>
           </div>
@@ -45,20 +45,20 @@ export default function RenderTotalAmount() {
             customClasses="w-auto justify-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] hover:-translate-y-0.5 border border-blue-500/20 mx-auto"
           />
 
-          <div className="flex items-center justify-center gap-2 text-sm text-richblack-400">
+          <div className="flex items-center justify-center gap-2 text-sm text-slate-500">
             <FiShield className="w-4 h-4" />
             <span>Secure Payments </span>
           </div>
 
-          <div className="flex items-center justify-center gap-2 text-sm text-richblack-400">
+          <div className="flex items-center justify-center gap-2 text-sm text-slate-500">
             <FiCreditCard className="w-4 h-4" />
             <span>We accept all major payment methods</span>
           </div>
         </div>
 
         <div className="mt-6 p-4 bg-richblack-900/50 rounded-lg">
-          <h3 className="text-sm font-semibold text-richblack-300 mb-2">What's included:</h3>
-          <ul className="text-xs text-richblack-400 space-y-1">
+          <h3 className="text-sm font-semibold text-slate-600 mb-2">What's included:</h3>
+          <ul className="text-xs text-slate-500 space-y-1">
             <li>• Lifetime access to courses</li>
             <li>• Mobile and desktop access</li>
             <li>• 30-day money-back guarantee</li>
@@ -69,3 +69,4 @@ export default function RenderTotalAmount() {
     </div>
   )
 }
+

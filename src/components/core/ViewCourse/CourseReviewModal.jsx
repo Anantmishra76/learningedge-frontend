@@ -136,10 +136,10 @@ export default function CourseReviewModal({ setReviewModal }) {
                 className="aspect-square w-12 h-12 rounded-xl object-cover border-2 border-white shadow-sm"
               />
               <div className="flex-1">
-                <p className="font-semibold text-richblack-800 capitalize">
+                <p className="font-semibold text-slate-800 capitalize">
                   {user?.firstName} {user?.lastName}
                 </p>
-                <p className="text-xs text-richblack-500 flex items-center gap-1">
+                <p className="text-xs text-slate-500 flex items-center gap-1">
                   <span className="w-1.5 h-1.5 bg-caribbeangreen-400 rounded-full"></span>
                   Posting publicly
                 </p>
@@ -152,7 +152,7 @@ export default function CourseReviewModal({ setReviewModal }) {
             >
               {/* Rating Section */}
               <div className="text-center p-4 bg-white rounded-xl border border-pure-greys-100">
-                <h3 className="text-lg font-semibold text-richblack-800 mb-3">
+                <h3 className="text-lg font-semibold text-slate-800 mb-3">
                   Rate your experience
                 </h3>
                 <div className="flex flex-col items-center gap-3">
@@ -189,7 +189,7 @@ export default function CourseReviewModal({ setReviewModal }) {
               {/* Review Text Section */}
               <div>
                 <label
-                  className="block text-sm font-semibold text-richblack-700 mb-2"
+                  className="block text-sm font-semibold text-slate-700 mb-2"
                   htmlFor="courseExperience"
                 >
                   Your review <span className="text-pink-400">*</span>
@@ -200,7 +200,7 @@ export default function CourseReviewModal({ setReviewModal }) {
                   {...register("courseExperience", { 
                     required: "Please share your experience"
                   })}
-                  className="w-full h-24 p-3 border-2 border-pure-greys-200 rounded-xl focus:border-blue-400 focus:outline-none transition-all duration-300 resize-none text-sm text-richblack-800 placeholder-richblack-400"
+                  className="w-full h-24 p-3 border-2 border-pure-greys-200 rounded-xl focus:border-blue-400 focus:outline-none transition-all duration-300 resize-none text-sm text-slate-800 placeholder-slate-500"
                 />
                 {errors.courseExperience && (
                   <span 
@@ -217,7 +217,7 @@ export default function CourseReviewModal({ setReviewModal }) {
                 <button
                   type="button"
                   onClick={() => setReviewModal(false)}
-                  className="px-4 py-2 text-sm text-richblack-600 bg-pure-greys-100 hover:bg-pure-greys-200 rounded-lg font-medium transition-all duration-300"
+                  className="px-4 py-2 text-sm text-slate-600 bg-pure-greys-100 hover:bg-pure-greys-200 rounded-lg font-medium transition-all duration-300"
                   disabled={isSubmitting}
                 >
                   Cancel
@@ -246,3 +246,4 @@ export default function CourseReviewModal({ setReviewModal }) {
       </div>
     )
   }
+

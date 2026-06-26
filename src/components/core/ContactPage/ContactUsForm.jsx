@@ -43,7 +43,7 @@ const ContactUsForm = () => {
       {/* First Name and Last Name Fields */}
       <div className="flex flex-col gap-5 lg:flex-row">
         <div className="flex flex-col gap-2 lg:w-[48%]">
-          <label htmlFor="firstname" className="text-sm font-medium text-richblack-100">
+          <label htmlFor="firstname" className="text-sm font-medium text-slate-700">
             First Name
           </label>
           <input
@@ -51,7 +51,7 @@ const ContactUsForm = () => {
             name="firstname"
             id="firstname"
             placeholder="Enter first name"
-            className="w-full rounded-lg bg-richblack-800 border border-richblack-600 p-2 text-white placeholder-richblack-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-200"
+            className="w-full rounded-lg bg-richblack-800 border border-richblack-600 p-2 text-white placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-200"
             {...register("firstname", { required: true })}
           />
           {errors.firstname && (
@@ -62,7 +62,7 @@ const ContactUsForm = () => {
         </div>
 
         <div className="flex flex-col gap-2 lg:w-[48%]">
-          <label htmlFor="lastname" className="text-sm font-medium text-richblack-100">
+          <label htmlFor="lastname" className="text-sm font-medium text-slate-700">
             Last Name
           </label>
           <input
@@ -70,7 +70,7 @@ const ContactUsForm = () => {
             name="lastname"
             id="lastname"
             placeholder="Enter last name"
-            className="w-full rounded-lg bg-richblack-800 border border-richblack-600 p-2 text-white placeholder-richblack-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-200"
+            className="w-full rounded-lg bg-richblack-800 border border-richblack-600 p-2 text-white placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-200"
             {...register("lastname")}
           />
         </div>
@@ -78,7 +78,7 @@ const ContactUsForm = () => {
 
       {/* Email Field */}
       <div className="flex flex-col gap-2">
-        <label htmlFor="email" className="text-sm font-medium text-richblack-100">
+        <label htmlFor="email" className="text-sm font-medium text-slate-700">
           Email Address
         </label>
         <input
@@ -86,7 +86,7 @@ const ContactUsForm = () => {
           name="email"
           id="email"
           placeholder="Enter email address"
-          className="w-full rounded-lg bg-richblack-800 border border-richblack-600 p-2 text-white placeholder-richblack-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-200"
+          className="w-full rounded-lg bg-richblack-800 border border-richblack-600 p-2 text-white placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-200"
           {...register("email", { required: true })}
         />
         {errors.email && (
@@ -98,7 +98,7 @@ const ContactUsForm = () => {
 
       {/* Phone Number Field with Country Code */}
       <div className="flex flex-col gap-2">
-        <label htmlFor="phonenumber" className="text-sm font-medium text-richblack-100">
+        <label htmlFor="phonenumber" className="text-sm font-medium text-slate-700">
           Phone Number
         </label>
 
@@ -121,7 +121,7 @@ const ContactUsForm = () => {
             name="phonenumber"
             id="phonenumber"
             placeholder="Enter phone number"
-            className="flex-1 min-w-0 rounded-lg bg-richblack-800 border border-richblack-600 p-2 text-white placeholder-richblack-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-200"
+            className="flex-1 min-w-0 rounded-lg bg-richblack-800 border border-richblack-600 p-2 text-white placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-200"
             {...register("phoneNo", {
               required: {
                 value: true,
@@ -141,7 +141,7 @@ const ContactUsForm = () => {
 
       {/* Message Field */}
       <div className="flex flex-col gap-2">
-        <label htmlFor="message" className="text-sm font-medium text-richblack-100">
+        <label htmlFor="message" className="text-sm font-medium text-slate-700">
           Message
         </label>
         <textarea
@@ -150,7 +150,7 @@ const ContactUsForm = () => {
           cols="30"
           rows="3"
           placeholder="Write your message here"
-          className="w-full rounded-lg bg-richblack-800 border border-richblack-600 p-2 text-white placeholder-richblack-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 resize-none"
+          className="w-full rounded-lg bg-richblack-800 border border-richblack-600 p-2 text-white placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 resize-none"
           {...register("message", { required: true })}
         />
         {errors.message && (
@@ -180,3 +180,4 @@ const ContactUsForm = () => {
 }
 
 export default ContactUsForm
+

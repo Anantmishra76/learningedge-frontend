@@ -58,21 +58,21 @@ const toggleCourses = (studentId) => {
 return (
     <div className="w-full">
         <div className="mb-8 flex items-center justify-between">
-            <h1 className="text-3xl font-semibold text-richblack-5">All Students</h1>
-            <p className="text-richblack-300">Total: {studentsCount || 0}</p>
+            <h1 className="text-3xl font-semibold text-slate-900">All Students</h1>
+            <p className="text-slate-600">Total: {studentsCount || 0}</p>
         </div>
 
         <div className="bg-richblack-800 rounded-lg border border-richblack-600 overflow-hidden">
             <Table className="w-full">
                 <Thead className="bg-richblack-700">
                     <Tr>
-                        <Th className="px-6 py-4 text-left text-sm font-medium uppercase text-richblack-100 border-b border-richblack-600">
+                        <Th className="px-6 py-4 text-left text-sm font-medium uppercase text-slate-700 border-b border-richblack-600">
                             Student Details
                         </Th>
-                        <Th className="px-6 py-4 text-center text-sm font-medium uppercase text-richblack-100 border-b border-richblack-600">
+                        <Th className="px-6 py-4 text-center text-sm font-medium uppercase text-slate-700 border-b border-richblack-600">
                             Status
                         </Th>
-                        <Th className="px-6 py-4 text-center text-sm font-medium uppercase text-richblack-100 border-b border-richblack-600">
+                        <Th className="px-6 py-4 text-center text-sm font-medium uppercase text-slate-700 border-b border-richblack-600">
                             Approval
                         </Th>
                     </Tr>
@@ -88,7 +88,7 @@ return (
                     ) : !allStudents || allStudents.length === 0 ? (
                         <Tr>
                             <Td colSpan="3" className="py-12 text-center">
-                                <div className="text-richblack-300 text-lg">No students found</div>
+                                <div className="text-slate-600 text-lg">No students found</div>
                             </Td>
                         </Tr>
                     ) : (
@@ -103,20 +103,20 @@ return (
                                                 className="h-[80px] w-[80px] rounded-full object-cover border-2 border-richblack-500"
                                             />
                                             <div className="flex-1 min-w-0">
-                                                <h3 className="text-lg font-semibold text-richblack-5 truncate">
+                                                <h3 className="text-lg font-semibold text-slate-900 truncate">
                                                     {student.firstName} {student.lastName}
                                                 </h3>
-                                                <p className="text-sm text-richblack-300 truncate">{student.email}</p>
+                                                <p className="text-sm text-slate-600 truncate">{student.email}</p>
                                                 <div className="mt-2 space-y-1">
-                                                    <p className="text-xs text-richblack-400">
+                                                    <p className="text-xs text-slate-500">
                                                         <span className="font-medium">Gender:</span>{" "}
                                                         {student.additionalDetails?.gender || "Not specified"}
                                                     </p>
-                                                    <p className="text-xs text-richblack-400">
+                                                    <p className="text-xs text-slate-500">
                                                         <span className="font-medium">Mobile:</span>{" "}
                                                         {student.additionalDetails?.contactNumber || "Not provided"}
                                                     </p>
-                                                    <p className="text-xs text-richblack-400">
+                                                    <p className="text-xs text-slate-500">
                                                         <span className="font-medium">DOB:</span>{" "}
                                                         {student.additionalDetails?.dateOfBirth || "Not provided"}
                                                     </p>
@@ -156,13 +156,13 @@ return (
                                     <Tr className="bg-richblack-700/30">
                                         <Td colSpan="3" className="px-6 py-4">
                                             <div className="bg-richblack-800 rounded-lg p-4 border border-richblack-600">
-                                                <h4 className="text-sm font-medium text-richblack-100 mb-3">Enrolled Courses</h4>
+                                                <h4 className="text-sm font-medium text-slate-700 mb-3">Enrolled Courses</h4>
                                                 <div className="space-y-2">
                                                     {student.courses.map((course) => (
                                                         <div key={course._id} className="flex flex-col sm:flex-row sm:items-center justify-between p-3 bg-richblack-700 rounded border border-richblack-600">
                                                             <div className="flex-1 min-w-0">
-                                                                <p className="text-sm font-medium text-richblack-5 truncate">{course.courseName}</p>
-                                                                <p className="text-xs text-richblack-300">₹{course.price}</p>
+                                                                <p className="text-sm font-medium text-slate-900 truncate">{course.courseName}</p>
+                                                                <p className="text-xs text-slate-600">₹{course.price}</p>
                                                             </div>
                                                         </div>
                                                     ))}
@@ -182,3 +182,4 @@ return (
 }
 
 export default AllStudents
+

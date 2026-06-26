@@ -34,10 +34,10 @@ const PurchaseHistory = () => {
 
   return (
     <div className="p-6">
-      <h1 className="text-3xl font-medium text-richblack-5 mb-8">Purchase History</h1>
+      <h1 className="text-3xl font-medium text-slate-900 mb-8">Purchase History</h1>
 
       {paymentHistory.length === 0 ? (
-        <div className="text-center text-richblack-300">
+        <div className="text-center text-slate-600">
           <p className="text-lg">No payment history found.</p>
           <p className="text-sm mt-2">Your completed purchases will appear here.</p>
         </div>
@@ -50,10 +50,10 @@ const PurchaseHistory = () => {
             >
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h2 className="text-xl font-semibold text-richblack-5">
+                  <h2 className="text-xl font-semibold text-slate-900">
                     {payment.courseName || 'Course Purchase'}
                   </h2>
-                  <p className="text-richblack-300 text-sm mt-1">
+                  <p className="text-slate-600 text-sm mt-1">
                     Transaction ID: {payment.transactionId || 'N/A'}
                   </p>
                 </div>
@@ -61,17 +61,17 @@ const PurchaseHistory = () => {
                   <p className="text-2xl font-bold text-blue-400">
                     ₹{payment.amount || '0'}
                   </p>
-                  <p className="text-richblack-300 text-sm">
+                  <p className="text-slate-600 text-sm">
                     {payment.date ? new Date(payment.date).toLocaleDateString() : 'Date N/A'}
                   </p>
                 </div>
               </div>
 
               <div className="flex justify-between items-center">
-                <div className="text-richblack-300">
+                <div className="text-slate-600">
                   <p>Status: <span className="text-green-400 font-medium">{payment.status || 'Completed'}</span></p>
                 </div>
-                <div className="text-richblack-300 text-sm">
+                <div className="text-slate-600 text-sm">
                   Payment Method: {payment.paymentMethod || 'Razorpay'}
                 </div>
               </div>
@@ -84,3 +84,4 @@ const PurchaseHistory = () => {
 }
 
 export default PurchaseHistory
+

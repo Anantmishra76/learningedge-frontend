@@ -19,13 +19,13 @@ const InstructorSection = () => {
         </div>
 
         <div className='lg:w-[50%] flex flex-col'>
-          <div className='text-3xl lg:text-4xl font-semobold w-full mb-2 text-richblack-700 leading-tight'>
+          <div className='text-3xl lg:text-4xl font-semobold w-full mb-2 text-slate-700 leading-tight'>
             Become an instructor today
             and 
             <HighlightText text={"inspire learners worldwide"} />
           </div>
 
-          <p className='font-medium text-[16px] w-[80%] text-richblack-700 mb-12'>
+          <p className='font-medium text-[16px] w-[80%] text-slate-700 mb-12'>
             Instructors from around the world teach millions of students on LearningEdge. We provide the tools and skills to teach what you love.
           </p>
 
@@ -45,3 +45,4 @@ const InstructorSection = () => {
 }
 
 export default InstructorSection
+

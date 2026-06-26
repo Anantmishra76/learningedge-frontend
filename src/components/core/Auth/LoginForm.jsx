@@ -36,7 +36,7 @@ function LoginForm() {
       className="mt-6 flex w-full flex-col gap-y-6"
     >
       <label className="w-full">
-        <p className="mb-2 text-[0.875rem] leading-[1.375rem] text-richblack-5 font-medium">
+        <p className="mb-2 text-[0.875rem] leading-[1.375rem] text-slate-900 font-medium">
           Email Address <sup className="text-pink-200">*</sup>
         </p>
         <input
@@ -49,12 +49,12 @@ function LoginForm() {
           style={{
             boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
           }}
-          className="w-full rounded-xl bg-richblack-800 p-4 text-richblack-5 outline-none border border-richblack-700 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-200 hover:border-richblack-600"
+          className="w-full rounded-xl bg-richblack-800 p-4 text-slate-900 outline-none border border-richblack-700 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-200 hover:border-richblack-600"
         />
       </label>
 
       <label className="relative">
-        <p className="mb-2 text-[0.875rem] leading-[1.375rem] text-richblack-5 font-medium">
+        <p className="mb-2 text-[0.875rem] leading-[1.375rem] text-slate-900 font-medium">
           Password <sup className="text-pink-200">*</sup>
         </p>
         <input
@@ -67,7 +67,7 @@ function LoginForm() {
           style={{
             boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
           }}
-          className="w-full rounded-xl bg-richblack-800 p-4 pr-12 text-richblack-5 outline-none border border-richblack-700 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-200 hover:border-richblack-600"
+          className="w-full rounded-xl bg-richblack-800 p-4 pr-12 text-slate-900 outline-none border border-richblack-700 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-200 hover:border-richblack-600"
         />
         <span
           onClick={() => setShowPassword((prev) => !prev)}

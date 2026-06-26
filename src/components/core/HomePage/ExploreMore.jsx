@@ -36,7 +36,7 @@ const ExploreMore = () => {
         Build with Code
 
           <HighlightText text={"Lead with Vision"} />
-          <p className="text-center text-richblack-300 text-base lg:text-lg font-semibold mt-1">
+          <p className="text-center text-slate-600 text-base lg:text-lg font-semibold mt-1">
            Ideas are just the beginning start building
 
           </p>
@@ -45,14 +45,14 @@ const ExploreMore = () => {
 
       {/* Tabs Section */}
       {/* Desktop Tabs */}
-      <div className="hidden md:flex flex-wrap gap-2 lg:gap-5 -mt-2 mx-auto w-max max-w-full bg-richblack-800 text-richblack-200 p-1 rounded-full font-medium drop-shadow-[0_1.5px_rgba(255,255,255,0.25)]">
+      <div className="hidden md:flex flex-wrap gap-2 lg:gap-5 -mt-2 mx-auto w-max max-w-full bg-white text-slate-600 p-1 rounded-full border border-richblack-100 font-medium shadow-sm">
         {tabsName.map((ele, index) => {
           return (
             <div
               className={` text-[12px] lg:text-[16px] flex flex-row items-center gap-1 lg:gap-2 ${currentTab === ele
-                ? "bg-richblack-900 text-richblack-5 font-medium"
-                : "text-richblack-200"
-                } px-3 lg:px-7 py-[5px] lg:py-[7px] rounded-full transition-all duration-200 cursor-pointer hover:bg-richblack-900 hover:text-richblack-5`}
+                ? "bg-blue-500 text-white font-medium"
+                : "text-slate-600"
+                } px-3 lg:px-7 py-[5px] lg:py-[7px] rounded-full transition-all duration-200 cursor-pointer hover:bg-blue-500 hover:text-white`}
               key={index}
               onClick={() => setMyCards(ele)}
             >
@@ -66,7 +66,7 @@ const ExploreMore = () => {
       <div className="md:hidden -mt-2 mx-auto w-max max-w-full relative">
         <button
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-          className="flex items-center justify-between w-full min-w-[200px] bg-richblack-800 text-richblack-200 p-3 rounded-lg font-medium drop-shadow-[0_1.5px_rgba(255,255,255,0.25)]">
+          className="flex items-center justify-between w-full min-w-[200px] bg-white text-slate-700 p-3 rounded-lg border border-richblack-100 font-medium shadow-sm">
           <span className="text-sm">{currentTab}</span>
           <svg 
             className={`w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}
@@ -79,7 +79,7 @@ const ExploreMore = () => {
         </button>
         
         {isDropdownOpen && (
-          <div className="absolute top-full left-0 right-0 mt-1 bg-richblack-800 rounded-lg shadow-lg z-10 overflow-hidden">
+          <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-lg shadow-lg z-10 overflow-hidden border border-richblack-100">
             {tabsName.map((ele, index) => {
               return (
                 <div
@@ -87,8 +87,8 @@ const ExploreMore = () => {
                   onClick={() => setMyCards(ele)}
                   className={`px-3 py-2 text-sm cursor-pointer transition-all duration-200 ${
                     currentTab === ele
-                      ? "bg-richblack-900 text-richblack-5 font-medium"
-                      : "text-richblack-200 hover:bg-richblack-700"
+                      ? "bg-blue-500 text-white font-medium"
+                      : "text-slate-700 hover:bg-blue-50"
                   }`}
                 >
                   {ele}
@@ -124,3 +124,4 @@ const ExploreMore = () => {
 }
 
 export default ExploreMore;
+

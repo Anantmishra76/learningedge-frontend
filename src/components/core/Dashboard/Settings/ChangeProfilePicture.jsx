@@ -64,8 +64,8 @@ export default function ChangeProfilePicture() {
           <FiCamera className="text-2xl text-white" />
         </div>
         <div>
-          <h2 className="text-xl font-semibold text-richblack-5">Profile Picture</h2>
-          <p className="text-richblack-300 text-sm">Update your profile picture</p>
+          <h2 className="text-xl font-semibold text-slate-900">Profile Picture</h2>
+          <p className="text-slate-600 text-sm">Update your profile picture</p>
         </div>
       </div>
 
@@ -83,8 +83,8 @@ export default function ChangeProfilePicture() {
 
         <div className="flex-1 space-y-4">
           <div className="text-center sm:text-left">
-            <p className="text-richblack-5 font-medium mb-2">Upload a new picture</p>
-            <p className="text-richblack-300 text-sm">JPG, PNG or GIF. Max size 5MB.</p>
+            <p className="text-slate-900 font-medium mb-2">Upload a new picture</p>
+            <p className="text-slate-600 text-sm">JPG, PNG or GIF. Max size 5MB.</p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3">
@@ -99,7 +99,7 @@ export default function ChangeProfilePicture() {
             <button
               onClick={handleClick}
               disabled={loading}
-              className="flex items-center justify-center gap-2 px-6 py-3 bg-richblack-700 hover:bg-richblack-600 text-richblack-5 rounded-lg transition-colors duration-200 border border-richblack-600"
+              className="flex items-center justify-center gap-2 px-6 py-3 bg-richblack-700 hover:bg-richblack-600 text-slate-900 rounded-lg transition-colors duration-200 border border-richblack-600"
             >
               <FiUpload className="text-lg" />
               Choose File

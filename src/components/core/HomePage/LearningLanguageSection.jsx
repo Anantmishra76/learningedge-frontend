@@ -18,7 +18,7 @@ const LearningLanguageSection = () => {
                     <HighlightText text={"mastering any language"} />
                 </div>
 
-                <div className='lg:text-center text-richblack-600 mx-auto text-base font-medium lg:w-[70%]'>
+                <div className='lg:text-center text-slate-600 mx-auto text-base font-medium lg:w-[70%]'>
                     Master any language with ease—your complete toolkit for fluency, confidence, and connection.
                     Everything you need, all in one place—smart, simple, and built to help you thrive.
 
@@ -56,3 +56,4 @@ const LearningLanguageSection = () => {
 }
 
 export default LearningLanguageSection
+

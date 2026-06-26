@@ -29,11 +29,11 @@ export default function EditProfile() {
       <div className="bg-gradient-to-br from-richblack-800 to-richblack-900 rounded-xl border border-richblack-700 p-8 shadow-lg hover:shadow-xl transition-all duration-300">
         <div className="flex items-center gap-4 mb-8">
           <div className="p-3 bg-blue-50 rounded-full">
-            <AiOutlineUser className="text-2xl text-richblack-900" />
+            <AiOutlineUser className="text-2xl text-slate-900" />
           </div>
           <div>
-            <h2 className="text-xl font-semibold text-richblack-5">Personal Information</h2>
-            <p className="text-richblack-300 text-sm">Update your personal details</p>
+            <h2 className="text-xl font-semibold text-slate-900">Personal Information</h2>
+            <p className="text-slate-600 text-sm">Update your personal details</p>
           </div>
         </div>
 
@@ -41,7 +41,7 @@ export default function EditProfile() {
           {/* Name Fields */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
-              <label htmlFor="firstName" className="block text-sm font-medium text-richblack-5">
+              <label htmlFor="firstName" className="block text-sm font-medium text-slate-900">
                 First Name <span className="text-pink-200">*</span>
               </label>
               <input
@@ -49,7 +49,7 @@ export default function EditProfile() {
                 name="firstName"
                 id="firstName"
                 placeholder="Enter first name"
-                className="w-full rounded-lg bg-richblack-700 p-3 text-richblack-5 border border-richblack-600 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors"
+                className="w-full rounded-lg bg-richblack-700 p-3 text-slate-900 border border-richblack-600 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors"
                 {...register("firstName", { required: true })}
                 defaultValue={user?.firstName}
               />
@@ -59,7 +59,7 @@ export default function EditProfile() {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="lastName" className="block text-sm font-medium text-richblack-5">
+              <label htmlFor="lastName" className="block text-sm font-medium text-slate-900">
                 Last Name <span className="text-pink-200">*</span>
               </label>
               <input
@@ -67,7 +67,7 @@ export default function EditProfile() {
                 name="lastName"
                 id="lastName"
                 placeholder="Enter last name"
-                className="w-full rounded-lg bg-richblack-700 p-3 text-richblack-5 border border-richblack-600 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors"
+                className="w-full rounded-lg bg-richblack-700 p-3 text-slate-900 border border-richblack-600 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors"
                 {...register("lastName", { required: true })}
                 defaultValue={user?.lastName}
               />
@@ -80,14 +80,14 @@ export default function EditProfile() {
           {/* Date of Birth and Gender */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
-              <label htmlFor="dateOfBirth" className="block text-sm font-medium text-richblack-5">
+              <label htmlFor="dateOfBirth" className="block text-sm font-medium text-slate-900">
                 Date of Birth <span className="text-pink-200">*</span>
               </label>
               <input
                 type="date"
                 name="dateOfBirth"
                 id="dateOfBirth"
-                className="w-full rounded-lg bg-richblack-700 p-3 text-richblack-5 border border-richblack-600 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors"
+                className="w-full rounded-lg bg-richblack-700 p-3 text-slate-900 border border-richblack-600 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors"
                 {...register("dateOfBirth", {
                   required: {
                     value: true,
@@ -106,14 +106,14 @@ export default function EditProfile() {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="gender" className="block text-sm font-medium text-richblack-5">
+              <label htmlFor="gender" className="block text-sm font-medium text-slate-900">
                 Gender <span className="text-pink-200">*</span>
               </label>
               <select
                 type="text"
                 name="gender"
                 id="gender"
-                className="w-full rounded-lg bg-richblack-700 p-3 text-richblack-5 border border-richblack-600 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors"
+                className="w-full rounded-lg bg-richblack-700 p-3 text-slate-900 border border-richblack-600 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors"
                 {...register("gender", { required: true })}
                 defaultValue={user?.additionalDetails?.gender}
               >
@@ -132,7 +132,7 @@ export default function EditProfile() {
           {/* Contact and About */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
-              <label htmlFor="contactNumber" className="block text-sm font-medium text-richblack-5">
+              <label htmlFor="contactNumber" className="block text-sm font-medium text-slate-900">
                 Contact Number <span className="text-pink-200">*</span>
               </label>
               <input
@@ -140,7 +140,7 @@ export default function EditProfile() {
                 name="contactNumber"
                 id="contactNumber"
                 placeholder="Enter Contact Number"
-                className="w-full rounded-lg bg-richblack-700 p-3 text-richblack-5 border border-richblack-600 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors"
+                className="w-full rounded-lg bg-richblack-700 p-3 text-slate-900 border border-richblack-600 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors"
                 {...register("contactNumber", {
                   required: {
                     value: true,
@@ -157,7 +157,7 @@ export default function EditProfile() {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="about" className="block text-sm font-medium text-richblack-5">
+              <label htmlFor="about" className="block text-sm font-medium text-slate-900">
                 About <span className="text-pink-200">*</span>
               </label>
               <input
@@ -165,7 +165,7 @@ export default function EditProfile() {
                 name="about"
                 id="about"
                 placeholder="Enter Bio Details"
-                className="w-full rounded-lg bg-richblack-700 p-3 text-richblack-5 border border-richblack-600 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors"
+                className="w-full rounded-lg bg-richblack-700 p-3 text-slate-900 border border-richblack-600 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors"
                 {...register("about", { required: true })}
                 defaultValue={user?.additionalDetails?.about}
               />
@@ -180,7 +180,7 @@ export default function EditProfile() {
           <button
             type="button"
             onClick={() => navigate("/dashboard/my-profile")}
-            className="px-6 py-2 bg-richblack-700 hover:bg-richblack-600 text-richblack-5 rounded-lg transition-colors duration-200"
+            className="px-6 py-2 bg-richblack-700 hover:bg-richblack-600 text-slate-900 rounded-lg transition-colors duration-200"
           >
             Cancel
           </button>

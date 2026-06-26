@@ -19,10 +19,10 @@ const StatsComponenet = () => {
             return (
               <div className="flex flex-col py-10 items-center" key={index}>
                 <IconComponent className="text-4xl text-blue-400 mb-2" />
-                <h1 className="text-[30px] font-bold text-richblack-5">
+                <h1 className="text-[30px] font-bold text-slate-900">
                   {data.count}
                 </h1>
-                <h2 className="font-semibold text-[16px] text-richblack-500">
+                <h2 className="font-semibold text-[16px] text-slate-500">
                   {data.label}
                 </h2>
               </div>

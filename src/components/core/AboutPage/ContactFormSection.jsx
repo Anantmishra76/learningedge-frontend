@@ -10,7 +10,7 @@ const ContactFormSection = () => {
         Get in Touch
       </h1>
       <p
-        className="text-richblack-200 text-sm sm:text-base md:text-lg drop-shadow-sm max-w-2xl mx-auto"
+        className="text-slate-600 text-sm sm:text-base md:text-lg drop-shadow-sm max-w-2xl mx-auto"
       >
         We'd love to hear from you. Please fill out this form and we'll get back to you soon.
       </p>
@@ -25,3 +25,4 @@ const ContactFormSection = () => {
 };
 
 export default ContactFormSection;
+

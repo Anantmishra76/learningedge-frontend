@@ -1,33 +1,70 @@
-// Core React imports and state management
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import {
+  FaBookOpen,
+  FaChartLine,
+  FaLaptopCode,
+  FaRoute,
+  FaUserGraduate,
+  FaUsers,
+} from "react-icons/fa";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/opacity.css";
 
-// Custom components
-import HighlightText from "../components/core/HomePage/HighlightText";
-import CTAButton from "../components/core/HomePage/Button";
-import CodeBlocks from "../components/core/HomePage/CodeBlocks";
-import TimelineSection from "../components/core/HomePage/TimelineSection";
-import InstructorSection from "../components/core/HomePage/InstructorSection";
-import ExploreMore from "../components/core/HomePage/ExploreMore";
-
-// Common components
 import Footer from "../components/common/Footer";
 import ReviewSlider from "../components/common/ReviewSlider";
 import Course_Slider from "../components/core/Catalog/Course_Slider";
-
-// API
+import CTAButton from "../components/core/HomePage/Button";
+import ExploreMore from "../components/core/HomePage/ExploreMore";
+import HighlightText from "../components/core/HomePage/HighlightText";
+import InstructorSection from "../components/core/HomePage/InstructorSection";
+import { fadeIn } from "../components/common/motionFrameVarients";
 import { getAllCourses } from "../services/operations/courseDetailsAPI";
+import bg from "../assets/Images/122.jpg";
 
-// Icons
-import { FaBookOpen } from "react-icons/fa";
+import Hero from "./Hero";
 
-// Animation
-import { motion } from "framer-motion";
-import { fadeIn } from "./../components/common/motionFrameVarients";
-import bg from "../assets/Images/122.jpg"
+const whyChooseUs = [
+  {
+    icon: FaLaptopCode,
+    title: "Project-based courses",
+    description:
+      "Practice with real coding tasks so every lesson turns into a usable skill.",
+  },
+  {
+    icon: FaUsers,
+    title: "Expert instructors",
+    description:
+      "Learn from mentors who explain concepts clearly and focus on practical work.",
+  },
+  {
+    icon: FaChartLine,
+    title: "Progress tracking",
+    description:
+      "Follow your completed lectures and continue exactly where you left off.",
+  },
+];
 
-// Image
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/opacity.css";
+const howItWorks = [
+  {
+    step: "01",
+    title: "Choose a path",
+    description:
+      "Browse courses or learning tracks that match your current skill level.",
+  },
+  {
+    step: "02",
+    title: "Learn by building",
+    description:
+      "Watch lessons, write code, complete projects, and apply each concept.",
+  },
+  {
+    step: "03",
+    title: "Track your growth",
+    description:
+      "Complete lectures, revisit content, and keep improving your portfolio.",
+  },
+];
 
 const Home = () => {
   const [allCourses, setAllCourses] = useState(null);
@@ -42,171 +79,152 @@ const Home = () => {
         setAllCourses([]);
       }
     };
+
     fetchAllCourses();
   }, []);
 
   return (
-    <React.Fragment>
-      <section className="relative min-h-[calc(100vh-3.5rem)] overflow-hidden">
-        <div className="absolute inset-0">
-          <LazyLoadImage
-            src={bg}
-            alt="Background"
-            className="h-full w-full object-cover"
-            effect="opacity"
-          />
-        </div>
 
-        <div className="relative mx-auto flex min-h-[calc(100vh-3.5rem)] w-11/12 max-w-maxContent items-center justify-center px-4 py-20 text-white sm:px-6">
-          <div className="flex max-w-4xl flex-col items-center text-center">
-            <motion.div
-              variants={fadeIn("up", 0.1)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.2 }}
-              className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
-              Boost Your Career with
-              <div className="mt-3">
-                <HighlightText text={"Coding Expertise"} />
+   <>
+      <Hero />
+
+      <section className="bg-white py-16">
+        <div className="mx-auto w-11/12 max-w-maxContent">
+          <motion.div
+            variants={fadeIn("up", 0.1)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            className="mb-8 text-center">
+            <h2 className="text-3xl font-bold text-slate-900 lg:text-5xl">
+              Featured <HighlightText text="Courses" />
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-base leading-7 text-slate-600">
+              Start with practical courses designed to help you build real
+              coding confidence.
+            </p>
+          </motion.div>
+
+          {allCourses ? (
+            <Course_Slider Courses={allCourses} />
+          ) : (
+            <div className="py-8 text-center text-slate-700">
+              Loading courses...
+            </div>
+          )}
+
+          <div className="mt-10 flex justify-center">
+            <CTAButton active={true} linkto="/all-courses">
+              <div className="flex items-center gap-3">
+                <FaBookOpen />
+                Explore Full Catalog
               </div>
-            </motion.div>
-
-            <motion.p
-              variants={fadeIn("up", 0.2)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.2 }}
-              className="mt-6 max-w-2xl text-base leading-7 text-richblack-200 sm:text-lg sm:leading-8">
-              Learn anytime, anywhere with interactive projects, real-world
-              coding, and expert mentorship designed to accelerate your growth.
-            </motion.p>
-
-            <motion.div
-              variants={fadeIn("up", 0.3)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.2 }}
-              className="mt-8 flex w-full flex-col items-center gap-4 sm:w-auto sm:flex-row sm:justify-center">
-              <CTAButton active={true} linkto={"/signup"}>
-                <div className="min-w-[170px]">Get Started</div>
-              </CTAButton>
-
-              <CTAButton active={false} linkto={"/all-courses"}>
-                <div className="min-w-[170px]">Explore Courses</div>
-              </CTAButton>
-            </motion.div>
-
-            <motion.div
-              variants={fadeIn("up", 0.4)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.2 }}
-              className="mt-10 flex flex-wrap items-center justify-center gap-3 text-sm text-richblack-100">
-              <div className="rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur">
-                Project-based learning
-              </div>
-              <div className="rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur">
-                Mentor support
-              </div>
-              <div className="rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur">
-                Flexible schedule
-              </div>
-            </motion.div>
+            </CTAButton>
           </div>
         </div>
       </section>
 
-      {/* Remaining code unchanged */}
-      <div className="min-h-screen flex items-center justify-center py-8">
-        <div className="relative mx-auto flex flex-col w-11/12 max-w-maxContent items-center text-white justify-between">
-          <div>
-            <CodeBlocks
-              position={"lg:flex-row"}
-              heading={
-                <div className="text-3xl lg:text-4xl font-semibold">
-                  Ignite your
-                  <HighlightText text={" programming journey "} />
-                  our expert-led courses
-                </div>
-              }
-              subheading={
-                "Our courses are crafted and led by seasoned professionals..."
-              }
-              codeblock={`<<!DOCTYPE html>...`}
-              codeColor={"text-white"}
-              backgroundGradient={"code-block1-grad"}
-            />
+      <section className="bg-richblack-5 py-12">
+        <div className="mx-auto w-11/12 max-w-maxContent">
+          <div className="mb-8 text-center">
+            <h2 className="text-3xl font-bold text-slate-900 lg:text-5xl">
+              Learning <HighlightText text="Paths" />
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-base leading-7 text-slate-600">
+              Pick a focused track and follow a clearer route from beginner
+              concepts to job-ready projects.
+            </p>
+          </div>
+          <ExploreMore />
+        </div>
+      </section>
+
+      <section className="bg-white py-16">
+        <div className="mx-auto w-11/12 max-w-maxContent">
+          <div className="mb-10 text-center">
+            <h2 className="text-3xl font-bold text-slate-900 lg:text-5xl">
+              Why Choose <HighlightText text="LearningEdge" />
+            </h2>
           </div>
 
-          <div>
-            <CodeBlocks
-              position={"lg:flex-row-reverse"}
-              heading={
-                <div className="w-[100%] text-3xl lg:text-4xl font-semibold lg:w-[50%]">
-                  No waiting,
-                  <HighlightText text={" just coding"} />
+          <div className="grid gap-6 md:grid-cols-3">
+            {whyChooseUs.map(({ icon: Icon, title, description }) => (
+              <div
+                key={title}
+                className="rounded-lg border border-richblack-100 bg-white p-6 text-slate-900 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-blue-200 hover:shadow-md">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500 text-xl">
+                  <Icon />
                 </div>
-              }
-              subheading={"Dive right in—our interactive platform..."}
-              ctabtn1={{
-                btnText: "Continue Lesson",
-                link: "/signup",
-                active: true,
-              }}
-              ctabtn2={{
-                btnText: "Learn More",
-                link: "/signup",
-                active: false,
-              }}
-              codeColor={"text-white"}
-              codeblock={`import React from "react";...`}
-              backgroundGradient={"code-block2-grad"}
-            />
-          </div>
-
-          <div className="relative mx-auto flex flex-col w-11/12 max-w-maxContent items-center text-white justify-between">
-            <div className="mx-auto w-11/12 max-w-maxContent py-12">
-              <motion.div
-                variants={fadeIn("up", 0.1)}
-                initial="hidden"
-                whileInView={"show"}
-                className="text-center mb-8">
-                <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-                  Explore Our <HighlightText text={"Learning Paths"} />
-                </h2>
-              </motion.div>
-
-              {allCourses ? (
-                <Course_Slider Courses={allCourses} />
-              ) : (
-                <div className="text-white text-center py-8">
-                  Loading courses...
-                </div>
-              )}
-            </div>
-
-            <div className="w-11/12 mx-auto flex justify-center py-8">
-              <CTAButton active={true} linkto={"/all-courses"}>
-                <div className="flex items-center gap-3">
-                  <FaBookOpen />
-                  Explore Full Catalog
-                </div>
-              </CTAButton>
-            </div>
-
-            <ExploreMore />
+                <h3 className="mb-3 text-xl font-semibold">{title}</h3>
+                <p className="text-sm leading-6 text-slate-600">
+                  {description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="bg-richblack-5">
-        <TimelineSection />
+      <section className="bg-richblack-5 py-16">
+        <div className="mx-auto w-11/12 max-w-maxContent">
+          <div className="mb-10 text-center">
+            <h2 className="text-3xl font-bold text-slate-900 lg:text-5xl">
+              How It <HighlightText text="Works" />
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-base leading-7 text-slate-600">
+              A simple learning flow that keeps your attention on progress.
+            </p>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-3">
+            {howItWorks.map((item) => (
+              <div
+                key={item.step}
+                className="rounded-lg border border-richblack-100 bg-white p-6 text-slate-900 shadow-sm">
+                <div className="mb-5 flex items-center gap-4">
+                  <span className="text-4xl font-bold text-blue-200">
+                    {item.step}
+                  </span>
+                  <FaRoute className="text-2xl text-yellow-50" />
+                </div>
+                <h3 className="mb-3 text-xl font-semibold">{item.title}</h3>
+                <p className="text-sm leading-6 text-slate-600">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="bg-richblack-5 px-4 py-16">
         <InstructorSection />
         <ReviewSlider />
       </div>
 
+      <section className="bg-white px-4 py-16">
+        <div className="mx-auto flex w-11/12 max-w-maxContent flex-col items-center gap-6 text-center">
+          <FaUserGraduate className="text-5xl text-yellow-50" />
+          <h2 className="text-3xl font-bold text-slate-900 lg:text-5xl">
+            Start Building Your <HighlightText text="Coding Future" />
+          </h2>
+          <p className="max-w-2xl text-base leading-7 text-slate-600">
+            Join LearningEdge, choose your first course, and begin learning with
+            practical lessons today.
+          </p>
+          <div className="flex flex-col gap-4 sm:flex-row">
+            <CTAButton active={true} linkto="/signup">
+              Create Account
+            </CTAButton>
+            <CTAButton active={false} linkto="/all-courses">
+              Browse Courses
+            </CTAButton>
+          </div>
+        </div>
+      </section>
+
       <Footer />
-    </React.Fragment>
+  </>
   );
 };
 

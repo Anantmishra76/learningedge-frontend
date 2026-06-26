@@ -31,14 +31,14 @@ const AllCourses = () => {
   }
 
   return (
-    <div className="bg-richblack-900 min-h-screen">
+    <div className="bg-slate-50 min-h-screen">
       {/* Header Section */}
-      <div className="bg-richblack-800 py-8 sm:py-12 md:py-16">
+      <div className="bg-white py-8 sm:py-12 md:py-16 border-b border-slate-200">
         <div className="mx-auto w-11/12 max-w-maxContent">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 text-center">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 text-center">
             All Courses
           </h1>
-          <p className="text-richblack-300 text-center text-sm sm:text-base lg:text-lg">
+          <p className="text-slate-600 text-center text-sm sm:text-base lg:text-lg">
             Explore our complete catalog of courses and find the perfect learning path for you
           </p>
         </div>
@@ -47,19 +47,19 @@ const AllCourses = () => {
       {/* Courses Grid */}
       <div className="mx-auto w-11/12 max-w-maxContent py-8 sm:py-12">
         {allCourses.length === 0 ? (
-          <div className="text-center text-white py-12 sm:py-20">
+          <div className="text-center text-slate-900 py-12 sm:py-20">
             <h2 className="text-xl sm:text-2xl font-semibold mb-4">No Courses Available</h2>
-            <p className="text-richblack-300 text-sm sm:text-base">
+            <p className="text-slate-600 text-sm sm:text-base">
               We're working on adding more courses. Please check back later!
             </p>
           </div>
         ) : (
           <>
             <div className="mb-6 sm:mb-8">
-              <h2 className="text-xl sm:text-2xl font-semibold text-white mb-2">
+              <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-2">
                 Available Courses ({allCourses.length})
               </h2>
-              <p className="text-richblack-300 text-sm sm:text-base">
+              <p className="text-slate-600 text-sm sm:text-base">
                 Choose from our diverse range of courses
               </p>
             </div>
@@ -83,3 +83,4 @@ const AllCourses = () => {
 }
 
 export default AllCourses
+

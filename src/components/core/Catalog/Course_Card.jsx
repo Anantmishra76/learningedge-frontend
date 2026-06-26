@@ -9,7 +9,7 @@ function Course_Card({ course }) {
   return (
     <div className='hover:scale-[1.02] transition-all duration-300 ease-out transform will-change-transform'>
       <Link to={`/courses/${course._id}`}>
-        <div className="bg-transparent rounded-xl overflow-hidden">
+        <div className="rounded-xl border border-richblack-100 bg-white p-3 shadow-sm overflow-hidden">
           <div className="rounded-lg overflow-hidden aspect-video">
             <Img
               src={course?.thumbnail}
@@ -18,12 +18,12 @@ function Course_Card({ course }) {
             />
           </div>
           <div className="flex flex-col gap-2 px-1 py-3">
-            <p className="text-xl text-richblack-5">{course?.courseName}</p>
-            <p className="text-sm text-richblack-50">
+            <p className="text-xl font-semibold text-slate-900">{course?.courseName}</p>
+            <p className="text-sm text-slate-600">
               {course?.instructor?.firstName} {course?.instructor?.lastName}
             </p>
         
-            <p className="text-xl text-richblack-5">Rs. {course?.price}</p>
+            <p className="text-xl font-semibold text-slate-900">Rs. {course?.price}</p>
           </div>
         </div>
       </Link>
@@ -32,3 +32,4 @@ function Course_Card({ course }) {
 }
 
 export default Course_Card
+

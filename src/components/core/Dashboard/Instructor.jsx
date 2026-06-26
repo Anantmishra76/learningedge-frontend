@@ -60,7 +60,7 @@ export default function Instructor() {
 
         <div className="flex flex-col gap-y-6 mt-5">
           <div className="flex justify-between items-center px-3 sm:px-5">
-            <p className="text-base sm:text-lg font-bold text-richblack-5">Your Courses</p>
+            <p className="text-base sm:text-lg font-bold text-slate-900">Your Courses</p>
             <Link to="/dashboard/my-courses">
               <p className="text-xs font-semibold text-blue-400 hover:text-blue-300 hover:underline">View All</p>
             </Link>
@@ -86,10 +86,10 @@ export default function Instructor() {
       >
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
           <div className="space-y-2">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-richblack-5 leading-snug">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 leading-snug">
               Welcome back, {user?.firstName}!
             </h1>
-            <p className="text-base sm:text-lg text-richblack-200">
+            <p className="text-base sm:text-lg text-slate-600">
               Ready to inspire and educate? Let’s make learning amazing today.
             </p>
           </div>
@@ -162,7 +162,7 @@ export default function Instructor() {
           >
             <div className="flex items-center gap-2 mb-6">
               <FaChartLine className="text-blue-400 text-lg sm:text-xl" />
-              <h2 className="text-lg sm:text-xl font-bold text-richblack-5">Analytics Overview</h2>
+              <h2 className="text-lg sm:text-xl font-bold text-slate-900">Analytics Overview</h2>
             </div>
 
             <div className="flex flex-col lg:flex-row gap-8">
@@ -172,16 +172,16 @@ export default function Instructor() {
                   <InstructorChart courses={instructorData} />
                 ) : (
                   <div className="rounded-xl bg-richblack-700 p-6 text-center">
-                    <FaChartLine className="text-4xl text-richblack-400 mx-auto mb-4" />
-                    <p className="text-base sm:text-lg font-semibold text-richblack-300">Enough Data is not Available to visualize </p>
-                    <p className="text-sm text-richblack-400 mt-2">Start creating courses to see analytics</p>
+                    <FaChartLine className="text-4xl text-slate-500 mx-auto mb-4" />
+                    <p className="text-base sm:text-lg font-semibold text-slate-600">Enough Data is not Available to visualize </p>
+                    <p className="text-sm text-slate-500 mt-2">Start creating courses to see analytics</p>
                   </div>
                 )}
               </div>
 
               {/* Quick Actions */}
               <div className="lg:w-80 space-y-4">
-                <h3 className="text-lg font-semibold text-richblack-5 mb-3">Quick Actions</h3>
+                <h3 className="text-lg font-semibold text-slate-900 mb-3">Quick Actions</h3>
                 <div className="space-y-3">
                   <Link
                     to="/dashboard/add-course"
@@ -189,8 +189,8 @@ export default function Instructor() {
                   >
                     <FaPlus className="text-blue-400 group-hover:scale-110 transition-transform" />
                     <div>
-                      <p className="font-medium text-richblack-5">Create Course</p>
-                      <p className="text-sm text-richblack-400">Add a new course to your catalog</p>
+                      <p className="font-medium text-slate-900">Create Course</p>
+                      <p className="text-sm text-slate-500">Add a new course to your catalog</p>
                     </div>
                   </Link>
                   <Link
@@ -199,8 +199,8 @@ export default function Instructor() {
                   >
                     <FaEye className="text-blue-400 group-hover:scale-110 transition-transform" />
                     <div>
-                      <p className="font-medium text-richblack-5">View All Courses</p>
-                      <p className="text-sm text-richblack-400">Manage your existing courses</p>
+                      <p className="font-medium text-slate-900">View All Courses</p>
+                      <p className="text-sm text-slate-500">Manage your existing courses</p>
                     </div>
                   </Link>
                 </div>
@@ -218,7 +218,7 @@ export default function Instructor() {
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-2">
                 <FaBook className="text-blue-400 text-lg sm:text-xl" />
-                <h2 className="text-lg sm:text-xl font-bold text-richblack-5">Recent Courses</h2>
+                <h2 className="text-lg sm:text-xl font-bold text-slate-900">Recent Courses</h2>
               </div>
               <Link
                 to="/dashboard/my-courses"
@@ -249,10 +249,10 @@ export default function Instructor() {
                     </div>
                   </div>
                   <div className="p-4">
-                    <h3 className="font-semibold text-richblack-5 mb-2 line-clamp-2 text-sm sm:text-base">
+                    <h3 className="font-semibold text-slate-900 mb-2 line-clamp-2 text-sm sm:text-base">
                       {course.courseName}
                     </h3>
-                    <div className="flex items-center justify-between text-xs sm:text-sm text-richblack-400">
+                    <div className="flex items-center justify-between text-xs sm:text-sm text-slate-500">
                       <span className="flex items-center gap-1">
                         <FaUsers className="text-xs" />
                         {course.studentsEnrolled.length} students
@@ -273,11 +273,11 @@ export default function Instructor() {
           className="mt-20 bg-gradient-to-br from-richblack-800 to-richblack-700 rounded-2xl p-10 sm:p-12 text-center shadow-xl"
         >
           <div className="max-w-md mx-auto">
-            <FaBook className="text-5xl sm:text-6xl text-richblack-400 mx-auto mb-6" />
-            <h2 className="text-xl sm:text-2xl font-bold text-richblack-5 mb-4">
+            <FaBook className="text-5xl sm:text-6xl text-slate-500 mx-auto mb-6" />
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4">
               Start Your Teaching Journey
             </h2>
-            <p className="text-richblack-300 mb-8 text-sm sm:text-base">
+            <p className="text-slate-600 mb-8 text-sm sm:text-base">
               You haven’t created any courses yet. Share your knowledge and inspire learners around the world.
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -295,3 +295,4 @@ export default function Instructor() {
     </div>
   )
 }
+

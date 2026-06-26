@@ -158,3 +158,4 @@ export default function InstructorChart({ courses }) {
     </motion.div>
   )
 }
+

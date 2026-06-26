@@ -39,11 +39,11 @@ export default function RenderSteps() {
               <div
                 className={`grid  aspect-square w-[34px] place-items-center rounded-full border-[1px] 
                     ${step === item.id ? "border-yellow-50 bg-yellow-900 text-yellow-50"
-                    : "border-richblack-700 bg-richblack-800 text-richblack-300"}
+                    : "border-richblack-700 bg-richblack-800 text-slate-600"}
                     ${step > item.id && "bg-yellow-50 text-yellow-50"}} `}
               >
                 {step > item.id ?
-                  (<FaCheck className="font-bold text-richblack-900" />)
+                  (<FaCheck className="font-bold text-slate-900" />)
                   : (item.id)
                 }
               </div>
@@ -63,7 +63,7 @@ export default function RenderSteps() {
       <div className="relative mb-10 flex w-full select-none justify-between">
         {steps.map((item) => (
           <div className="flex-1 flex flex-col items-center gap-y-2" key={item.id}>
-            <p className={`text-xs sm:text-sm text-center ${step >= item.id ? "text-richblack-5" : "text-richblack-500"}`}>
+            <p className={`text-xs sm:text-sm text-center ${step >= item.id ? "text-slate-900" : "text-slate-500"}`}>
               {item.title}
             </p>
           </div>
@@ -77,3 +77,4 @@ export default function RenderSteps() {
     </>
   )
 }
+

@@ -21,7 +21,7 @@ export default function DeleteAccount() {
           <FiAlertTriangle className="text-2xl text-pink-900" />
         </div>
         <div>
-          <h2 className="text-xl font-semibold text-richblack-5">Delete Account</h2>
+          <h2 className="text-xl font-semibold text-slate-900">Delete Account</h2>
           <p className="text-pink-25 text-sm">Permanently delete your account</p>
         </div>
       </div>
@@ -47,7 +47,7 @@ export default function DeleteAccount() {
             onChange={() => setCheck(prev => !prev)}
           />
           <div className="flex-1">
-            <p className="text-richblack-5 text-sm font-medium mb-1">
+            <p className="text-slate-900 text-sm font-medium mb-1">
               I understand the consequences
             </p>
             <button
@@ -55,7 +55,7 @@ export default function DeleteAccount() {
               className={`text-sm font-medium transition-colors ${
                 check
                   ? "text-pink-300 hover:text-pink-200 cursor-pointer"
-                  : "text-richblack-400 cursor-not-allowed"
+                  : "text-slate-500 cursor-not-allowed"
               }`}
               onClick={() => check &&
                 setConfirmationModal({
@@ -79,3 +79,4 @@ export default function DeleteAccount() {
     </div>
   )
 }
+

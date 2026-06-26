@@ -51,7 +51,7 @@ export default function EnrolledCourses() {
   // return if data is null
   if (enrolledCourses?.length == 0) {
     return (
-      <p className="grid h-[50vh] w-full place-content-center text-center text-richblack-5 text-3xl">
+      <p className="grid h-[50vh] w-full place-content-center text-center text-slate-900 text-3xl">
         You have not enrolled in any course yet.
       </p>)
   }
@@ -60,9 +60,9 @@ export default function EnrolledCourses() {
 
   return (
     <>
-      <div className="text-4xl text-richblack-5 font-boogaloo text-center sm:text-left mb-6">Enrolled Courses</div>
+      <div className="text-4xl text-slate-900 font-boogaloo text-center sm:text-left mb-6">Enrolled Courses</div>
       {
-        <div className="my-8 text-richblack-5">
+        <div className="my-8 text-slate-900">
           {/* Headings */}
           <div className="flex rounded-t-2xl bg-richblack-800 ">
             <p className="w-[45%] px-5 py-3 font-semibold">Course Name</p>
@@ -103,7 +103,7 @@ export default function EnrolledCourses() {
 
                   <div className="flex max-w-xs flex-col gap-2">
                     <p className="font-semibold">{course.courseName}</p>
-                    <p className="text-xs text-richblack-300">
+                    <p className="text-xs text-slate-600">
                       {course.courseDescription.length > 50
                         ? `${course.courseDescription.slice(0, 50)}...`
                         : course.courseDescription}
@@ -151,3 +151,4 @@ export default function EnrolledCourses() {
     </>
   )
 }
+

@@ -94,7 +94,7 @@ function SignupForm() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {/* First Name */}
           <div className="flex flex-col">
-            <label className="text-richblack-5 text-sm font-medium mb-1">
+            <label className="text-slate-900 text-sm font-medium mb-1">
               First Name <span className="text-pink-200">*</span>
             </label>
             <input
@@ -104,13 +104,13 @@ function SignupForm() {
               value={firstName}
               onChange={handleOnChange}
               placeholder="Enter first name"
-              className="w-full rounded-lg bg-richblack-800 p-2.5 text-richblack-5 outline-none border border-richblack-700 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-200 placeholder:text-richblack-400"
+              className="w-full rounded-lg bg-richblack-800 p-2.5 text-slate-900 outline-none border border-richblack-700 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-200 placeholder:text-slate-500"
             />
           </div>
 
           {/* Last Name */}
           <div className="flex flex-col">
-            <label className="text-richblack-5 text-sm font-medium mb-1">
+            <label className="text-slate-900 text-sm font-medium mb-1">
               Last Name <span className="text-pink-200">*</span>
             </label>
             <input
@@ -120,14 +120,14 @@ function SignupForm() {
               value={lastName}
               onChange={handleOnChange}
               placeholder="Enter last name"
-              className="w-full rounded-lg bg-richblack-800 p-2.5 text-richblack-5 outline-none border border-richblack-700 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-200 placeholder:text-richblack-400"
+              className="w-full rounded-lg bg-richblack-800 p-2.5 text-slate-900 outline-none border border-richblack-700 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-200 placeholder:text-slate-500"
             />
           </div>
         </div>
 
         {/* Email Address */}
         <div className="flex flex-col">
-          <label className="text-richblack-5 text-sm font-medium mb-1">
+          <label className="text-slate-900 text-sm font-medium mb-1">
             Email Address <span className="text-pink-200">*</span>
           </label>
           <input
@@ -137,14 +137,14 @@ function SignupForm() {
             value={email}
             onChange={handleOnChange}
             placeholder="Enter email address"
-            className="w-full rounded-lg bg-richblack-800 p-2.5 text-richblack-5 outline-none border border-richblack-700 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-200 placeholder:text-richblack-400"
+            className="w-full rounded-lg bg-richblack-800 p-2.5 text-slate-900 outline-none border border-richblack-700 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-200 placeholder:text-slate-500"
           />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {/* Create Password */}
           <div className="flex flex-col relative">
-            <label className="text-richblack-5 text-sm font-medium mb-1">
+            <label className="text-slate-900 text-sm font-medium mb-1">
               Create Password <span className="text-pink-200">*</span>
             </label>
             <input
@@ -154,12 +154,12 @@ function SignupForm() {
               value={password}
               onChange={handleOnChange}
               placeholder="Enter Password"
-              className="w-full rounded-lg bg-richblack-800 p-2.5 pr-12 text-richblack-5 outline-none border border-richblack-700 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-200 placeholder:text-richblack-400"
+              className="w-full rounded-lg bg-richblack-800 p-2.5 pr-12 text-slate-900 outline-none border border-richblack-700 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-200 placeholder:text-slate-500"
             />
             <button
               type="button"
               onClick={() => setShowPassword((prev) => !prev)}
-              className="absolute right-3 top-9 text-richblack-400 hover:text-richblack-200 transition-colors duration-200"
+              className="absolute right-3 top-9 text-slate-500 hover:text-slate-600 transition-colors duration-200"
             >
               {showPassword ? (
                 <AiOutlineEyeInvisible size={20} />
@@ -171,7 +171,7 @@ function SignupForm() {
 
           {/* Confirm Password */}
           <div className="flex flex-col relative">
-            <label className="text-richblack-5 text-sm font-medium mb-1">
+            <label className="text-slate-900 text-sm font-medium mb-1">
               Confirm Password <span className="text-pink-200">*</span>
             </label>
             <input
@@ -181,12 +181,12 @@ function SignupForm() {
               value={confirmPassword}
               onChange={handleOnChange}
               placeholder="Confirm Password"
-              className="w-full rounded-lg bg-richblack-800 p-2.5 pr-12 text-richblack-5 outline-none border border-richblack-700 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-200 placeholder:text-richblack-400"
+              className="w-full rounded-lg bg-richblack-800 p-2.5 pr-12 text-slate-900 outline-none border border-richblack-700 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-200 placeholder:text-slate-500"
             />
             <button
               type="button"
               onClick={() => setShowConfirmPassword((prev) => !prev)}
-              className="absolute right-3 top-9 text-richblack-400 hover:text-richblack-200 transition-colors duration-200"
+              className="absolute right-3 top-9 text-slate-500 hover:text-slate-600 transition-colors duration-200"
             >
               {showConfirmPassword ? (
                 <AiOutlineEyeInvisible size={20} />
