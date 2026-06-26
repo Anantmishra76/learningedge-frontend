@@ -8,7 +8,7 @@ const Stats = [
   { count: "50+", label: "Awards", icon: FaTrophy },
 ];
 
-const StatsComponenet = () => {
+const StatsComponent = () => {
   return (
     <div className="bg-richblack-700">
       {/* Stats */}
@@ -34,4 +34,4 @@ const StatsComponenet = () => {
   );
 };
 
-export default StatsComponenet;
+export default StatsComponent;

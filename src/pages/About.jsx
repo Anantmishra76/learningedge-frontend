@@ -7,7 +7,7 @@ import BannerImage3 from "../assets/Images/Aboutus3.jpeg"
 
 import Footer from "../components/common/Footer"
 import LearningGrid from "../components/core/AboutPage/LearningGrid"
-import StatsComponenet from "../components/core/AboutPage/Stats"
+import StatsComponent from "../components/core/AboutPage/Stats"
 import HighlightText from "../components/core/HomePage/HighlightText"
 import Img from "../components/common/Img"
 
@@ -213,7 +213,7 @@ const About = () => {
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-orange-600/10 via-red-600/10 to-pink-600/10"></div>
         </div>
         <div className="relative">
-          <StatsComponenet />
+          <StatsComponent />
         </div>
       </section>
 

@@ -1,48 +1,39 @@
-import React from 'react'
-import Instructor from '../../../assets/Images/Intructor_img.jpeg'
-import HighlightText from './HighlightText'
-import CTAButton from "../HomePage/Button"
-import { FaArrowRight } from 'react-icons/fa'
-import Img from './../../common/Img';
+import React from "react";
+import Instructor from "../../../assets/Images/Instructor.jpg";
 
 const InstructorSection = () => {
   return (
-    <div className='mb-10 bg-richblack-5'>
-      <div className='flex flex-col-reverse lg:flex-row gap-2 lg:gap-5 items-center'>
-
-        <div className='lg:w-[50%] '>
-          <Img
-            src={Instructor}
-            alt="Instructor"
-            className='shadow-white rounded-full w-96 h-96 object-cover'
-          />
+    <section className="section-padding">
+      <div className="section-container flex flex-col items-center gap-10 lg:flex-row lg:gap-16">
+        {/* Left Image */}
+        <div className="flex-1 flex justify-center">
+          <div className="relative w-[340px] sm:w-[400px]">
+            <img
+              src={Instructor}
+              alt="Instructor"
+              className="relative z-10 w-full object-contain"
+            />
+          </div>
         </div>
 
-        <div className='lg:w-[50%] flex flex-col'>
-          <div className='text-3xl lg:text-4xl font-semobold w-full mb-2 text-slate-700 leading-tight'>
-            Become an instructor today
-            and 
-            <HighlightText text={"inspire learners worldwide"} />
-          </div>
+        <div className="flex-1 max-w-xl text-center lg:text-left">
+          <h2 className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
+            Become an instructor
+          </h2>
 
-          <p className='font-medium text-[16px] w-[80%] text-slate-700 mb-12'>
-            Instructors from around the world teach millions of students on LearningEdge. We provide the tools and skills to teach what you love.
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            Share your knowledge with millions of learners around the world.
+            Create engaging courses, inspire students, and grow your teaching
+            career with powerful tools designed for educators.
           </p>
 
-          <div className='w-fit mt-6'>
-            <CTAButton active={true} linkto={"/signup"}>
-              <div className='flex flex-row gap-3 items-center px-2 py-1'>
-                Start Your Teaching Journey
-                <FaArrowRight className='text-sm' />
-              </div>
-            </CTAButton>
-          </div>
+          <button className="mt-8 rounded-md bg-black px-7 py-3 text-base font-semibold text-white">
+            Start teaching today
+          </button>
         </div>
-
       </div>
-    </div>
-  )
-}
+    </section>
+  );
+};
 
-export default InstructorSection
-
+export default InstructorSection;

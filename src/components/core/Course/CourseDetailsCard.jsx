@@ -39,7 +39,7 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
     }
     setConfirmationModal({
       text1: "You are not logged in!",
-      text2: "Please login to add To Cart",
+      text2: "Please log in to add this course to your cart.",
       btn1Text: "Login",
       btn2Text: "Cancel",
       btn1Handler: () => navigate("/login"),
@@ -75,7 +75,7 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
               }
             >
               {user && course?.studentsEnrolled.includes(user?._id)
-                ? "Go To Course"
+                ? "Go to Course"
                 : "Buy Now"}
             </button>
             {(!user || !course?.studentsEnrolled.includes(user?._id)) && (
@@ -86,7 +86,7 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
           </div>
           <div className={``}>
             <p className={`my-2 text-xl font-semibold `}>
-              Course Requirements :
+              Course Requirements:
             </p>
             <div className="flex flex-col gap-3 text-sm text-caribbeangreen-100">
               {course?.instructions?.map((item, i) => {

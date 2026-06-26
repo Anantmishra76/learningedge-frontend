@@ -1,47 +1,56 @@
 import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
-import hero from "../assets/hero.jpg";
+import hero from "../assets/hero.png";
+import hero2 from "../assets/hero2.png";
+import hero3 from "../assets/hero3.png";
+import hero4 from "../assets/hero4.png";
 
 const slides = [
   { id: 1, img: hero, alt: "Coding" },
   {
     id: 2,
-    img: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1200&q=80",
+    img: hero2,
     alt: "Data science",
   },
   {
     id: 3,
-    img: "https://images.unsplash.com/photo-1558655146-d09347e92766?w=1200&q=80",
+    img: hero3,
     alt: "Design",
   },
   {
     id: 4,
-    img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80",
+    img: hero4,
     alt: "Cloud",
   },
 ];
 
 export default function Hero() {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
   return (
-    <div className="min-h-screen bg-gray-950 text-white font-sans">
-      <div className="relative pt-16">
+    <div className="bg-gray-950 text-white">
+      <div className="relative">
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           loop
           speed={600}
           autoplay={{ delay: 4500, disableOnInteraction: false }}
-          navigation={{
-            nextEl: ".swiper-btn-next",
-            prevEl: ".swiper-btn-prev",
+          navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
+          onSwiper={(swiper) => {
+            swiper.params.navigation.prevEl = prevRef.current;
+            swiper.params.navigation.nextEl = nextRef.current;
+            swiper.navigation.init();
+            swiper.navigation.update();
           }}
           pagination={{ clickable: true }}
-          style={{ height: "480px" }}>
+          className="h-[320px] sm:h-[420px] lg:h-[520px]">
           {slides.map((s) => (
-            <SwiperSlide key={s.id} style={{ height: "480px" }}>
+            <SwiperSlide key={s.id}>
               <img
                 src={s.img}
                 alt={s.alt}
@@ -53,70 +62,17 @@ export default function Hero() {
         </Swiper>
 
         <button
-          className="swiper-btn-prev absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-gray-900/80 border border-gray-700 hover:bg-gray-800 flex items-center justify-center transition-colors mt-8"
+          ref={prevRef}
+          className="absolute left-4 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/70 bg-black/30 text-white backdrop-blur-sm transition hover:bg-black/50"
           aria-label="Previous slide">
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2">
-            <path d="M15 18l-6-6 6-6" />
-          </svg>
+          <MdChevronLeft size={24} />
         </button>
         <button
-          className="swiper-btn-next absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-gray-900/80 border border-gray-700 hover:bg-gray-800 flex items-center justify-center transition-colors mt-8"
+          ref={nextRef}
+          className="absolute right-4 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/70 bg-black/30 text-white backdrop-blur-sm transition hover:bg-black/50"
           aria-label="Next slide">
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2">
-            <path d="M9 18l6-6-6-6" />
-          </svg>
+          <MdChevronRight size={24} />
         </button>
-      </div>
-
-      {/* trust bar + categories unchanged */}
-      <div className="border-y border-gray-800 bg-gray-900/60">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex flex-wrap gap-6 md:gap-10 items-center justify-center md:justify-start text-sm text-gray-400">
-          {[
-            ["12M+", "Students worldwide"],
-            ["85K+", "Courses available"],
-            ["4,000+", "Expert instructors"],
-            ["30", "Day money-back"],
-          ].map(([n, l]) => (
-            <div key={l} className="flex items-center gap-2">
-              <span className="text-white font-semibold">{n}</span>
-              <span>{l}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <h2 className="text-lg font-semibold text-gray-200 mb-6">
-          Browse categories
-        </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
-          {[
-            "Development",
-            "Design",
-            "Data Science",
-            "Business",
-            "Marketing",
-            "DevOps",
-          ].map((c) => (
-            <button
-              key={c}
-              className="text-sm text-gray-300 border border-gray-700 hover:border-violet-500 hover:text-violet-400 rounded px-3 py-2.5 text-center transition-colors">
-              {c}
-            </button>
-          ))}
-        </div>
       </div>
     </div>
   );

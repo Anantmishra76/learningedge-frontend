@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { Outlet, useParams } from "react-router-dom"
 
 // Components
-import CourseReviewModal from "../components/core/ViewCourse/CourseReviewModal"
+import ReviewModal from "../components/common/ReviewModal"
 import VideoDetailsSidebar from "../components/core/ViewCourse/VideoDetailsSidebar"
 
 // API functions
@@ -95,7 +95,7 @@ export default function ViewCourse() {
       </div>
 
       {/* Course review modal */}
-      {reviewModal && <CourseReviewModal setReviewModal={setReviewModal} />}
+      {reviewModal && <ReviewModal setReviewModal={setReviewModal} />}
     </>
   )
 }

@@ -149,13 +149,13 @@ const CreateCategory = () => {
       {/* Categories List */}
       <div className="bg-gradient-to-br from-richblack-800 to-richblack-900 rounded-xl border border-richblack-700 p-8 shadow-lg hover:shadow-xl transition-all duration-300">
         <div className="flex items-center gap-4 mb-6">
-          <div className="p-3 bg-rickblack-300 rounded-full">
+          <div className="p-3 bg-richblack-300 rounded-full">
             <AiOutlineFolderOpen className="text-2xl text-slate-900" style={{ color: 'lightblue' }} />
           </div>
           <div>
             <h3 className="text-xl font-semibold text-slate-900">Existing Categories</h3>
             <p className="text-slate-600 text-sm">
-              {subLinks?.length || 0} categories • Manage your course organization
+              {subLinks?.length || 0} categories - Manage your course organization
             </p>
           </div>
         </div>

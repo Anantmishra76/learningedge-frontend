@@ -17,10 +17,10 @@ const PageNotFound = () => {
               {/* Error message and home button */}
               <div className="-mt-12">
                 <h3 className="text-4xl mb-1">
-                  Look like you're lost
+                  Looks like you're lost
                 </h3>
 
-                <p>The page you are looking for not available!</p>
+                <p>The page you are looking for is not available.</p>
 
                 <Link
                   to='/'

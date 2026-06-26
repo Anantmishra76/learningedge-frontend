@@ -90,7 +90,7 @@ export default function Instructor() {
               Welcome back, {user?.firstName}!
             </h1>
             <p className="text-base sm:text-lg text-slate-600">
-              Ready to inspire and educate? Let’s make learning amazing today.
+              Ready to inspire and educate? Let's make learning amazing today.
             </p>
           </div>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -146,7 +146,7 @@ export default function Instructor() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-purple-100 text-sm font-medium">Total Income</p>
-                  <p className="text-3xl sm:text-4xl font-bold mt-1">₹{totalAmount || 0}</p>
+                  <p className="text-3xl sm:text-4xl font-bold mt-1">Rs. {totalAmount || 0}</p>
                 </div>
                 <FaRupeeSign className="text-3xl sm:text-4xl text-purple-200" />
               </div>
@@ -173,7 +173,7 @@ export default function Instructor() {
                 ) : (
                   <div className="rounded-xl bg-richblack-700 p-6 text-center">
                     <FaChartLine className="text-4xl text-slate-500 mx-auto mb-4" />
-                    <p className="text-base sm:text-lg font-semibold text-slate-600">Enough Data is not Available to visualize </p>
+                    <p className="text-base sm:text-lg font-semibold text-slate-600">Not enough data is available to visualize.</p>
                     <p className="text-sm text-slate-500 mt-2">Start creating courses to see analytics</p>
                   </div>
                 )}
@@ -224,7 +224,7 @@ export default function Instructor() {
                 to="/dashboard/my-courses"
                 className="text-blue-400 hover:text-blue-300 font-medium text-xs sm:text-sm transition-colors"
               >
-                View All →
+                View All &gt;
               </Link>
             </div>
 
@@ -245,7 +245,7 @@ export default function Instructor() {
                       className="w-full h-40 sm:h-48 object-cover"
                     />
                     <div className="absolute top-3 right-3 bg-black/50 backdrop-blur-sm rounded-lg px-2 py-1">
-                      <p className="text-xs font-medium text-white">₹{course.price}</p>
+                      <p className="text-xs font-medium text-white">Rs. {course.price}</p>
                     </div>
                   </div>
                   <div className="p-4">
@@ -278,7 +278,7 @@ export default function Instructor() {
               Start Your Teaching Journey
             </h2>
             <p className="text-slate-600 mb-8 text-sm sm:text-base">
-              You haven’t created any courses yet. Share your knowledge and inspire learners around the world.
+              You haven't created any courses yet. Share your knowledge and inspire learners around the world.
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { HomePageExplore } from "../../../../data/homepage-explore";
 import CourseCard from "./CourseCard";
-import HighlightText from "./HighlightText";
 
 const tabsName = [
   "Free For All",
@@ -29,30 +28,29 @@ const ExploreMore = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-center py-8">
+    <div className="flex flex-col py-4">
       {/* Explore more section */}
       <div>
-        <div className="text-3xl lg:text-4xl font-semibold text-center my-6">
-        Build with Code
-
-          <HighlightText text={"Lead with Vision"} />
-          <p className="text-center text-slate-600 text-base lg:text-lg font-semibold mt-1">
-           Ideas are just the beginning start building
-
+        <div className="mx-auto mb-8 max-w-3xl text-center">
+          <h3 className="text-2xl font-semibold text-slate-900 lg:text-4xl">
+            Choose a path that matches your goal
+          </h3>
+          <p className="mt-3 text-base leading-7 text-slate-600">
+            Switch between course groups and compare what fits your next step.
           </p>
         </div>
       </div>
 
       {/* Tabs Section */}
       {/* Desktop Tabs */}
-      <div className="hidden md:flex flex-wrap gap-2 lg:gap-5 -mt-2 mx-auto w-max max-w-full bg-white text-slate-600 p-1 rounded-full border border-richblack-100 font-medium shadow-sm">
+      <div className="mx-auto hidden w-max max-w-full flex-wrap gap-2 rounded-full border border-slate-200 bg-white p-1 text-slate-600 shadow-sm md:flex lg:gap-3">
         {tabsName.map((ele, index) => {
           return (
             <div
-              className={` text-[12px] lg:text-[16px] flex flex-row items-center gap-1 lg:gap-2 ${currentTab === ele
+              className={`flex flex-row items-center gap-1 text-[12px] lg:gap-2 lg:text-[15px] ${currentTab === ele
                 ? "bg-blue-500 text-white font-medium"
                 : "text-slate-600"
-                } px-3 lg:px-7 py-[5px] lg:py-[7px] rounded-full transition-all duration-200 cursor-pointer hover:bg-blue-500 hover:text-white`}
+                } cursor-pointer rounded-full px-3 py-[7px] transition-all duration-200 hover:bg-blue-500 hover:text-white lg:px-5`}
               key={index}
               onClick={() => setMyCards(ele)}
             >
@@ -63,10 +61,10 @@ const ExploreMore = () => {
       </div>
 
       {/* Mobile Dropdown */}
-      <div className="md:hidden -mt-2 mx-auto w-max max-w-full relative">
+      <div className="relative mx-auto w-full max-w-sm md:hidden">
         <button
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-          className="flex items-center justify-between w-full min-w-[200px] bg-white text-slate-700 p-3 rounded-lg border border-richblack-100 font-medium shadow-sm">
+          className="flex w-full items-center justify-between rounded-lg border border-slate-200 bg-white p-3 font-medium text-slate-700 shadow-sm">
           <span className="text-sm">{currentTab}</span>
           <svg 
             className={`w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}
@@ -79,7 +77,7 @@ const ExploreMore = () => {
         </button>
         
         {isDropdownOpen && (
-          <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-lg shadow-lg z-10 overflow-hidden border border-richblack-100">
+          <div className="absolute left-0 right-0 top-full z-10 mt-1 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-lg">
             {tabsName.map((ele, index) => {
               return (
                 <div
@@ -100,7 +98,7 @@ const ExploreMore = () => {
       </div>
 
       {/* Cards Group */}
-      <div className="gap-6 justify-center flex flex-wrap w-full text-black mt-8 lg:px-0 px-3">
+      <div className="mt-8 grid w-full gap-6 text-black sm:grid-cols-2 lg:grid-cols-3">
         {courses.map((ele, index) => {
           return (
             <CourseCard
@@ -114,9 +112,9 @@ const ExploreMore = () => {
       </div>
 
       {/* Learn More Button */}
-      <div className='flex flex-row gap-7 justify-center mt-8'>
-        <a href="/signup" className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
-          Learn more
+      <div className='mt-8 flex flex-row justify-center gap-7'>
+        <a href="/signup" className="rounded-md bg-brand-500 px-8 py-3 text-center font-semibold text-white shadow-lg transition-all duration-300 hover:bg-brand-600">
+          Start a learning path
         </a>
       </div>
     </div>

@@ -1,19 +1,19 @@
-import { useMemo } from "react"
+import { useMemo } from "react";
 import {
   TiStarFullOutline,
   TiStarHalfOutline,
   TiStarOutline,
-} from "react-icons/ti"
+} from "react-icons/ti";
 
 function RatingStars({ Review_Count, Star_Size }) {
   const starCount = useMemo(() => {
-    const wholeStars = Math.floor(Review_Count) || 0
+    const wholeStars = Math.floor(Review_Count) || 0;
     return {
       full: wholeStars,
       half: Number.isInteger(Review_Count) ? 0 : 1,
       empty: Number.isInteger(Review_Count) ? 5 - wholeStars : 4 - wholeStars,
-    }
-  }, [Review_Count])
+    };
+  }, [Review_Count]);
 
   return (
     <div className="flex gap-1 text-yellow-50">
@@ -31,8 +31,6 @@ function RatingStars({ Review_Count, Star_Size }) {
         ))}
     </div>
   );
-
 }
 
-export default RatingStars
-
+export default RatingStars;
