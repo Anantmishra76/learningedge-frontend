@@ -26,19 +26,16 @@ export default function CourseBuilderForm() {
 
   // handle form submission
   const onSubmit = async (data) => {
-    // console.log("sent data ", data)
     setLoading(true)
 
     let result
 
     if (editSectionName) {
       result = await updateSection({ sectionName: data.sectionName, sectionId: editSectionName, courseId: course._id, }, token)
-      // console.log("edit = ", result)
     } else {
       result = await createSection(
         { sectionName: data.sectionName, courseId: course._id, }, token)
     }
-    // console.log("section result = ", result)
     if (result) {
       dispatch(setCourse(result))
       setEditSectionName(null)

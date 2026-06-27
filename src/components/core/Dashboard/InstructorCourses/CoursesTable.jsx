@@ -48,7 +48,6 @@ export default function CoursesTable({ courses, setCourses, loading, setLoading 
         return duration;
       }
     } catch (error) {
-      console.log("Error fetching course duration:", error);
     }
     return "2h 30m 0s";
   }, [courseDurations, token])
@@ -77,7 +76,6 @@ export default function CoursesTable({ courses, setCourses, loading, setLoading 
     setConfirmationModal(null)
     setLoading(false)
     toast.dismiss(toastId)
-    // console.log("All Course ", courses)
   }
 
 

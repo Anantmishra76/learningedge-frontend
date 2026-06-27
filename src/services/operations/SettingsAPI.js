@@ -35,7 +35,6 @@ export function updateUserProfileImage(token, formData) {
           Authorization: `Bearer ${token}`,
         }
       )
-      console.log("UPDATE_DISPLAY_PICTURE_API API RESPONSE............", response);
 
       if (!response.data.success) {
         throw new Error(response.data.message)
@@ -46,8 +45,7 @@ export function updateUserProfileImage(token, formData) {
       // below line is must - if not code - then as we refresh the page after changing profile image then old profile image will show 
       // as we only changes in user(store) not in localStorage
       localStorage.setItem("user", JSON.stringify(response.data.data));
-    } catch (error) {
-      console.log("UPDATE_DISPLAY_PICTURE_API API ERROR............", error)
+    } catch {
       toast.error("Unable to update profile picture. Please try again.")
     }
     toast.dismiss(toastId)
@@ -68,7 +66,6 @@ export function updateProfile(token, formData) {
       const response = await apiConnector("PUT", UPDATE_PROFILE_API, formData, {
         Authorization: `Bearer ${token}`,
       })
-      console.log("UPDATE_PROFILE_API API RESPONSE............", response)
 
       if (!response.data.success) {
         throw new Error(response.data.message)
@@ -81,8 +78,7 @@ export function updateProfile(token, formData) {
 
       localStorage.setItem("user", JSON.stringify({ ...response.data.updatedUserDetails, image: userImage }));
       toast.success("Profile updated successfully.")
-    } catch (error) {
-      console.log("UPDATE_PROFILE_API API ERROR............", error)
+    } catch {
       toast.error("Unable to update profile. Please try again.")
     }
     toast.dismiss(toastId)
@@ -102,14 +98,12 @@ export async function changePassword(token, formData) {
     const response = await apiConnector("POST", CHANGE_PASSWORD_API, formData, {
       Authorization: `Bearer ${token}`,
     })
-    console.log("CHANGE_PASSWORD_API API RESPONSE............", response)
 
     if (!response.data.success) {
       throw new Error(response.data.message)
     }
     toast.success("Password changed successfully.")
   } catch (error) {
-    console.log("CHANGE_PASSWORD_API API ERROR............", error)
     toast.error("Password change failed: " + (error.response.data.message || "Please try again."))
   }
   toast.dismiss(toastId)
@@ -129,15 +123,13 @@ export function deleteProfile(token, navigate) {
       const response = await apiConnector("DELETE", DELETE_PROFILE_API, null, {
         Authorization: `Bearer ${token}`,
       })
-      console.log("DELETE_PROFILE_API API RESPONSE............", response)
 
       if (!response.data.success) {
         throw new Error(response.data.message)
       }
       toast.success("Profile deleted successfully.")
       dispatch(logout(navigate))
-    } catch (error) {
-      console.log("DELETE_PROFILE_API API ERROR............", error)
+    } catch {
       toast.error("Unable to delete profile. Please try again or contact support.")
     }
     toast.dismiss(toastId)

@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom"
 import { FiCreditCard, FiShield } from "react-icons/fi"
 
 import IconBtn from "../../../common/IconBtn"
-import { buyCourse } from "../../../../services/operations/studentFeaturesAPI"
 
 export default function RenderTotalAmount() {
   const { total, cart } = useSelector((state) => state.cart)
@@ -14,6 +13,7 @@ export default function RenderTotalAmount() {
 
   const handleBuyCourse = async () => {
     const courses = cart.map((course) => course._id)
+    const { buyCourse } = await import("../../../../services/operations/studentFeaturesAPI")
     await buyCourse(token, courses, user, navigate, dispatch)
   }
 

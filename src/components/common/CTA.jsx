@@ -1,10 +1,13 @@
 import React from "react";
 import { FaUserGraduate } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const CTA = () => {
+  const navigate = useNavigate();
+
   return (
     <>
-      <section className="section-padding bg-white">
+      <section className="section-padding">
         <div className="section-container flex flex-col items-center gap-6 text-center">
           <div className="flex h-16 w-16 items-center justify-center rounded-full bg-accent-50 text-3xl text-accent-500">
             <FaUserGraduate />
@@ -17,7 +20,9 @@ const CTA = () => {
             practical lessons today.
           </p>
 
-          <button className="mt-8 rounded-md bg-black px-7 py-3 text-base font-semibold text-white">
+          <button
+            onClick={() => navigate("/login")}
+            className="mt-8 rounded-md bg-black px-7 py-3 text-base font-semibold text-white">
             Explore Our Courses
           </button>
         </div>

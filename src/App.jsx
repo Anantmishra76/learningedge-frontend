@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -7,14 +6,16 @@ import { useSelector } from "react-redux";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import BlogPage from "./pages/Blog/BlogPage";
+import BlogDetailsPage from "./pages/Blog/BlogDetailsPage";
 import ForgotPassword from "./pages/ForgotPassword";
 import UpdatePassword from "./pages/UpdatePassword";
 import VerifyEmail from "./pages/VerifyEmail";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import PageNotFound from "./pages/PageNotFound";
-import CourseDetails from './pages/CourseDetails';
-import Catalog from './pages/Catalog';
+import CourseDetails from "./pages/CourseDetails";
+import Catalog from "./pages/Catalog";
 import AllCourses from "./pages/AllCourses";
 
 // Layout components
@@ -28,9 +29,9 @@ import ProtectedRoute from "./components/core/Auth/ProtectedRoute";
 import Dashboard from "./pages/Dashboard";
 import MyProfile from "./components/core/Dashboard/MyProfile";
 import Settings from "./components/core/Dashboard/Settings/Settings";
-import MyCourses from './components/core/Dashboard/MyCourses';
-import EditCourse from './components/core/Dashboard/EditCourse/EditCourse';
-import Instructor from './components/core/Dashboard/Instructor';
+import MyCourses from "./components/core/Dashboard/MyCourses";
+import EditCourse from "./components/core/Dashboard/EditCourse/EditCourse";
+import Instructor from "./components/core/Dashboard/Instructor";
 import Cart from "./components/core/Dashboard/Cart/Cart";
 import EnrolledCourses from "./components/core/Dashboard/EnrolledCourses";
 import PurchaseHistory from "./components/core/Dashboard/PurchaseHistory";
@@ -38,15 +39,15 @@ import AddCourse from "./components/core/Dashboard/AddCourse/AddCourse";
 
 // Course viewing components
 import ViewCourse from "./pages/ViewCourse";
-import VideoDetails from './components/core/ViewCourse/VideoDetails';
+import VideoDetails from "./components/core/ViewCourse/VideoDetails";
 
 // Admin components
 import CreateCategory from "./components/core/Dashboard/CreateCategory";
-import AllStudents from './components/core/Dashboard/AllStudents';
-import AllInstructors from './components/core/Dashboard/AllInstructors';
+import AllStudents from "./components/core/Dashboard/AllStudents";
+import AllInstructors from "./components/core/Dashboard/AllInstructors";
 
 // Constants and utilities
-import { ACCOUNT_TYPE } from './utils/constants';
+import { ACCOUNT_TYPE } from "./utils/constants";
 import { HiArrowNarrowUp } from "react-icons/hi";
 
 /**
@@ -88,9 +89,9 @@ function App() {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleArrow);
+    window.addEventListener("scroll", handleArrow);
     return () => {
-      window.removeEventListener('scroll', handleArrow);
+      window.removeEventListener("scroll", handleArrow);
     };
   }, []);
 
@@ -101,8 +102,7 @@ function App() {
       {/* Scroll to top button - appears when scrolled down */}
       <button
         onClick={() => window.scrollTo(0, 0)}
-        className={`bg-brand-500 hover:bg-brand-600 hover:scale-110 p-3 text-lg text-white rounded-2xl fixed right-3 z-10 shadow-lg duration-500 ease-in-out ${showArrow ? 'bottom-6' : '-bottom-24'}`}
-      >
+        className={`bg-brand-500 hover:bg-brand-600 hover:scale-110 p-3 text-lg text-white rounded-2xl fixed right-3 z-10 shadow-lg duration-500 ease-in-out ${showArrow ? "bottom-6" : "-bottom-24"}`}>
         <HiArrowNarrowUp />
       </button>
 
@@ -111,6 +111,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:blogId" element={<BlogDetailsPage />} />
         <Route path="/all-courses" element={<AllCourses />} />
         <Route path="catalog/:catalogName" element={<Catalog />} />
         <Route path="courses/:courseId" element={<CourseDetails />} />
@@ -163,17 +165,22 @@ function App() {
             <ProtectedRoute>
               <Dashboard />
             </ProtectedRoute>
-          }
-        >
+          }>
           <Route path="dashboard/my-profile" element={<MyProfile />} />
           <Route path="dashboard/Settings" element={<Settings />} />
 
           {/* Admin-only routes - conditionally rendered based on user role */}
           {user?.accountType === ACCOUNT_TYPE.ADMIN && (
             <>
-              <Route path="dashboard/create-category" element={<CreateCategory />} />
+              <Route
+                path="dashboard/create-category"
+                element={<CreateCategory />}
+              />
               <Route path="dashboard/all-students" element={<AllStudents />} />
-              <Route path="dashboard/all-instructors" element={<AllInstructors />} />
+              <Route
+                path="dashboard/all-instructors"
+                element={<AllInstructors />}
+              />
             </>
           )}
 
@@ -181,8 +188,14 @@ function App() {
           {user?.accountType === ACCOUNT_TYPE.STUDENT && (
             <>
               <Route path="dashboard/cart" element={<Cart />} />
-              <Route path="dashboard/enrolled-courses" element={<EnrolledCourses />} />
-              <Route path="dashboard/purchase-history" element={<PurchaseHistory />} />
+              <Route
+                path="dashboard/enrolled-courses"
+                element={<EnrolledCourses />}
+              />
+              <Route
+                path="dashboard/purchase-history"
+                element={<PurchaseHistory />}
+              />
             </>
           )}
 
@@ -192,7 +205,10 @@ function App() {
               <Route path="dashboard/instructor" element={<Instructor />} />
               <Route path="dashboard/add-course" element={<AddCourse />} />
               <Route path="dashboard/my-courses" element={<MyCourses />} />
-              <Route path="dashboard/edit-course/:courseId" element={<EditCourse />} />
+              <Route
+                path="dashboard/edit-course/:courseId"
+                element={<EditCourse />}
+              />
             </>
           )}
         </Route>
@@ -203,8 +219,7 @@ function App() {
             <ProtectedRoute>
               <ViewCourse />
             </ProtectedRoute>
-          }
-        >
+          }>
           {user?.accountType === ACCOUNT_TYPE.STUDENT && (
             <Route
               path="view-course/:courseId/section/:sectionId/sub-section/:subSectionId"
@@ -221,4 +236,3 @@ function App() {
 }
 
 export default App;
-

@@ -19,7 +19,6 @@ export default function MyCourses() {
     const fetchCourses = async () => {
       setLoading(true);
       const result = await fetchInstructorCourses(token)
-      // console.log('Instructors all courses  ', result);
       setLoading(false);
       if (result) {
         setCourses(result)

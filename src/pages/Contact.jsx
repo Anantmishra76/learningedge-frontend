@@ -1,284 +1,176 @@
-import React, { useState, useEffect } from "react"
-import { useForm } from "react-hook-form"
-import { toast } from "react-hot-toast"
-import {
-  HiOutlineChatBubbleLeftRight,
-  HiOutlineGlobeAlt,
-  HiOutlinePhone,
-} from "react-icons/hi2"
-import { IoSendSharp } from "react-icons/io5"
-
-import Footer from "../components/common/Footer"
-import CountryCode from "../../data/countrycode.js"
-import { apiConnector } from "../services/apiConnector"
-import { contactusEndpoint } from "../services/apis"
-
-const contactInfo = [
-  {
-    icon: HiOutlineChatBubbleLeftRight,
-    title: "Chat with us",
-    text: "noreply.learnedge@gmail.com",
-  },
-  {
-    icon: HiOutlineGlobeAlt,
-    title: "Visit us",
-    text: "SMS Lucknow-226010",
-  },
-  {
-    icon: HiOutlinePhone,
-    title: "Call us",
-    text: "Mon–Fri, 8 am – 5 pm",
-  },
-]
+import React from "react";
+import { Mail, Phone, MapPin, CheckCircle } from "lucide-react";
 
 const Contact = () => {
-  const [loading, setLoading] = useState(false)
-  const [submitted, setSubmitted] = useState(false)
-
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors, isSubmitSuccessful },
-  } = useForm()
-
-  useEffect(() => {
-    if (isSubmitSuccessful) {
-      reset({
-        firstname: "",
-        lastname: "",
-        email: "",
-        countrycode: "+91",
-        phoneNo: "",
-        message: "",
-      })
-    }
-  }, [reset, isSubmitSuccessful])
-
-  const onSubmit = async (data) => {
-    try {
-      setLoading(true)
-      await apiConnector("POST", contactusEndpoint.CONTACT_US_API, data)
-      toast.success("Message sent! We'll get back to you soon.")
-      setSubmitted(true)
-      setTimeout(() => setSubmitted(false), 5000)
-    } catch (error) {
-      console.error("CONTACT US ERROR:", error)
-      toast.error("Something went wrong. Please try again.")
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  const inputBase =
-    "rounded-lg bg-white border border-slate-200 px-4 py-3 text-sm text-slate-900 placeholder-slate-500 outline-none transition-all duration-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20"
-  const inputClass = `w-full ${inputBase}`
-
   return (
-    <div className="min-h-screen bg-slate-50">
-      {/* ─── Hero ─── */}
-      <section className="relative overflow-hidden bg-white py-16 text-center">
-        <div className="absolute -top-32 -right-32 h-64 w-64 rounded-full bg-brand-500/10 blur-3xl" />
-        <div className="absolute -bottom-32 -left-32 h-64 w-64 rounded-full bg-accent-500/10 blur-3xl" />
-        <div className="relative mx-auto max-w-2xl px-4">
-          <h1 className="text-4xl font-bold text-slate-900 sm:text-5xl">
-            Contact <span className="text-brand-500">Us</span>
-          </h1>
-          <p className="mt-4 text-base text-slate-600 sm:text-lg">
-            Have a question or feedback? Fill out the form and our team will get
-            back to you within 24 hours.
-          </p>
-        </div>
-      </section>
+    <div>
+      <section className="bg-slate-50 py-20 mt-10">
+        <div className="mx-auto w-11/12 max-w-7xl">
+          {/* Heading */}
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="inline-block rounded-full bg-blue-100 px-4 py-1 text-sm font-medium text-blue-600">
+              Contact Us
+            </span>
 
-      {/* ─── Main content ─── */}
-      <section className="mx-auto -mt-6 max-w-5xl px-4 pb-16">
-        <div className="grid gap-8 lg:grid-cols-5">
-          {/* ── Left: Info cards ── */}
-          <div className="flex flex-col gap-5 lg:col-span-2">
-            {contactInfo.map((item, i) => {
-              const Icon = item.icon
-              return (
-                <div
-                  key={i}
-                  className="group flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:border-brand-500/40 hover:shadow-lg"
-                >
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-500 transition-colors group-hover:bg-brand-100">
-                    <Icon size={22} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-slate-900">
-                      {item.title}
-                    </h3>
-                    <p className="mt-1 text-sm text-slate-600">
-                      {item.text}
-                    </p>
-                  </div>
-                </div>
-              )
-            })}
+            <h1 className="mt-5 text-4xl font-bold text-slate-900">
+              Need Help With Your Learning Journey?
+            </h1>
+
+            <p className="mt-4 text-slate-600">
+              Have a question about courses, enrollment, payments, or teaching
+              on LearningEdge? Send us a message and we will get back to you
+              within 24 hours.
+            </p>
           </div>
 
-          {/* ── Right: Form ── */}
-          <div className="lg:col-span-3">
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-              {submitted ? (
-                <div className="flex flex-col items-center justify-center py-12 text-center">
-                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-600/20 text-green-400">
-                    <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-semibold text-slate-900">
-                    Thank you!
-                  </h3>
-                  <p className="mt-2 text-slate-600">
-                    Your message has been sent. We'll respond shortly.
-                  </p>
-                </div>
-              ) : (
-                <form
-                  onSubmit={handleSubmit(onSubmit)}
-                  className="flex flex-col gap-5"
-                >
-                  {/* Name row */}
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <div>
-                      <label className="mb-1 block text-sm font-medium text-slate-700">
-                        First Name <span className="text-pink-300">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="John"
-                        className={inputClass}
-                        {...register("firstname", { required: true })}
-                      />
-                      {errors.firstname && (
-                        <p className="mt-1 text-xs text-accent-600">
-                          First name is required
-                        </p>
-                      )}
-                    </div>
-
-                    <div>
-                      <label className="mb-1 block text-sm font-medium text-slate-700">
-                        Last Name
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="Doe"
-                        className={inputClass}
-                        {...register("lastname")}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Email */}
+          {/* Content */}
+          <div className="mt-16 grid gap-10 lg:grid-cols-5">
+            {/* Contact Form */}
+            <div className="lg:col-span-3 rounded-3xl bg-white p-8 shadow-sm border border-slate-200">
+              <form className="space-y-6">
+                <div className="grid gap-6 md:grid-cols-2">
                   <div>
-                    <label className="mb-1 block text-sm font-medium text-slate-700">
-                      Email <span className="text-pink-300">*</span>
+                    <label className="mb-2 block text-sm font-medium text-slate-700">
+                      Full Name
                     </label>
+
+                    <input
+                      type="text"
+                      placeholder="John Doe"
+                      className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-slate-700">
+                      Email Address
+                    </label>
+
                     <input
                       type="email"
-                      placeholder="you@example.com"
-                      className={inputClass}
-                      {...register("email", { required: true })}
+                      placeholder="john@example.com"
+                      className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
                     />
-                    {errors.email && (
-                      <p className="mt-1 text-xs text-accent-600">
-                        Email is required
-                      </p>
-                    )}
                   </div>
+                </div>
 
-                  {/* Phone */}
-                  <div>
-                    <label className="mb-1 block text-sm font-medium text-slate-700">
-                      Phone Number <span className="text-pink-300">*</span>
-                    </label>
-                    <div className="flex items-center gap-3">
-                      <select
-                        className={`${inputBase} w-[120px] shrink-0`}
-                        {...register("countrycode", { required: true })}
-                        defaultValue="+91"
-                      >
-                        {CountryCode.map((c, i) => (
-                          <option
-                            key={i}
-                            value={c.code}
-                            className="bg-white"
-                          >
-                            {c.code}
-                          </option>
-                        ))}
-                      </select>
-                      <input
-                        type="tel"
-                        placeholder="12345 67890"
-                        className={`${inputBase} flex-1 min-w-0`}
-                        {...register("phoneNo", {
-                          required: "Phone number is required",
-                          pattern: {
-                            value: /^[0-9]{10,12}$/,
-                            message: "Enter a valid phone number (10-12 digits)",
-                          },
-                        })}
-                      />
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-slate-700">
+                    Phone Number
+                  </label>
+
+                  <input
+                    type="tel"
+                    placeholder="+91 9876543210"
+                    className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-slate-700">
+                    Your Message
+                  </label>
+
+                  <textarea
+                    rows={6}
+                    placeholder="Tell us how we can help with your course or account..."
+                    className="w-full resize-none rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
+                  />
+                </div>
+
+                <label className="flex items-start gap-3 text-sm text-slate-600">
+                  <input
+                    type="checkbox"
+                    className="mt-1 h-4 w-4 rounded border-slate-300"
+                  />
+                  <span>
+                    I agree to the Terms of Service and Privacy Policy.
+                  </span>
+                </label>
+
+                <button className="w-full rounded-xl bg-slate-900 py-4 font-medium text-white transition hover:bg-slate-800">
+                  Send Message
+                </button>
+              </form>
+            </div>
+
+            {/* Contact Info */}
+            <div className="space-y-6 lg:col-span-2">
+              <div className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
+                <h3 className="mb-6 text-xl font-semibold text-slate-900">
+                  LearningEdge Support
+                </h3>
+
+                <div className="space-y-6">
+                  <div className="flex gap-4">
+                    <div className="rounded-xl bg-blue-50 p-3 text-blue-600">
+                      <Mail size={22} />
                     </div>
-                    {errors.phoneNo && (
-                      <p className="mt-1 text-xs text-accent-600">
-                        {errors.phoneNo.message}
-                      </p>
-                    )}
+
+                    <div>
+                      <p className="font-medium text-slate-800">Email</p>
+                      <p className="text-slate-500">anantmishra727@gmail.com</p>
+                    </div>
                   </div>
 
-                  {/* Message */}
-                  <div>
-                    <label className="mb-1 block text-sm font-medium text-slate-700">
-                      Message <span className="text-pink-300">*</span>
-                    </label>
-                    <textarea
-                      rows={4}
-                      placeholder="Write your question or feedback here..."
-                      className={`${inputClass} resize-none`}
-                      {...register("message", { required: true })}
-                    />
-                    {errors.message && (
-                      <p className="mt-1 text-xs text-accent-600">
-                        Message is required
-                      </p>
-                    )}
+                  <div className="flex gap-4">
+                    <div className="rounded-xl bg-green-50 p-3 text-green-600">
+                      <Phone size={22} />
+                    </div>
+
+                    <div>
+                      <p className="font-medium text-slate-800">Phone</p>
+                      <p className="text-slate-500">+91 7678649665</p>
+                    </div>
                   </div>
 
-                  {/* Submit */}
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className="mt-2 flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-200 hover:bg-brand-600 hover:shadow-xl active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
-                  >
-                    {loading ? (
-                      <>
-                        <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
-                        Sending…
-                      </>
-                    ) : (
-                      <>
-                        Send Message
-                        <IoSendSharp size={16} />
-                      </>
-                    )}
-                  </button>
-                </form>
-              )}
+                  <div className="flex gap-4">
+                    <div className="rounded-xl bg-orange-50 p-3 text-orange-600">
+                      <MapPin size={22} />
+                    </div>
+
+                    <div>
+                      <p className="font-medium text-slate-800">Office</p>
+
+                      <p className="text-slate-500">xyz</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
+                <h3 className="mb-5 text-xl font-semibold text-slate-900">
+                  How We Can Help
+                </h3>
+
+                <ul className="space-y-4 text-slate-600">
+                  <li className="flex items-center gap-3">
+                    <CheckCircle size={18} className="text-green-600" />
+                    Course and enrollment support
+                  </li>
+
+                  <li className="flex items-center gap-3">
+                    <CheckCircle size={18} className="text-green-600" />
+                    Help with payments and purchase history
+                  </li>
+
+                  <li className="flex items-center gap-3">
+                    <CheckCircle size={18} className="text-green-600" />
+                    Instructor and course creation guidance
+                  </li>
+
+                  <li className="flex items-center gap-3">
+                    <CheckCircle size={18} className="text-green-600" />
+                    Account and profile assistance
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Contact
-
+export default Contact;

@@ -1,7 +1,10 @@
 import React from "react";
-import Instructor from "../../../assets/Images/Instructor.jpg";
+import { useNavigate } from "react-router-dom";
+import Instructor from "../../../assets/Images/Instructor-optimized.jpeg";
 
 const InstructorSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="section-padding">
       <div className="section-container flex flex-col items-center gap-10 lg:flex-row lg:gap-16">
@@ -12,6 +15,8 @@ const InstructorSection = () => {
               src={Instructor}
               alt="Instructor"
               className="relative z-10 w-full object-contain"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
@@ -27,7 +32,10 @@ const InstructorSection = () => {
             career with powerful tools designed for educators.
           </p>
 
-          <button className="mt-8 rounded-md bg-black px-7 py-3 text-base font-semibold text-white">
+          <button
+            type="button"
+            onClick={() => navigate("/signup?role=instructor")}
+            className="mt-8 rounded-md bg-black px-7 py-3 text-base font-semibold text-white transition hover:bg-slate-800">
             Start teaching today
           </button>
         </div>

@@ -30,27 +30,19 @@ const VideoDetails = () => {
 
   useEffect(() => {
     ; (async () => {
-      console.log("useEffect triggered")
-      console.log("courseSectionData:", courseSectionData)
-      console.log("courseId:", courseId, "sectionId:", sectionId, "subSectionId:", subSectionId)
       
       if (!courseSectionData.length) {
-        console.log("No courseSectionData available")
         return
       }
       if (!courseId && !sectionId && !subSectionId) {
         navigate(`/dashboard/enrolled-courses`)
       } else {
-        // console.log("courseSectionData", courseSectionData)
         const filteredData = courseSectionData.filter(
           (course) => course._id === sectionId
         )
-        // console.log("filteredData", filteredData)
         const filteredVideoData = filteredData?.[0]?.subSection.filter(
           (data) => data._id === subSectionId
         )
-        // console.log("filteredVideoData = ", filteredVideoData)
-        console.log("Video URL:", filteredVideoData?.[0]?.videoUrl)
         if (filteredVideoData) setVideoData(filteredVideoData[0])
         setPreviewSource(courseEntireData.thumbnail)
         setVideoEnded(false)
@@ -73,7 +65,6 @@ const VideoDetails = () => {
 
   // go to the next video
   const goToNextVideo = () => {
-    // console.log(courseSectionData)
 
     const currentSectionIndx = courseSectionData.findIndex((data) => data._id === sectionId)
 
@@ -81,7 +72,6 @@ const VideoDetails = () => {
 
     const currentSubSectionIndx = courseSectionData[currentSectionIndx].subSection.findIndex((data) => data._id === subSectionId)
 
-    // console.log("no of subsections", noOfSubsections)
 
     if (currentSubSectionIndx !== noOfSubsections - 1) {
       const nextSubSectionId = courseSectionData[currentSectionIndx].subSection[currentSubSectionIndx + 1]._id
@@ -116,7 +106,6 @@ const VideoDetails = () => {
 
   // go to the previous video
   const goToPrevVideo = () => {
-    // console.log(courseSectionData)
 
     const currentSectionIndx = courseSectionData.findIndex((data) => data._id === sectionId)
 
@@ -159,13 +148,11 @@ const VideoDetails = () => {
     try {
       // For external URLs (YouTube, Vimeo, etc.), just check if URL is valid
       if (url.includes('youtube.com') || url.includes('youtu.be') || url.includes('vimeo.com')) {
-        console.log("External video URL detected:", url);
         return true;
       }
       
       // For local files, try to fetch the video
       const response = await fetch(url, { method: 'HEAD' });
-      console.log("Video URL test result:", response.ok, "Status:", response.status);
       return response.ok;
     } catch (error) {
       console.error("Video URL test failed:", error);
@@ -211,9 +198,6 @@ const VideoDetails = () => {
         </div>
       ) : (
         <div className="relative group">
-          {console.log("About to render video")}
-          {console.log("Final video URL being passed:", videoData?.videoUrl?.startsWith('/') ? `http://localhost:5000${videoData.videoUrl}` : videoData?.videoUrl)}
-          {console.log("Video data object:", videoData)}
           <video
             ref={playerRef}
             src={videoData?.videoUrl?.startsWith('/') ? `http://localhost:5000${videoData.videoUrl}` : videoData?.videoUrl}
@@ -225,18 +209,14 @@ const VideoDetails = () => {
               console.error("Video player error:", error)
             }}
             onLoadStart={() => {
-              console.log("Video load started")
               setVideoLoading(true)
             }}
             onLoadedData={() => {
-              console.log("Video data loaded successfully")
               setVideoLoading(false)
             }}
             onPlay={() => {
-              console.log("Video started playing")
               setVideoLoading(false)
             }}
-            onPause={() => console.log("Video paused")}
           />
 
           {/* Video Loading Overlay */}

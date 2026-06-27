@@ -1,7 +1,7 @@
 import { toast } from "react-hot-toast";
 import { studentEndpoints } from "../apis";
 import { apiConnector } from "../apiConnector";
-import rzpLogo from "../../assets/Logo/Razorpay_logo.jpg"
+import rzpLogo from "../../assets/Logo/my_logo.png"
 import { setPaymentLoading } from "../../slices/courseSlice";
 import { resetCart } from "../../slices/cartSlice";
 
@@ -79,14 +79,12 @@ export async function buyCourse(token, coursesId, userDetails, navigate, dispatc
 
         const paymentObject = new window.Razorpay(options);
         paymentObject.open();
-        paymentObject.on("payment.failed", function (response) {
+        paymentObject.on("payment.failed", function () {
             toast.error("Payment failed. Please check your details and try again.");
-            console.log("payment failed.... ", response.error);
         })
 
     }
     catch (error) {
-        console.log("PAYMENT API ERROR.....", error);
         toast.error("Payment error: " + (error.response?.data?.message || "Please try again."));
     }
     toast.dismiss(toastId);
@@ -110,8 +108,8 @@ async function sendPaymentSuccessEmail(response, amount, token) {
             Authorization: `Bearer ${token}`
         })
     }
-    catch (error) {
-        console.log("PAYMENT SUCCESS EMAIL ERROR....", error);
+    catch {
+        return
     }
 }
 
@@ -140,8 +138,7 @@ async function verifyPayment(bodyData, token, navigate, dispatch) {
         navigate("/dashboard/enrolled-courses");
         dispatch(resetCart());
     }
-    catch (error) {
-        console.log("PAYMENT VERIFY ERROR....", error);
+    catch {
         toast.error("Unable to verify payment. Please contact support if the issue persists.");
     }
     toast.dismiss(toastId);

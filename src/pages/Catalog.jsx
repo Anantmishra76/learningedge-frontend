@@ -24,7 +24,6 @@ function Catalog() {
         )[0]._id
         setCategoryId(category_id)
       } catch (error) {
-        console.log("Could not fetch Categories.", error)
       }
     })()
   }, [catalogName])
@@ -37,7 +36,6 @@ function Catalog() {
           const res = await getCatalogPageData(categoryId)
           setCatalogPageData(res)
         } catch (error) {
-          console.log(error)
         }
         setLoading(false)
       })()

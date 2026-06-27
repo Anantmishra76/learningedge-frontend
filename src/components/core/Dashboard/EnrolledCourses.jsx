@@ -20,7 +20,6 @@ export default function EnrolledCourses() {
         const res = await getUserEnrolledCourses(token)
         setEnrolledCourses(res)
       } catch {
-        console.log("Could not fetch enrolled courses.")
       }
     }
 
@@ -117,7 +116,6 @@ export default function EnrolledCourses() {
                   <div className=" px-2 py-3">{course?.totalDuration}</div>
 
                   <div className="flex sm:w-2/5 flex-col gap-2 px-2 py-3">
-                    {/* {console.log('Course ============== ', course.progressPercentage)} */}
 
                     <p>Progress: {course.progressPercentage || 0}%</p>
                     <ProgressBar

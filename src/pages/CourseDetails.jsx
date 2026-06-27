@@ -12,7 +12,6 @@ import CourseDetailsCard from "../components/core/Course/CourseDetailsCard";
 
 import { formatDate } from "../services/formatDate";
 import { fetchCourseDetails } from "../services/operations/courseDetailsAPI";
-import { buyCourse } from "../services/operations/studentFeaturesAPI";
 import GetAvgRating from "../utils/avgRating";
 
 import {
@@ -37,12 +36,8 @@ function CourseDetails() {
 
   useEffect(() => {
     const fetchCourseDetailsData = async () => {
-      try {
-        const res = await fetchCourseDetails(courseId);
-        setResponse(res);
-      } catch {
-        console.log("Could not fetch Course Details");
-      }
+      const res = await fetchCourseDetails(courseId);
+      setResponse(res);
     };
     fetchCourseDetailsData();
   }, [courseId]);
@@ -134,9 +129,10 @@ function CourseDetails() {
     { id: "tags", label: "Tags", icon: AiOutlineTag },
   ];
 
-  const handleBuyCourse = () => {
+  const handleBuyCourse = async () => {
     if (token) {
       const coursesId = [courseId];
+      const { buyCourse } = await import("../services/operations/studentFeaturesAPI");
       buyCourse(token, coursesId, user, navigate, dispatch);
       return;
     }

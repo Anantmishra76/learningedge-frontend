@@ -1,10 +1,8 @@
-import { useEffect, useRef, useState } from "react"
+import { lazy, Suspense, useEffect, useRef, useState } from "react"
 import { useDropzone } from "react-dropzone"
 import { FiUploadCloud } from "react-icons/fi"
 
-import ReactPlayer from 'react-player'
-
-
+const ReactPlayer = lazy(() => import("react-player"))
 
 export default function Upload({ name, label, register, setValue, errors, video = false, viewData = null, editData = null, }) {
   // const { course } = useSelector((state) => state.course)
@@ -36,7 +34,6 @@ export default function Upload({ name, label, register, setValue, errors, video 
   }
 
   const previewFile = (file) => {
-    // console.log(file)
     const reader = new FileReader()
     reader.readAsDataURL(file)
     reader.onloadend = () => {
@@ -72,13 +69,15 @@ export default function Upload({ name, label, register, setValue, errors, video 
                 className="h-full w-full rounded-md object-cover"
               />
             ) : (
-              <ReactPlayer
-                url={previewSource}
-                controls={true}
-                width="100%"
-                height="250px"
-                style={{ borderRadius: '0.375rem' }}
-              />
+              <Suspense fallback={<div className="flex h-[250px] items-center justify-center rounded-md bg-richblack-800 text-sm text-slate-500">Loading preview...</div>}>
+                <ReactPlayer
+                  url={previewSource}
+                  controls={true}
+                  width="100%"
+                  height="250px"
+                  style={{ borderRadius: '0.375rem' }}
+                />
+              </Suspense>
             )}
 
             {!viewData && (

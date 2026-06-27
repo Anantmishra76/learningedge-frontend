@@ -40,7 +40,6 @@ export function sendOtp(email, navigate) {
       navigate("/verify-email");
       toast.success("OTP Sent Successfully");
     } catch (error) {
-      console.log("SENDOTP API ERROR --> ", error);
       toast.error(error.response.data?.message);
     }
     dispatch(setLoading(false));
@@ -84,8 +83,7 @@ export function signUp(accountType, firstName, lastName, email, password, confir
 
       toast.success("Signup Successful");
       navigate("/login");
-    } catch (error) {
-      console.log("SIGNUP API ERROR --> ", error);
+    } catch {
       toast.error("Invalid OTP");
     }
     dispatch(setLoading(false))
@@ -114,7 +112,6 @@ export function login(email, password, navigate) {
         password,
       })
 
-      console.log("LOGIN API RESPONSE............", response);
 
       if (!response.data.success) {
         throw new Error(response.data.message)
@@ -134,7 +131,6 @@ export function login(email, password, navigate) {
 
       navigate("/");
     } catch (error) {
-      console.log("LOGIN API ERROR.......", error)
       toast.error(error.response?.data?.message)
     }
     dispatch(setLoading(false))
@@ -160,7 +156,6 @@ export function getPasswordResetToken(email, setEmailSent) {
         email,
       })
 
-      console.log("RESET PASS TOKEN RESPONSE............", response)
 
       if (!response.data.success) {
         throw new Error(response.data.message)
@@ -169,7 +164,6 @@ export function getPasswordResetToken(email, setEmailSent) {
       toast.success("OTP Sent Successfully")
       setEmailSent(true)
     } catch (error) {
-      console.log("RESET PASS TOKEN ERROR............", error)
       toast.error(error.response?.data?.message)
     }
     toast.dismiss(toastId)
@@ -201,7 +195,6 @@ export function resetPassword(email, otp, password, confirmPassword, navigate) {
         confirmPassword,
       })
 
-      console.log("RESETPASSWORD RESPONSE............", response)
 
       if (!response.data.success) {
         throw new Error(response.data.message)
@@ -210,7 +203,6 @@ export function resetPassword(email, otp, password, confirmPassword, navigate) {
       toast.success("Password Reset Successfully")
       navigate("/login")
     } catch (error) {
-      console.log("RESETPASSWORD ERROR............", error)
       toast.error(error.response?.data?.message)
     }
     toast.dismiss(toastId)

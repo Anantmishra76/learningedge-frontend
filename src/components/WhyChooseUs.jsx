@@ -5,27 +5,27 @@ import img from "../assets/Images/whyus.jpg";
 const features = [
   {
     icon: Target,
-    title: "Strategy-First Development",
-    desc: "We start with your business goals, users, and workflows so every website, app, or system solves a real problem.",
+    title: "Learn at Your Own Pace",
+    desc: "Access flexible courses anytime, anywhere, and build skills with lessons designed for real understanding.",
     color: "bg-blue-100 text-blue-600",
   },
   {
     icon: Workflow,
-    title: "Systems Built Around Your Operations",
-    desc: "From ERP and HRMS to dashboards and automation, we create connected tools that reduce manual work and improve visibility.",
-    color: "bg-purple-100 text-purple-600",
+    title: "Practical Course Structure",
+    desc: "Follow organized modules, hands-on projects, quizzes, and resources that make every topic easier to master.",
+    color: "bg-brand-100 text-brand-600",
   },
   {
     icon: ShieldCheck,
-    title: "Secure, Scalable Architecture",
-    desc: "Our solutions are built for performance, reliability, and long-term maintainability as your business grows.",
-    color: "bg-red-100 text-red-500",
+    title: "Trusted Learning Environment",
+    desc: "Study on a secure and reliable platform built to support smooth video lessons, progress tracking, and assessments.",
+    color: "bg-pink-100 text-pink-500",
   },
   {
     icon: BarChart3,
-    title: "Focused on Business Outcomes",
-    desc: "We align design, development, SEO, and automation around better leads, smoother operations, and measurable growth.",
-    color: "bg-green-100 text-green-600",
+    title: "Track Your Growth",
+    desc: "Monitor your progress, complete milestones, and stay motivated as you move closer to your learning goals.",
+    color: "bg-caribbeangreen-100 text-caribbeangreen-500",
   },
 ];
 
@@ -38,7 +38,7 @@ const WhyChooseUs = () => {
             Why Choose Us?
           </h2>
 
-          <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-orange-500 sm:w-20"></div>
+          <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-accent-500 sm:w-20"></div>
         </div>
 
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-12">
@@ -60,7 +60,7 @@ const WhyChooseUs = () => {
                       {item.title}
                     </h3>
 
-                    <p className="text-sm leading-6 text-gray-500 sm:text-base sm:leading-7">
+                    <p className="text-sm leading-6 text-slate-500 sm:text-base sm:leading-7">
                       {item.desc}
                     </p>
                   </div>
@@ -70,7 +70,7 @@ const WhyChooseUs = () => {
           </div>
 
           <div className="flex justify-center">
-            <div className="relative w-full max-w-md overflow-hidden rounded-xl border-4 border-sky-500 bg-white p-2 shadow-xl sm:border-[6px] sm:p-3">
+            <div className="relative w-full max-w-md overflow-hidden rounded-xl border-4 border-brand-500 bg-white p-2 shadow-xl sm:border-[6px] sm:p-3">
               <img
                 src={img}
                 alt="Why Choose Us"

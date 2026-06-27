@@ -118,6 +118,14 @@ const Navbar = () => {
                 Contact Us
               </Link>
             </li>
+
+            <li>
+              <Link
+                to="/blog"
+                className={`px-3 py-1 rounded-xl ${match("/blog") ? "bg-brand-500 text-white" : "hover:text-brand-500"}`}>
+                Blogs
+              </Link>
+            </li>
           </ul>
 
           {/* Right */}
@@ -207,6 +215,14 @@ const Navbar = () => {
                 onClick={() => setMobileOpen(false)}
                 className={`block text-lg font-semibold py-2 px-3 rounded-lg ${match("/contact") ? "bg-brand-500 text-white" : "text-slate-700"}`}>
                 Contact Us
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/blog"
+                onClick={() => setMobileOpen(false)}
+                className={`block text-lg font-semibold py-2 px-3 rounded-lg ${match("/blog") ? "bg-brand-500 text-white" : "text-slate-700"}`}>
+                Blogs
               </Link>
             </li>
           </ul>

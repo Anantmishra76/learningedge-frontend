@@ -40,7 +40,6 @@ const CreateCategory = () => {
       setSubLinks(res);
     }
     catch (error) {
-      console.log("Could not fetch the category list = ", error);
     }
     setLoading(false)
   }
@@ -60,7 +59,6 @@ const CreateCategory = () => {
       setDescription('');
       await fetchSublinks(); // Refresh the list
     } catch (error) {
-      console.log("Error creating category:", error);
     } finally {
       setIsCreating(false);
     }
@@ -71,7 +69,6 @@ const CreateCategory = () => {
       await deleteCategory(categoryId, token);
       await fetchSublinks(); // Refresh the list
     } catch (error) {
-      console.log("Error deleting category:", error);
     }
   }
 
