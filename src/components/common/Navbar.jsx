@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, matchPath, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
-import LearningEdgeLOGO from "../../assets/Logo/my_logo.png";
-import { fetchCourseCategories } from "./../../services/operations/courseDetailsAPI";
-import ProfileDropDown from "../core/Auth/ProfileDropDown";
+import LearningEdgeLOGO from "@/assets/logos/my_logo.png";
+import { fetchCourseCategories } from "@/features/courses/services/courseDetailsAPI";
+import ProfileDropDown from "@/features/auth/components/ProfileDropDown";
 import {
   AiOutlineShoppingCart,
   AiOutlineMenu,

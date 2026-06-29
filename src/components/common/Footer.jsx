@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ImGithub, ImLinkedin2 } from "react-icons/im";
 
-import LearningEdgeLogo from "../../assets/Logo/my_logo.png";
+import LearningEdgeLogo from "@/assets/logos/my_logo.png";
 
 const quickLinks = [
   { title: "Home", link: "/" },

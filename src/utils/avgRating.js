@@ -1,7 +1,7 @@
 /**
  * Calculates the average rating from an array of rating objects
- * @param {Array} ratingArr - Array of objects containing rating values
- * @returns {number} Average rating rounded to 1 decimal place, or 0 if invalid
+ * @param {Array} ratingArr
+ * @returns {number} 
  */
 export default function GetAvgRating(ratingArr) {
   // Handle undefined, null, or empty arrays

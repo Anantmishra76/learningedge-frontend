@@ -4,8 +4,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { A11y, Autoplay } from "swiper/modules";
 import "swiper/css";
 
-import { apiConnector } from "../../services/apiConnector";
-import { ratingsEndpoints } from "../../services/apis";
+import { apiConnector } from "@/services/apiConnector";
+import { ratingsEndpoints } from "@/services/apis";
 import Img from "./Img";
 
 const TRUNCATE = 20;

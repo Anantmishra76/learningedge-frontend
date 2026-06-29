@@ -1,0 +1,114 @@
+import { useState } from "react";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+
+import { login } from "@/features/auth/services/authAPI";
+import Footer from "@/components/common/Footer";
+
+function Login() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+  const [showPassword, setShowPassword] = useState(false);
+
+  const { email, password } = formData;
+
+  const handleOnChange = (e) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    dispatch(login(email, password, navigate));
+  };
+
+  return (
+    <>
+      <main className="min-h-[calc(100vh-3.5rem)] bg-richblack-900 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-yellow-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="max-w-xl w-full relative z-10">
+          <div className="bg-richblack-800/60 backdrop-blur-md rounded-3xl p-6  border border-richblack-700/50 hover:border-richblack-600/70 transition-all duration-300 hover:shadow-yellow-400/10">
+            <h1 className="text-2xl lg:text-3xl font-bold leading-tight text-slate-900 mb-2 bg-gradient-to-r from-richblack-5 to-richblack-100 bg-clip-text">
+              Sign In to LearningEdge
+            </h1>
+
+            <form
+              onSubmit={handleOnSubmit}
+              className="mt-6 flex w-full flex-col gap-y-6">
+              <label className="w-full">
+                <p className="mb-2 text-[0.875rem] leading-[1.375rem] text-slate-900 font-medium">
+                  Email Address <sup className="text-pink-200">*</sup>
+                </p>
+                <input
+                  required
+                  type="email"
+                  name="email"
+                  value={email}
+                  onChange={handleOnChange}
+                  placeholder="Enter email address"
+                  style={{
+                    boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
+                  }}
+                  className="w-full rounded-xl bg-richblack-800 p-4 text-slate-900 outline-none border border-richblack-700  transition-all duration-200 hover:border-richblack-600"
+                />
+              </label>
+
+              <label className="relative">
+                <p className="mb-2 text-[0.875rem] leading-[1.375rem] text-slate-900 font-medium">
+                  Password <sup className="text-pink-200">*</sup>
+                </p>
+                <input
+                  required
+                  type={showPassword ? "text" : "password"}
+                  name="password"
+                  value={password}
+                  onChange={handleOnChange}
+                  placeholder="Enter Password"
+                  style={{
+                    boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
+                  }}
+                  className="w-full rounded-xl bg-richblack-800 p-4 pr-12 text-slate-900 outline-none border border-richblack-700  transition-all duration-200 hover:border-richblack-600"
+                />
+                <span
+                  onClick={() => setShowPassword((prev) => !prev)}
+                  className="absolute right-4 top-[42px] z-[10] cursor-pointer hover:text-blue-400 transition-colors duration-200">
+                  {showPassword ? (
+                    <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
+                  ) : (
+                    <AiOutlineEye fontSize={24} fill="#AFB2BF" />
+                  )}
+                </span>
+                <Link to="/forgot-password">
+                  <p className="mt-2 ml-auto max-w-max text-xs text-yellow-400 hover:text-blue-200 transition-colors duration-200">
+                    Forgot Password?
+                  </p>
+                </Link>
+              </label>
+
+              <button
+                type="submit"
+                className="mt-8 mx-auto block rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 py-2 px-4 font-semibold text-white shadow-lg hover:from-blue-600 hover:to-blue-700 focus:from-blue-600 focus:to-blue-700 focus:ring-2 focus:ring-blue-500/50 transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]">
+                Sign In
+              </button>
+            </form>
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </>
+  );
+}
+
+export default Login;

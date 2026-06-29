@@ -7,7 +7,7 @@ import { FiAlertCircle } from "react-icons/fi";
 import { Rating, Star as StarShape } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 
-import { createRating } from "../../services/operations/courseDetailsAPI";
+import { createRating } from "@/features/courses/services/courseDetailsAPI";
 import Img from "./Img";
 
 const RATING_LABELS = ["", "Poor", "Fair", "Good", "Very Good", "Excellent"];
