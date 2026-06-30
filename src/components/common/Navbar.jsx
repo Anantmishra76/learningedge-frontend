@@ -21,6 +21,8 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [visible, setVisible] = useState(true);
   const lastY = useRef(0);
+  const visibleRef = useRef(true);
+  const animationFrameRef = useRef(null);
 
   useEffect(() => {
     fetchCourseCategories()
@@ -41,11 +43,29 @@ const Navbar = () => {
 
   useEffect(() => {
     const onScroll = () => {
-      setVisible(window.scrollY < 200 || window.scrollY < lastY.current);
-      lastY.current = window.scrollY;
+      if (animationFrameRef.current) return;
+
+      animationFrameRef.current = window.requestAnimationFrame(() => {
+        const currentY = window.scrollY;
+        const shouldShow = currentY < 200 || currentY < lastY.current;
+
+        if (visibleRef.current !== shouldShow) {
+          visibleRef.current = shouldShow;
+          setVisible(shouldShow);
+        }
+
+        lastY.current = currentY;
+        animationFrameRef.current = null;
+      });
     };
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (animationFrameRef.current) {
+        window.cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
   }, []);
 
   const match = (path) => matchPath({ path }, location.pathname);
