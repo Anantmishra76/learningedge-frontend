@@ -81,7 +81,7 @@ src/
 
 - **assets/**: Contains all static files including images, logos, and icons organized by type and usage.
 
-- **components/**: 
+- **components/**:
   - **common/**: Reusable UI components used across multiple pages
   - **core/**: Feature-specific components organized by module/feature
 
@@ -91,7 +91,7 @@ src/
 
 - **pages/**: Each file represents a main route/page in the application. These components typically compose various components to create full pages.
 
-- **services/**: 
+- **services/**:
   - **operations/**: API integration organized by feature
   - **apiConnector.js**: Axios instance and interceptors
   - **apis.js**: API endpoint definitions and configurations
@@ -162,4 +162,5 @@ Contributions, issues, and feature requests are welcome!
 [Add your contact information here]
 
 ---
+
 Built with ❤️ using React + Vite
