@@ -73,7 +73,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-10 h-14 flex items-center justify-center border-b border-slate-200 bg-white text-slate-900 shadow-sm transition-transform duration-300 ${visible ? "translate-y-0" : "-translate-y-full"}`}>
+        className={`fixed top-0 left-0 right-0 z-30 h-14 flex items-center justify-center border-b border-slate-200 bg-white text-slate-900 shadow-sm transition-transform duration-300 ${visible ? "translate-y-0" : "-translate-y-full"}`}>
         <div className="w-11/12 max-w-maxContent flex items-center justify-between">
           <Link to="/" className="flex items-center">
             <img
@@ -182,8 +182,12 @@ const Navbar = () => {
               </div>
             )}
             <button
-              className="md:hidden text-2xl text-slate-700"
-              onClick={() => setMobileOpen(!mobileOpen)}>
+              type="button"
+              className="md:hidden grid size-10 place-items-center rounded-lg text-2xl text-slate-700 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+              aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-navigation"
+              onClick={() => setMobileOpen((isOpen) => !isOpen)}>
               {mobileOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
             </button>
           </div>
@@ -192,7 +196,9 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden fixed inset-0 z-20 bg-white flex flex-col pt-14">
+        <div
+          id="mobile-navigation"
+          className="md:hidden fixed inset-x-0 bottom-0 top-14 z-20 bg-white flex flex-col">
           <ul className="flex flex-col p-6 gap-4 flex-1 overflow-y-auto">
             <li>
               <Link

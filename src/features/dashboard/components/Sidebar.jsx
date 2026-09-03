@@ -35,10 +35,9 @@ export default function Sidebar() {
 
   // If screen size is small or medium then close the side bar
   useEffect(() => {
-    if (screenSize <= 768) {
-      dispatch(setOpenSideMenu(false))
-    }
-    else dispatch(setOpenSideMenu(true))
+    if (typeof screenSize !== "number") return
+
+    dispatch(setOpenSideMenu(screenSize >= 1024))
   }, [dispatch, screenSize])
 
   if (profileLoading || authLoading) {
@@ -52,15 +51,19 @@ export default function Sidebar() {
   return (
     <>
       {/* Mobile menu toggle */}
-      <div
-        className="lg:hidden text-slate-700 fixed left-4 top-[4.5rem] z-30 cursor-pointer bg-white p-2 rounded-full shadow-lg border border-slate-200 hover:bg-slate-100 transition-colors duration-200"
+      <button
+        type="button"
+        className="lg:hidden text-slate-700 fixed left-4 top-[4.5rem] z-30 bg-white p-2 rounded-full shadow-lg border border-slate-200 hover:bg-slate-100 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+        aria-label={openSideMenu ? "Close dashboard menu" : "Open dashboard menu"}
+        aria-expanded={openSideMenu}
+        aria-controls="dashboard-sidebar"
         onClick={() => dispatch(setOpenSideMenu(!openSideMenu))}
       >
         {openSideMenu ? <IoMdClose size={24} /> : <HiMenuAlt1 size={24} />}
-      </div>
+      </button>
 
       {/* Mobile overlay */}
-      {openSideMenu && screenSize <= 1024 && (
+      {openSideMenu && screenSize < 1024 && (
         <div
           className="lg:hidden fixed inset-0 z-10 bg-slate-900/30 backdrop-blur-md"
           onClick={() => dispatch(setOpenSideMenu(false))}
@@ -69,6 +72,7 @@ export default function Sidebar() {
 
       {/* Sidebar */}
       <div
+        id="dashboard-sidebar"
         className={`fixed top-14 z-20 flex h-[calc(100vh-3.5rem)] 
         w-[80vw] sm:w-[260px] md:w-[280px] lg:w-[300px] max-w-[320px] 
         flex-col border-r border-r-slate-200 bg-white 

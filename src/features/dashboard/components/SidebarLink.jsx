@@ -18,7 +18,7 @@ export default function SidebarLink({ link, iconName }) {
 
   const handleClick = () => {
     dispatch(resetCourseState())
-    if (openSideMenu && screenSize <= 640) dispatch(setOpenSideMenu(false))
+    if (openSideMenu && screenSize < 1024) dispatch(setOpenSideMenu(false))
   }
 
   return (
