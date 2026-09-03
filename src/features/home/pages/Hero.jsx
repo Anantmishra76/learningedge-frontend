@@ -4,9 +4,9 @@ import { Pagination, Autoplay } from "swiper/modules";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import "swiper/css";
 import "swiper/css/pagination";
-import hero from "@/assets/images/hero-optimized.jpg";
-import hero3 from "@/assets/images/hero3-optimized.jpg";
-import hero4 from "@/assets/images/hero4-optimized.jpg";
+import hero from "@/assets/Images/hero-optimized.jpg";
+import hero3 from "@/assets/Images/hero3-optimized.jpg";
+import hero4 from "@/assets/Images/hero4-optimized.jpg";
 
 const slides = [
   { id: 1, img: hero, alt: "Coding" },

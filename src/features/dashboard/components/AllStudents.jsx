@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { getAllStudentsData } from '@/features/dashboard/services/adminApi'
 import { Table, Th, Thead, Tr, Td, Tbody } from 'react-super-responsive-table';
-import user_logo from "@/assets/images/user.png";
+import user_logo from "@/assets/Images/user.png";
 
 
 // loading skeleton

@@ -1,6 +1,6 @@
 import React from "react";
 import { BarChart3, ShieldCheck, Target, Workflow } from "lucide-react";
-import img from "@/assets/images/whyus.jpg";
+import img from "@/assets/Images/whyus.jpg";
 
 const features = [
   {

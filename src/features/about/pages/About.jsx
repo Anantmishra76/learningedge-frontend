@@ -1,9 +1,9 @@
 import React from "react"
 
-import FoundingStory from "@/assets/images/foundingstory.jpg"
-import BannerImage1 from "@/assets/images/Aboutus1.jpeg"
-import BannerImage2 from "@/assets/images/Aboutus2.jpeg"
-import BannerImage3 from "@/assets/images/Aboutus3.jpeg"
+import FoundingStory from "@/assets/Images/foundingstory.jpg"
+import BannerImage1 from "@/assets/Images/Aboutus1.jpeg"
+import BannerImage2 from "@/assets/Images/Aboutus2.jpeg"
+import BannerImage3 from "@/assets/Images/Aboutus3.jpeg"
 
 import Footer from "@/components/common/Footer"
 import LearningGrid from "@/features/about/components/LearningGrid"

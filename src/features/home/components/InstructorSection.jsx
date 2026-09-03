@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Instructor from "@/assets/images/Instructor-optimized.jpeg";
+import Instructor from "@/assets/Images/Instructor-optimized.jpeg";
 
 const InstructorSection = () => {
   const navigate = useNavigate();
