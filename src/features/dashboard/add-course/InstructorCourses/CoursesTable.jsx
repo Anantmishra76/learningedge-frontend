@@ -48,6 +48,7 @@ export default function CoursesTable({ courses, setCourses, loading, setLoading 
         return duration;
       }
     } catch (error) {
+      console.error("Failed to calculate course duration:", error)
     }
     return "2h 30m 0s";
   }, [courseDurations, token])
@@ -213,10 +214,10 @@ export default function CoursesTable({ courses, setCourses, loading, setLoading 
                           btn2Text: "Cancel",
                           btn1Handler: !loading
                             ? () => handleCourseDelete(course._id)
-                            : () => { },
+                            : () => undefined,
                           btn2Handler: !loading
                             ? () => setConfirmationModal(null)
-                            : () => { },
+                            : () => undefined,
 
                         })
                       }}

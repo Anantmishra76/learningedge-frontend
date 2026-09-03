@@ -20,6 +20,7 @@ export default function EnrolledCourses() {
         const res = await getUserEnrolledCourses(token)
         setEnrolledCourses(res)
       } catch {
+        setEnrolledCourses([])
       }
     }
 

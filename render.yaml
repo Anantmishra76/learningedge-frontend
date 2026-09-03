@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: learningedge-frontend
+    runtime: static
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_APP_BASE_URL
+        value: https://learningedge-backend.onrender.com
+      - key: VITE_APP_RAZORPAY_KEY
+        sync: false
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

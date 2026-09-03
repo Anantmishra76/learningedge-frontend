@@ -24,6 +24,7 @@ function Catalog() {
         )[0]._id
         setCategoryId(category_id)
       } catch (error) {
+        console.error("Failed to load course categories:", error)
       }
     })()
   }, [catalogName])
@@ -36,6 +37,7 @@ function Catalog() {
           const res = await getCatalogPageData(categoryId)
           setCatalogPageData(res)
         } catch (error) {
+          console.error("Failed to load catalog data:", error)
         }
         setLoading(false)
       })()

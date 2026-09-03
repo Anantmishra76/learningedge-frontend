@@ -162,7 +162,9 @@ const VideoDetails = () => {
 
   useEffect(() => {
     if (videoData?.videoUrl) {
-      const finalUrl = videoData.videoUrl.startsWith('/') ? `http://localhost:5000${videoData.videoUrl}` : videoData.videoUrl;
+      const finalUrl = videoData.videoUrl.startsWith('/')
+        ? `${import.meta.env.VITE_APP_BASE_URL}${videoData.videoUrl}`
+        : videoData.videoUrl;
       testVideoUrl(finalUrl);
     }
   }, [videoData]);
@@ -200,7 +202,9 @@ const VideoDetails = () => {
         <div className="relative group">
           <video
             ref={playerRef}
-            src={videoData?.videoUrl?.startsWith('/') ? `http://localhost:5000${videoData.videoUrl}` : videoData?.videoUrl}
+            src={videoData?.videoUrl?.startsWith('/')
+              ? `${import.meta.env.VITE_APP_BASE_URL}${videoData.videoUrl}`
+              : videoData?.videoUrl}
             controls
             style={{ width: '100%', height: '400px', borderRadius: '0.75rem' }}
             crossOrigin="anonymous"

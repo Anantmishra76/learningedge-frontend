@@ -47,6 +47,8 @@ export default function ChangeProfilePicture() {
         setLoading(false)
       })
     } catch (error) {
+      console.error("Failed to update profile picture:", error)
+      setLoading(false)
     }
   }
 

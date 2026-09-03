@@ -6,7 +6,6 @@ import {
 } from "@/features/courses/services/courseDetailsAPI";
 import IconBtn from "@/components/common/IconBtn";
 
-import { IoIosAdd } from "react-icons/io";
 import { useSelector } from "react-redux";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { AiOutlineFolderOpen, AiOutlinePlus } from "react-icons/ai";
@@ -44,7 +43,9 @@ const CreateCategory = () => {
       setLoading(true);
       const res = await fetchCourseCategories();
       setSubLinks(res);
-    } catch (error) {}
+    } catch (error) {
+      console.error("Failed to load categories:", error);
+    }
     setLoading(false);
   };
 
@@ -63,6 +64,7 @@ const CreateCategory = () => {
       setDescription("");
       await fetchSublinks(); // Refresh the list
     } catch (error) {
+      console.error("Failed to create category:", error);
     } finally {
       setIsCreating(false);
     }
@@ -72,7 +74,9 @@ const CreateCategory = () => {
     try {
       await deleteCategory(categoryId, token);
       await fetchSublinks(); // Refresh the list
-    } catch (error) {}
+    } catch (error) {
+      console.error("Failed to delete category:", error);
+    }
   };
 
   return (

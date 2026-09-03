@@ -20,6 +20,7 @@ export default function EditProfile() {
     try {
       dispatch(updateProfile(token, data))
     } catch (error) {
+      console.error("Failed to update profile:", error)
     }
   }
 

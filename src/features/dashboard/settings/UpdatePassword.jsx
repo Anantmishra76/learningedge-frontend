@@ -25,6 +25,7 @@ export default function UpdatePassword() {
     try {
       await changePassword(token, data)
     } catch (error) {
+      console.error("Failed to update password:", error)
     }
   }
 
