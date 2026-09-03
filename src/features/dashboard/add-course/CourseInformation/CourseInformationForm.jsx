@@ -34,7 +34,7 @@ export default function CourseInformationForm() {
     }
     // if form is in edit mode 
     // It will add value in input field
-    if (editCourse) {
+    if (editCourse && course) {
       setValue("courseTitle", course.courseName)
       setValue("courseShortDesc", course.courseDescription)
       setValue("coursePrice", course.price)
@@ -46,18 +46,7 @@ export default function CourseInformationForm() {
     }
 
     getCategories()
-  }, [
-    course.category,
-    course.courseDescription,
-    course.courseName,
-    course.instructions,
-    course.price,
-    course.tag,
-    course.thumbnail,
-    course.whatYouWillLearn,
-    editCourse,
-    setValue,
-  ])
+  }, [course, editCourse, setValue])
 
 
 
