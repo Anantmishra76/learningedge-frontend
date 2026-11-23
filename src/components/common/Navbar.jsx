@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, matchPath, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
-import LearningEdgeLOGO from "@/assets/logos/my_logo.png";
+import BrandLogo from "./BrandLogo";
 import { fetchCourseCategories } from "@/features/courses/services/courseDetailsAPI";
 import ProfileDropDown from "@/features/auth/components/ProfileDropDown";
 import {
@@ -73,28 +73,23 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-30 h-14 flex items-center justify-center border-b border-slate-200 bg-white text-slate-900 shadow-sm transition-transform duration-300 ${visible ? "translate-y-0" : "-translate-y-full"}`}>
-        <div className="w-11/12 max-w-maxContent flex items-center justify-between">
+        className={`fixed top-0 left-0 right-0 z-30 flex h-14 items-center justify-center border-b border-slate-200 bg-white text-slate-900 transition-transform duration-200 ${visible ? "translate-y-0" : "-translate-y-full"}`}>
+        <div className="flex w-11/12 max-w-maxContent items-center justify-between">
           <Link to="/" className="flex items-center">
-            <img
-              src={LearningEdgeLOGO}
-              alt="Logo"
-              className="h-12 w-auto max-w-[180px] object-contain"
-              loading="lazy"
-            />
+            <BrandLogo />
           </Link>
 
           {/* Desktop links */}
-          <ul className="hidden md:flex gap-x-6 text-slate-600">
+          <ul className="hidden items-center gap-x-2 text-sm text-slate-600 md:flex">
             <li>
               <Link
                 to="/"
-                className={`px-3 py-1 rounded-xl ${match("/") ? "bg-brand-500 text-white" : "hover:text-brand-500"}`}>
+                className={`flex min-h-11 items-center rounded-lg px-3 transition-colors ${match("/") ? "bg-slate-100 text-brand-700" : "hover:bg-slate-50 hover:text-slate-900"}`}>
                 Home
               </Link>
             </li>
             <li>
-              <div className="group relative flex items-center gap-1 cursor-pointer px-3 py-1 rounded-xl">
+                <div className="group relative flex min-h-11 cursor-pointer items-center gap-1 rounded-lg px-3 transition-colors hover:bg-slate-50">
                 <span
                   className={
                     match("/catalog/:catalogName")
@@ -105,7 +100,7 @@ const Navbar = () => {
                 </span>
                 <MdKeyboardArrowDown />
 
-                <div className="invisible group-hover:visible opacity-0 group-hover:opacity-100 group-hover:translate-y-0 absolute top-full left-1/2 -translate-x-1/2 translate-y-2 transition-all w-48 bg-white text-slate-900 rounded-lg border border-slate-200 p-2 z-50 shadow-lg">
+                <div className="invisible absolute left-1/2 top-full z-50 w-52 -translate-x-1/2 translate-y-1 rounded-xl border border-slate-200 bg-white p-2 text-slate-900 opacity-0 shadow-lg transition-[opacity,transform] duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-white border-l border-t border-slate-200 rotate-45" />
                   {subLinks.length ? (
                     subLinks.map((s, i) => (
@@ -127,14 +122,14 @@ const Navbar = () => {
             <li>
               <Link
                 to="/about"
-                className={`px-3 py-1 rounded-xl ${match("/about") ? "bg-brand-500 text-white" : "hover:text-brand-500"}`}>
+                className={`flex min-h-11 items-center rounded-lg px-3 transition-colors ${match("/about") ? "bg-slate-100 text-brand-700" : "hover:bg-slate-50 hover:text-slate-900"}`}>
                 About Us
               </Link>
             </li>
             <li>
               <Link
                 to="/contact"
-                className={`px-3 py-1 rounded-xl ${match("/contact") ? "bg-brand-500 text-white" : "hover:text-brand-500"}`}>
+                className={`flex min-h-11 items-center rounded-lg px-3 transition-colors ${match("/contact") ? "bg-slate-100 text-brand-700" : "hover:bg-slate-50 hover:text-slate-900"}`}>
                 Contact Us
               </Link>
             </li>
@@ -142,7 +137,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/blog"
-                className={`px-3 py-1 rounded-xl ${match("/blog") ? "bg-brand-500 text-white" : "hover:text-brand-500"}`}>
+                className={`flex min-h-11 items-center rounded-lg px-3 transition-colors ${match("/blog") ? "bg-slate-100 text-brand-700" : "hover:bg-slate-50 hover:text-slate-900"}`}>
                 Blogs
               </Link>
             </li>
@@ -152,7 +147,7 @@ const Navbar = () => {
           <div className="flex items-center gap-x-3">
             {user?.accountType === "Student" && (
               <Link to="/dashboard/cart" className="relative">
-                <AiOutlineShoppingCart className="text-3xl text-slate-700" />
+                <AiOutlineShoppingCart className="text-2xl text-slate-700" />
                 {totalItems > 0 && (
                   <span className="absolute -bottom-1 -right-1 w-4 h-4 bg-brand-500 rounded-full text-xs text-white grid place-items-center">
                     {totalItems}
@@ -164,13 +159,13 @@ const Navbar = () => {
               <>
                 <Link to="/login" className="hidden sm:block">
                   <button
-                    className={`px-3 py-1.5 rounded text-sm border ${match("/login") ? "bg-brand-500 border-brand-500 text-white" : "border-slate-200 bg-white text-slate-700 hover:bg-slate-100"}`}>
+                    className={`rounded-lg px-3 py-2 text-sm transition-colors ${match("/login") ? "bg-blue-50 text-brand-700" : "text-slate-700 hover:bg-slate-50"}`}>
                     Log in
                   </button>
                 </Link>
                 <Link to="/signup" className="hidden sm:block">
                   <button
-                    className={`px-3 py-1.5 rounded text-sm border ${match("/signup") ? "bg-brand-500 border-brand-500 text-white" : "border-slate-200 bg-white text-slate-700 hover:bg-slate-100"}`}>
+                    className={`rounded-lg border px-4 py-2 text-sm transition-colors ${match("/signup") ? "border-brand-700 bg-brand-700 text-white" : "border-brand-700 bg-brand-700 text-white hover:bg-brand-600"}`}>
                     Sign Up
                   </button>
                 </Link>
@@ -200,11 +195,21 @@ const Navbar = () => {
           id="mobile-navigation"
           className="md:hidden fixed inset-x-0 bottom-0 top-14 z-20 bg-white flex flex-col">
           <ul className="flex flex-col p-6 gap-4 flex-1 overflow-y-auto">
+            {token && (
+              <li>
+                <Link
+                  to="/dashboard/my-profile"
+                  onClick={() => setMobileOpen(false)}
+                  className={`block rounded-lg px-3 py-3 text-base ${match("/dashboard/:section") ? "bg-slate-100 font-medium text-brand-700" : "text-slate-700"}`}>
+                  Dashboard
+                </Link>
+              </li>
+            )}
             <li>
               <Link
                 to="/"
                 onClick={() => setMobileOpen(false)}
-                className={`block text-lg font-semibold py-2 px-3 rounded-lg ${match("/") ? "bg-brand-500 text-white" : "text-slate-700"}`}>
+                className={`block rounded-lg px-3 py-3 text-base ${match("/") ? "bg-slate-100 font-medium text-brand-700" : "text-slate-700"}`}>
                 Home
               </Link>
             </li>
@@ -231,7 +236,7 @@ const Navbar = () => {
               <Link
                 to="/about"
                 onClick={() => setMobileOpen(false)}
-                className={`block text-lg font-semibold py-2 px-3 rounded-lg ${match("/about") ? "bg-brand-500 text-white" : "text-slate-700"}`}>
+                className={`block rounded-lg px-3 py-3 text-base ${match("/about") ? "bg-slate-100 font-medium text-brand-700" : "text-slate-700"}`}>
                 About Us
               </Link>
             </li>
@@ -239,7 +244,7 @@ const Navbar = () => {
               <Link
                 to="/contact"
                 onClick={() => setMobileOpen(false)}
-                className={`block text-lg font-semibold py-2 px-3 rounded-lg ${match("/contact") ? "bg-brand-500 text-white" : "text-slate-700"}`}>
+                className={`block rounded-lg px-3 py-3 text-base ${match("/contact") ? "bg-slate-100 font-medium text-brand-700" : "text-slate-700"}`}>
                 Contact Us
               </Link>
             </li>
@@ -247,7 +252,7 @@ const Navbar = () => {
               <Link
                 to="/blog"
                 onClick={() => setMobileOpen(false)}
-                className={`block text-lg font-semibold py-2 px-3 rounded-lg ${match("/blog") ? "bg-brand-500 text-white" : "text-slate-700"}`}>
+                className={`block rounded-lg px-3 py-3 text-base ${match("/blog") ? "bg-slate-100 font-medium text-brand-700" : "text-slate-700"}`}>
                 Blogs
               </Link>
             </li>

@@ -12,7 +12,7 @@ const FeaturedCourses = ({ courses }) => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}>
-            <h2 className="text-3xl font-semibold text-slate-900 lg:text-4xl">
+            <h2 className="text-2xl font-medium leading-tight text-slate-900 lg:text-3xl">
               Featured Courses
             </h2>
           </motion.div>

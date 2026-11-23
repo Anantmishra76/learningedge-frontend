@@ -138,10 +138,12 @@ export function ReviewSlider() {
                 type="button"
                 aria-label={`Go to review ${index + 1}`}
                 onClick={() => swiper?.slideToLoop(index)}
-                className={`mt-2 h-2 rounded-full bg-blue-600 transition-all duration-300 ${
-                  activeIndex === index ? "w-6 opacity-100" : "w-2 opacity-30"
-                }`}
-              />
+                className="mt-1 grid h-6 w-6 shrink-0 place-items-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-1"
+              >
+                <span className={`h-2 rounded-full bg-brand-600 transition-[width,opacity] duration-150 ${
+                  activeIndex === index ? "w-6 opacity-100" : "w-2 opacity-40"
+                }`} />
+              </button>
             ))}
           </div>
         </div>

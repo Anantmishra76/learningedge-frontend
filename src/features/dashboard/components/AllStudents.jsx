@@ -123,8 +123,10 @@ return (
                                                 </div>
                                                 {student.courses?.length > 0 && (
                                                     <button
+                                                        type="button"
+                                                        aria-expanded={expandedStudent === student._id}
                                                         onClick={() => toggleCourses(student._id)}
-                                                        className="mt-3 text-sm text-caribbeangreen-300 hover:text-caribbeangreen-200 transition-colors"
+                                                        className="mt-2 inline-flex min-h-11 items-center text-left text-sm text-caribbeangreen-300 transition-colors hover:text-caribbeangreen-200"
                                                     >
                                                         {expandedStudent === student._id ? "Hide Courses" : `Show Enrolled courses (${student.courses.length})`}
                                                     </button>

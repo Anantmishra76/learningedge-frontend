@@ -5,8 +5,8 @@ function Course_Card({ course }) {
   return (
     <Link
       to={`/courses/${course._id}`}
-      className="group block rounded-xl border border-richblack-700 bg-richblack-800 overflow-hidden hover:border-richblack-500 hover:-translate-y-0.5 transition-all duration-150">
-      <div className="aspect-video overflow-hidden bg-richblack-700">
+      className="group block w-full min-w-0 max-w-full overflow-hidden rounded-xl border border-slate-200 bg-white transition-[border-color,box-shadow] duration-150 hover:border-slate-300 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600">
+      <div className="aspect-video w-full min-w-0 max-w-full overflow-hidden bg-richblack-700">
         <Img
           src={course?.thumbnail}
           alt={course?.courseName}
@@ -15,16 +15,16 @@ function Course_Card({ course }) {
       </div>
 
       {/* Body */}
-      <div className="p-3 flex flex-col gap-2">
-        <p className="text-sm font-medium text-richblack-5 leading-snug line-clamp-2">
+      <div className="flex min-h-32 w-full min-w-0 max-w-full flex-col gap-2 p-4 sm:p-5">
+        <p className="line-clamp-2 text-base font-medium leading-snug text-slate-900">
           {course?.courseName}
         </p>
 
-        <p className="text-xs text-richblack-300 flex items-center gap-1">
+        <p className="flex items-center gap-2 text-sm text-slate-600">
           {/* ponytail: swap for your icon component if available */}
           <svg
-            width="12"
-            height="12"
+            width="16"
+            height="16"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -38,7 +38,7 @@ function Course_Card({ course }) {
           {course?.instructor?.firstName} {course?.instructor?.lastName}
         </p>
 
-        <p className="text-sm font-semibold text-yellow-50">
+        <p className="mt-auto pt-1 text-sm font-medium tabular-nums text-slate-900">
           ₹ {course?.price}
         </p>
       </div>

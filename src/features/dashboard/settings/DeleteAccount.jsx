@@ -42,7 +42,7 @@ export default function DeleteAccount() {
         <div className="flex items-start gap-3 p-4 bg-richblack-800 rounded-lg border border-richblack-700">
           <input
             type="checkbox"
-            className="mt-1 h-4 w-4 text-pink-600 bg-richblack-700 border-richblack-600 rounded focus:ring-pink-500 focus:ring-2"
+            className="h-6 w-6 shrink-0 text-pink-600 bg-richblack-700 border-richblack-600 rounded focus:ring-pink-500 focus:ring-2"
             checked={check}
             onChange={() => setCheck(prev => !prev)}
           />
@@ -52,7 +52,7 @@ export default function DeleteAccount() {
             </p>
             <button
               type="button"
-              className={`text-sm font-medium transition-colors ${
+              className={`inline-flex min-h-11 items-center text-left text-sm font-medium transition-colors ${
                 check
                   ? "text-pink-300 hover:text-pink-200 cursor-pointer"
                   : "text-slate-500 cursor-not-allowed"

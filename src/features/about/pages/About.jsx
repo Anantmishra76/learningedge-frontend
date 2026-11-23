@@ -21,8 +21,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Hero Section */}
-      <section className="relative min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[800px] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-50 via-white to-accent-50"></div>
+      <section className="relative overflow-hidden bg-[#f5f3ed]">
 
         <div className="relative mx-auto flex w-11/12 max-w-maxContent flex-col justify-center gap-6 sm:gap-8 md:gap-10 text-center text-slate-900 py-12 sm:py-16 md:py-20">
           <motion.header className="mx-auto lg:w-[80%]">
@@ -31,9 +30,9 @@ const About = () => {
               initial='hidden'
               whileInView={'show'}
               viewport={{ once: false, amount: 0.1 }}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 leading-tight"
+              className="mb-4 text-3xl font-medium leading-tight text-slate-900 sm:text-4xl lg:text-5xl"
             >
-                <span className="bg-gradient-to-r from-brand-500 via-brand-400 to-accent-500 bg-clip-text text-transparent">
+                <span className="text-brand-700">
                 Driving Innovation
               </span>
               <br />
@@ -66,9 +65,9 @@ const About = () => {
                 <section className="py-8 sm:py-12 md:py-16">
         <div className="mx-auto w-11/12 max-w-maxContent">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
-            <Img src={BannerImage1} alt="Banner 1" className="w-full max-w-sm h-auto max-h-48 rounded-xl shadow-xl hover:scale-105 transition-transform duration-300" />
-            <Img src={BannerImage2} alt="Banner 2" className="w-full max-w-sm h-auto max-h-48 rounded-xl shadow-xl hover:scale-105 transition-transform duration-300" />
-            <Img src={BannerImage3} alt="Banner 3" className="w-full max-w-sm h-auto max-h-48 rounded-xl shadow-xl hover:scale-105 transition-transform duration-300" />
+            <Img src={BannerImage1} alt="LearningEdge learners" className="w-full max-w-sm h-auto max-h-48 rounded-xl object-cover" />
+            <Img src={BannerImage2} alt="LearningEdge learning community" className="w-full max-w-sm h-auto max-h-48 rounded-xl object-cover" />
+            <Img src={BannerImage3} alt="LearningEdge online learning" className="w-full max-w-sm h-auto max-h-48 rounded-xl object-cover" />
           </div>
         </div>
       </section>
@@ -77,11 +76,6 @@ const About = () => {
       </section>
       {/* Founding Story and Vision/Mission Section */}
       <section className="pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-12 sm:pb-16 md:pb-20 lg:pb-24 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-3">
-          <div className="absolute top-20 left-20 w-64 h-64 bg-accent-500 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-80 h-80 bg-brand-500 rounded-full blur-3xl"></div>
-        </div>
-
         <div className="relative mx-auto w-11/12 max-w-maxContent">
           <motion.div
             variants={fadeIn('up', 0.2)}
@@ -91,7 +85,7 @@ const About = () => {
             className="mb-12 sm:mb-16 md:mb-20"
           >
             <div className="flex flex-col lg:flex-row items-center gap-6 sm:gap-8 lg:gap-12">
-              <div className="flex-1 rounded-3xl border border-slate-200 bg-white p-4 shadow-sm sm:p-6 md:p-8">
+              <div className="flex-1 rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 md:p-8">
                 <motion.div
                   variants={fadeIn('right', 0.3)}
                   initial='hidden'
@@ -102,7 +96,7 @@ const About = () => {
                     <div className="w-10 h-10 bg-brand-500 rounded-full flex items-center justify-center">
                       <FaBookOpen className="text-white text-lg" />
                     </div>
-                    <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900">
+                    <h2 className="text-xl font-medium text-slate-900 sm:text-2xl md:text-3xl">
                       Our Founding Story
                     </h2>
                   </div>
@@ -136,11 +130,10 @@ const About = () => {
                 className="flex-1 relative"
               >
                 <div className="relative group">
-                  <div className="absolute -inset-4 bg-gradient-to-r from-brand-500 to-accent-500 rounded-3xl blur-lg opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
                   <Img
                     src={FoundingStory}
-                    alt="FoundingStory"
-                    className="relative w-full h-auto rounded-2xl shadow-xl border border-slate-200 transform group-hover:scale-105 transition-transform duration-500"
+                    alt="The LearningEdge founding story"
+                    className="relative w-full h-auto rounded-2xl border border-slate-200"
                   />
                 </div>
               </motion.div>
@@ -154,7 +147,7 @@ const About = () => {
             viewport={{ once: false, amount: 0.1 }}
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
-              <div className="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm transition-shadow duration-300 hover:shadow-md sm:p-6 md:p-8 overflow-hidden">
+              <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 md:p-8">
                 <motion.div
                   variants={fadeIn('up', 0.3)}
                   initial='hidden'
@@ -165,7 +158,7 @@ const About = () => {
                     <div className="w-10 h-10 bg-brand-500 rounded-full flex items-center justify-center">
                       <FaBullseye className="text-white text-lg" />
                     </div>
-                       <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900">
+                       <h3 className="text-xl font-medium text-slate-900 sm:text-2xl md:text-3xl">
                       Our Vision
                     </h3>
                   </div>
@@ -181,7 +174,7 @@ const About = () => {
                 </motion.div>
               </div>
 
-              <div className="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm transition-shadow duration-300 hover:shadow-md sm:p-6 md:p-8 overflow-hidden">
+              <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 md:p-8">
                 <motion.div
                   variants={fadeIn('up', 0.4)}
                   initial='hidden'
@@ -192,7 +185,7 @@ const About = () => {
                     <div className="w-10 h-10 bg-accent-500 rounded-full flex items-center justify-center">
                       <FaRocket className="text-white text-lg" />
                     </div>
-                      <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900">
+                      <h3 className="text-xl font-medium text-slate-900 sm:text-2xl md:text-3xl">
                       Our mission
                     </h3>
                   </div>
@@ -209,9 +202,6 @@ const About = () => {
 
       {/* Statistics Section */}
       <section className="py-10 sm:py-16 md:py-0 bg-slate-50 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-orange-600/10 via-red-600/10 to-pink-600/10"></div>
-        </div>
         <div className="relative">
           <StatsComponent />
         </div>
@@ -219,10 +209,6 @@ const About = () => {
 
       {/* Learning Grid and Contact Form Section */}
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-500 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-brand-500 rounded-full blur-3xl"></div>
-        </div>
 
         <div className="relative mx-auto w-11/12 max-w-maxContent">
           <motion.div
@@ -232,7 +218,7 @@ const About = () => {
             viewport={{ once: false, amount: 0.1 }}
             className="text-center mb-8 sm:mb-12 md:mb-16"
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            <h2 className="mb-4 text-2xl font-medium text-slate-900 sm:text-3xl md:text-4xl">
               Explore Our Learning Ecosystem
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-slate-600 max-w-3xl mx-auto">

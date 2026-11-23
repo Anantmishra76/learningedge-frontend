@@ -65,7 +65,7 @@ export default function Sidebar() {
       {/* Mobile overlay */}
       {openSideMenu && screenSize < 1024 && (
         <div
-          className="lg:hidden fixed inset-0 z-10 bg-slate-900/30 backdrop-blur-md"
+          className="lg:hidden fixed inset-0 z-10 bg-slate-900/30"
           onClick={() => dispatch(setOpenSideMenu(false))}
         ></div>
       )}
@@ -74,16 +74,16 @@ export default function Sidebar() {
       <div
         id="dashboard-sidebar"
         className={`fixed top-14 z-20 flex h-[calc(100vh-3.5rem)] 
-        w-[80vw] sm:w-[260px] md:w-[280px] lg:w-[300px] max-w-[320px] 
+        w-[80vw] sm:w-[260px] md:w-[280px] lg:w-[280px] max-w-[320px]
         flex-col border-r border-r-slate-200 bg-white 
         shadow-2xl lg:shadow-none transform transition-transform duration-300 
         ${openSideMenu ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
       >
         {/* Header */}
         <div className="flex items-center justify-center p-6 border-b border-slate-200 bg-slate-50">
-          <div className="text-center">
-            <h2 className="text-xl font-bold text-slate-900">Dashboard</h2>
-            <p className="text-sm text-slate-500 mt-1">Welcome back!</p>
+          <div className="text-left">
+            <h2 className="text-lg font-medium text-slate-900">Dashboard</h2>
+            <p className="mt-1 text-sm text-slate-500">Your LearningEdge workspace</p>
           </div>
         </div>
 
@@ -104,7 +104,7 @@ export default function Sidebar() {
           </div>
 
           {/* Divider */}
-          <div className="mx-3 my-6 h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+          <div className="mx-3 my-5 h-px bg-slate-200" />
 
           {/* Settings & Logout */}
           <div className="space-y-1 px-3">
@@ -140,7 +140,7 @@ export default function Sidebar() {
         {user && (
           <div className="p-4 border-t border-slate-200 bg-slate-50">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-accent-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+              <div className="grid h-10 w-10 place-items-center rounded-lg bg-brand-700 text-base font-medium text-white">
                 {user.firstName?.[0]?.toUpperCase()}{user.lastName?.[0]?.toUpperCase()}
               </div>
               <div className="flex-1 min-w-0">

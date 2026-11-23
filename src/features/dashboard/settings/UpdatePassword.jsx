@@ -60,7 +60,8 @@ export default function UpdatePassword() {
               <button
                 type="button"
                 onClick={() => setShowOldPassword((prev) => !prev)}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-500 hover:text-slate-900 transition-colors"
+                aria-label={showOldPassword ? "Hide current password" : "Show current password"}
+                className="absolute right-1 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center text-slate-500 transition-colors hover:text-slate-900"
               >
                 {showOldPassword ? (
                   <AiOutlineEyeInvisible fontSize={20} />
@@ -91,7 +92,8 @@ export default function UpdatePassword() {
               <button
                 type="button"
                 onClick={() => setShowNewPassword((prev) => !prev)}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-500 hover:text-slate-900 transition-colors"
+                aria-label={showNewPassword ? "Hide new password" : "Show new password"}
+                className="absolute right-1 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center text-slate-500 transition-colors hover:text-slate-900"
               >
                 {showNewPassword ? (
                   <AiOutlineEyeInvisible fontSize={20} />
@@ -122,7 +124,8 @@ export default function UpdatePassword() {
               <button
                 type="button"
                 onClick={() => setShowConfirmNewPassword((prev) => !prev)}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-500 hover:text-slate-900 transition-colors"
+                aria-label={showConfirmNewPassword ? "Hide confirmed password" : "Show confirmed password"}
+                className="absolute right-1 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center text-slate-500 transition-colors hover:text-slate-900"
               >
                 {showConfirmNewPassword ? (
                   <AiOutlineEyeInvisible fontSize={20} />
@@ -148,7 +151,7 @@ export default function UpdatePassword() {
           <IconBtn
             type="submit"
             text="Update Password"
-            customClasses="bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg hover:from-blue-600 hover:to-blue-700"
+            customClasses="min-h-11 bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg hover:from-blue-600 hover:to-blue-700"
           />
         </div>
       </div>

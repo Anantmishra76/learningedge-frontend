@@ -96,11 +96,16 @@ export default function Upload({ name, label, register, setValue, errors, video 
           </div>
         ) : (
           <div
-            className="flex w-full flex-col items-center p-6"
+            className="relative flex min-h-[250px] w-full flex-col items-center justify-center p-6"
             {...getRootProps()}
-            onClick={handleBrowseClick}
           >
-            <input {...getInputProps()} ref={inputRef} />
+            <input
+              {...getInputProps({
+                "aria-label": `Choose ${video ? "video" : "image"} file for ${label}`,
+                className: "absolute inset-0 h-full w-full cursor-pointer opacity-0",
+              })}
+              ref={inputRef}
+            />
             <div className="grid aspect-square w-14 place-items-center rounded-full bg-pure-greys-800">
               <FiUploadCloud className="text-2xl text-yellow-50" />
             </div>

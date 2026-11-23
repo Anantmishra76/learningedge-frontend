@@ -29,7 +29,7 @@ const Home = () => {
 
   return (
     <>
-      <Hero />
+      <Hero courses={courses || []} />
       <FeaturedCourses courses={courses} />
       <PopularCourses courses={courses} />
       <NewCourses courses={courses} />

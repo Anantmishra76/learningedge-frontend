@@ -57,7 +57,7 @@ const BlogPage = () => {
                   </div>
 
                   <div className="flex flex-1 flex-col space-y-3 p-5">
-                    <div className="flex flex-wrap items-center gap-2 text-[11px] font-medium uppercase tracking-[0.14em] text-slate-500">
+                    <div className="flex flex-wrap items-center gap-2 text-[13px] font-medium text-slate-600">
                       <span>{post.publishedAt}</span>
                       <span className="h-1 w-1 rounded-full bg-slate-300" />
                       <span>{post.readTime}</span>

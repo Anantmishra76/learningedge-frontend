@@ -168,13 +168,7 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
                       }}
                     >
                       <div className="relative flex items-center justify-center w-5 h-5">
-                        <input
-                          type="checkbox"
-                          checked={completedLectures.includes(topic?._id)}
-                          onChange={() => { }}
-                          className="peer sr-only"
-                        />
-                        <div className={`w-5 h-5 rounded-full border-2 border-white transition-all duration-300 ease-in-out cursor-pointer flex items-center justify-center ${
+                        <div aria-hidden="true" className={`w-5 h-5 rounded-full border-2 border-white transition-all duration-300 ease-in-out cursor-pointer flex items-center justify-center ${
                           completedLectures.includes(topic?._id)
                             ? 'bg-caribbeangreen-200 shadow-lg shadow-caribbeangreen-200/30'
                             : videoBarActive === topic._id

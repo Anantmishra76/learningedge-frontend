@@ -197,7 +197,7 @@ export default function CoursesTable({ courses, setCourses, loading, setLoading 
                       disabled={loading}
                       onClick={() => { navigate(`/dashboard/edit-course/${course._id}`) }}
                       title="Edit"
-                      className="px-2 transition-all duration-200 hover:scale-110 hover:text-caribbeangreen-300"
+                      className="inline-flex size-11 items-center justify-center rounded-md transition-all duration-200 hover:scale-110 hover:text-caribbeangreen-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
                     >
                       <FiEdit2 size={20} />
                     </button>
@@ -222,7 +222,7 @@ export default function CoursesTable({ courses, setCourses, loading, setLoading 
                         })
                       }}
                       title="Delete"
-                      className="px-1 transition-all duration-200 hover:scale-110 hover:text-[#ff0000]"
+                      className="inline-flex size-11 items-center justify-center rounded-md transition-all duration-200 hover:scale-110 hover:text-[#ff0000] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
                     >
                       <RiDeleteBin6Line size={20} />
                     </button>

@@ -61,9 +61,9 @@ function Catalog() {
   }
 
   return (
-    <div className="overflow-x-hidden bg-slate-50">
+    <div className="bg-slate-50">
       {/* Hero Section */}
-      <div className="box-content bg-white px-4 border-b border-slate-200">
+      <div className="box-border w-full bg-white px-4 border-b border-slate-200">
         <div className="mx-auto flex min-h-[260px] max-w-maxContentTab flex-col justify-center gap-4 lg:max-w-maxContent">
           <p className="text-sm text-slate-500">
             {`Home / Catalog / `}
@@ -81,7 +81,7 @@ function Catalog() {
       </div>
 
       {/* Courses Section */}
-      <div className="mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
+      <div className="mx-auto box-border w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
         <div className="section_heading">Courses to get you started</div>
         <div className="my-4 flex border-b border-b-slate-200 text-sm">
           <p

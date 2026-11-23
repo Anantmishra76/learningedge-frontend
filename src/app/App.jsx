@@ -50,7 +50,7 @@ function App() {
   }, []);
 
   return (
-    <div className="w-full min-h-screen bg-slate-50 text-slate-600 flex flex-col font-sans pt-14 overflow-x-hidden">
+    <div className="flex min-h-screen w-full flex-col bg-slate-50 pt-14 font-sans text-slate-600">
       <Navbar />
 
       {/* Scroll to top button - appears when scrolled down */}

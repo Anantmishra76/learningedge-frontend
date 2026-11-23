@@ -5,7 +5,7 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Pagination, Autoplay } from "swiper/modules";
+import { FreeMode, Pagination } from "swiper/modules";
 
 import Course_Card from "./Course_Card";
 
@@ -18,19 +18,9 @@ function Course_Slider({ Courses }) {
           spaceBetween={25}
           speed={800}
           effect="slide"
-          loop={Courses.length > 3}
-          autoplay={
-            Courses.length > 3
-              ? {
-                  delay: 2000,
-                  disableOnInteraction: false,
-                  pauseOnMouseEnter: true,
-                  waitForTransition: true,
-                  stopOnLastSlide: false,
-                }
-              : false
-          }
-          modules={[FreeMode, Pagination, Autoplay]}
+          loop={false}
+          autoplay={false}
+          modules={[FreeMode, Pagination]}
           grabCursor={true}
           centeredSlides={false}
           slidesPerGroup={1}
@@ -49,7 +39,7 @@ function Course_Slider({ Courses }) {
               spaceBetween: 30,
             },
           }}
-          className="max-h-[30rem] pt-8 px-2 smooth-slider"
+          className="smooth-slider min-w-0 max-w-full px-2 pt-8"
           style={{
             "--swiper-transition-timing-function":
               "cubic-bezier(0.25, 0.46, 0.45, 0.94)",

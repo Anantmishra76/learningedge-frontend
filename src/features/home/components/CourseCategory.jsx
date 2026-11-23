@@ -26,8 +26,8 @@ const CourseCategories = () => {
             <Link
               key={category._id}
               to={`/catalog/${category.name.split(" ").join("-").toLowerCase()}`}
-              className="rounded-lg border border-slate-200 bg-white p-5 hover:border-blue-600">
-              <h3 className="font-semibold text-slate-900">{category.name}</h3>
+              className="group rounded-xl border border-slate-200 bg-white p-5 transition-colors hover:border-brand-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600">
+              <h3 className="font-medium text-slate-900 group-hover:text-brand-700">{category.name}</h3>
               <p className="mt-2 text-sm text-slate-600">
                 {category.description}
               </p>

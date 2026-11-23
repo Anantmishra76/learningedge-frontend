@@ -32,15 +32,10 @@ function Login() {
 
   return (
     <>
-      <main className="min-h-[calc(100vh-3.5rem)] bg-richblack-900 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-yellow-400/10 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="max-w-xl w-full relative z-10">
-          <div className="bg-richblack-800/60 backdrop-blur-md rounded-3xl p-6  border border-richblack-700/50 hover:border-richblack-600/70 transition-all duration-300 hover:shadow-yellow-400/10">
-            <h1 className="text-2xl lg:text-3xl font-bold leading-tight text-slate-900 mb-2 bg-gradient-to-r from-richblack-5 to-richblack-100 bg-clip-text">
+      <main className="flex min-h-[calc(100vh-3.5rem)] items-center justify-center bg-slate-50 px-4 py-12 sm:px-6 lg:px-8">
+        <div className="w-full max-w-md">
+          <div className="rounded-xl border border-slate-200 bg-white p-6 sm:p-8">
+            <h1 className="mb-2 text-2xl font-medium leading-tight text-slate-900 lg:text-3xl">
               Sign In to LearningEdge
             </h1>
 
@@ -61,7 +56,7 @@ function Login() {
                   style={{
                     boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
                   }}
-                  className="w-full rounded-xl bg-richblack-800 p-4 text-slate-900 outline-none border border-richblack-700  transition-all duration-200 hover:border-richblack-600"
+                  className="w-full rounded-lg border border-slate-300 bg-white p-3 text-slate-900 placeholder:text-slate-400 outline-none transition-colors focus:border-brand-600 focus:ring-2 focus:ring-brand-600/20"
                 />
               </label>
 
@@ -79,7 +74,7 @@ function Login() {
                   style={{
                     boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
                   }}
-                  className="w-full rounded-xl bg-richblack-800 p-4 pr-12 text-slate-900 outline-none border border-richblack-700  transition-all duration-200 hover:border-richblack-600"
+                  className="w-full rounded-lg border border-slate-300 bg-white p-3 pr-12 text-slate-900 placeholder:text-slate-400 outline-none transition-colors focus:border-brand-600 focus:ring-2 focus:ring-brand-600/20"
                 />
                 <span
                   onClick={() => setShowPassword((prev) => !prev)}
@@ -99,7 +94,7 @@ function Login() {
 
               <button
                 type="submit"
-                className="mt-8 mx-auto block rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 py-2 px-4 font-semibold text-white shadow-lg hover:from-blue-600 hover:to-blue-700 focus:from-blue-600 focus:to-blue-700 focus:ring-2 focus:ring-blue-500/50 transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]">
+                className="mx-auto mt-6 block rounded-lg bg-brand-700 px-5 py-3 font-medium text-white transition-colors hover:bg-brand-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">
                 Sign In
               </button>
             </form>

@@ -25,23 +25,21 @@ export default function SidebarLink({ link, iconName }) {
     <NavLink
       to={link.path}
       onClick={handleClick}
-      className={`group relative flex items-center gap-x-3 px-4 py-3 text-sm font-medium rounded-lg transition-all duration-200 ${
+      className={`group relative flex h-10 items-center gap-x-3 rounded-lg px-3 text-sm transition-colors duration-150 ${
         matchRoute(link.path)
-          ? "bg-brand-500 text-white shadow-lg"
-          : "text-slate-600 hover:bg-slate-100 hover:text-brand-500"
+          ? "bg-slate-100 font-medium text-brand-700"
+          : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
       }`}
     >
       <span
-        className={`absolute left-0 top-0 h-full w-[0.2rem] bg-brand-600 rounded-r transition-opacity duration-300 ${
-          matchRoute(link.path) ? "opacity-100" : "opacity-0 group-hover:opacity-50"
+        className={`absolute left-0 top-2 h-6 w-0.5 rounded-r bg-brand-600 transition-opacity duration-150 ${
+          matchRoute(link.path) ? "opacity-100" : "opacity-0"
         }`}
       >
       </span>
 
-      <Icon className={`text-lg transition-transform duration-200 ${
-        matchRoute(link.path) ? "scale-110" : "group-hover:scale-105"
-      }`} />
-      <span className="font-medium">{link.name}</span>
+      <Icon className="text-base text-current" />
+      <span>{link.name}</span>
     </NavLink>
   )
 }

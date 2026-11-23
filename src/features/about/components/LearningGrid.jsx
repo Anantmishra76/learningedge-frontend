@@ -9,46 +9,46 @@ const LearningGridArray = [
     heading: "World-Class Learning for",
     highlightText: "Anyone, Anywhere",
     description:
-      "LearningEdge partners with more than 275+ leading universities and companies to bring flexible, affordable, job-relevant online learning to individuals and organizations worldwide.",
+      "Explore courses across technology, business, and creative fields. Study lessons and course materials at a pace that works for you.",
     BtnText: "Learn More",
     BtnLink: "/",
   },
   {
     order: 1,
     heading: "Curriculum Based on Industry Needs",
-    description:
-      "Save time and money! The Belajar curriculum is made to be easier to understand and in line with industry needs.",
+      description:
+      "Courses are organized into sections and lessons, with resources to support your study.",
   },
   {
     order: 2,
     heading: "Our Learning Methods",
-    description:
-      "LearningEdge partners with more than 275+ leading universities and companies to bring",
+      description:
+      "Learn through video lessons and course materials on a schedule that works for you.",
   },
   {
     order: 3,
-    heading: "Certification",
+      heading: "Course progress",
     description:
-      "LearningEdge partners with more than 275+ leading universities and companies to bring",
+      "Keep track of your progress as you complete course sections and lessons.",
   },
   {
     order: 4,
-    heading: `Rating "Auto-grading"`,
+      heading: "Course resources",
     description:
-      "LearningEdge partners with more than 275+ leading universities and companies to bring",
+      "Use the materials included with a course as you work through each topic.",
   },
   {
     order: 5,
-    heading: "Ready to Work",
+      heading: "Learn at your pace",
     description:
-      "LearningEdge partners with more than 275+ leading universities and companies to bring",
+      "Return to your enrolled courses and continue learning on your schedule.",
   },
 ];
 
 const LearningGrid = () => {
 
   return (
-    <div className="grid mx-auto w-[350px] lg:w-fit grid-cols-1 lg:grid-cols-4 mb-12">
+    <div className="mx-auto mb-12 grid w-full max-w-7xl grid-cols-1 gap-px overflow-hidden rounded-xl border border-slate-200 bg-slate-200 sm:grid-cols-2 lg:grid-cols-4">
       {LearningGridArray.map((card, i) => {
         return (
           <motion.div
@@ -57,30 +57,25 @@ const LearningGrid = () => {
             initial='hidden'
             whileInView={'show'}
             viewport={{ once: false, amount: 0.1 }}
-            className={`${i === 0 && "lg:col-span-2 lg:h-[294px]"}  ${card.order % 2 === 1
-                ? "bg-richblack-700 h-[294px]"
-                : card.order % 2 === 0
-                  ? "bg-richblack-800 h-[294px]"
-                  : "bg-transparent"
-              } ${card.order === 3 && "lg:col-start-2"}  `}
+            className={`${i === 0 ? "lg:col-span-2 bg-white" : card.order % 2 === 1 ? "bg-white" : "bg-slate-50"} ${card.order === 3 ? "lg:col-start-2" : ""} min-h-[216px]`}
           >
             {card.order < 0 ? (
-              <div className="lg:w-[90%] flex flex-col gap-3 pb-10 lg:pb-0">
-                <div className="text-4xl font-semibold ">
-                  <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+              <div className="flex h-full flex-col justify-center gap-3 p-6 sm:p-8">
+                <div className="max-w-[18ch] text-3xl font-medium leading-tight text-slate-900 sm:text-4xl">
+                  <span>
                     {card.heading}
                   </span>
                   <HighlightText text={card.highlightText} />
                 </div>
-                <p className="text-slate-600 font-medium">
+                <p className="max-w-xl text-sm leading-6 text-slate-600 sm:text-base">
                   {card.description}
                 </p>
               </div>
             ) : (
-              <div className="p-8 flex flex-col gap-8">
-                <h1 className="text-slate-900 text-lg bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent font-bold">{card.heading}</h1>
+              <div className="flex h-full flex-col gap-6 p-6">
+                <h3 className="text-base font-medium text-slate-900">{card.heading}</h3>
 
-                <p className="text-slate-600 font-medium">
+                <p className="text-sm leading-6 text-slate-600">
                   {card.description}
                 </p>
               </div>

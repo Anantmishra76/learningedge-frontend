@@ -1,70 +1,99 @@
-import { useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
-import { MdChevronLeft, MdChevronRight } from "react-icons/md";
-import "swiper/css";
-import "swiper/css/pagination";
-import hero from "@/assets/Images/hero-optimized.jpg";
-import hero3 from "@/assets/Images/hero3-optimized.jpg";
-import hero4 from "@/assets/Images/hero4-optimized.jpg";
+import { useEffect, useRef } from "react";
 
-const slides = [
-  { id: 1, img: hero, alt: "Coding" },
-  {
-    id: 3,
-    img: hero3,
-    alt: "Design",
-  },
-  {
-    id: 4,
-    img: hero4,
-    alt: "Cloud",
-  },
-];
+const FONT_IMPORT = `@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap");`;
 
-export default function Hero() {
-  const swiperRef = useRef(null);
+const display = "font-['Bricolage_Grotesque',sans-serif]";
+
+const focusRing =
+  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2441e0]";
+
+export default function Hero({
+  headline = "Build skills for the work you want to do.",
+  subhead = "Learn online with practical courses in technology, design, business, and more. Follow clear lessons, practice with real projects, and get guidance as you grow.",
+  primaryCta = { label: "Create your account", href: "/signup" },
+  secondaryCta = { label: "Explore courses", href: "/all-courses" },
+  fineprint = "Learn at your pace, from any device.",
+  media = {
+    type: "video",
+    src: "https://videos.pexels.com/video-files/4443257/4443257-hd_1920_1080_25fps.mp4",
+    alt: "Student taking notes during an online class",
+  },
+}) {
+  const videoRef = useRef(null);
+  const isVideo = media?.type === "video";
+
+  // Respect reduced motion: don't autoplay, show native controls.
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const reduce = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    if (reduce) {
+      video.pause();
+      video.controls = true;
+    }
+  }, [isVideo, media?.src]);
 
   return (
-    <div className="bg-gray-950 text-white">
-      <div className="relative">
-        <Swiper
-          modules={[Pagination, Autoplay]}
-          loop
-          speed={600}
-          autoplay={{ delay: 4500, disableOnInteraction: false }}
-          onSwiper={(swiper) => {
-            swiperRef.current = swiper;
-          }}
-          pagination={{ clickable: true }}
-          className="h-[320px] sm:h-[420px] lg:h-[520px]">
-          {slides.map((s) => (
-            <SwiperSlide key={s.id}>
-              <img
-                src={s.img}
-                alt={s.alt}
-                className="absolute inset-0 w-full h-full object-cover"
-                loading={s.id === 1 ? "eager" : "lazy"}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+    <section
+      aria-labelledby="hero-title"
+      className="box-border flex min-h-[100svh] items-center bg-[#eef2f4] bg-[linear-gradient(#d5dde2_1px,transparent_1px),linear-gradient(90deg,#d5dde2_1px,transparent_1px)] bg-[size:32px_32px] px-[clamp(20px,5vw,72px)] pb-8 pt-20 font-['Instrument_Sans',system-ui,sans-serif] text-lg leading-relaxed text-[#17233a]">
+      <style>{FONT_IMPORT}</style>
 
-        <button
-          type="button"
-          onClick={() => swiperRef.current?.slidePrev()}
-          className="absolute left-4 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/70 bg-black/30 text-white backdrop-blur-sm transition hover:-translate-y-1/2 hover:bg-black/50"
-          aria-label="Previous slide">
-          <MdChevronLeft size={24} />
-        </button>
-        <button
-          type="button"
-          onClick={() => swiperRef.current?.slideNext()}
-          className="absolute right-4 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/70 bg-black/30 text-white backdrop-blur-sm transition hover:-translate-y-1/2 hover:bg-black/50"
-          aria-label="Next slide">
-          <MdChevronRight size={24} />
-        </button>
+      <div className="mx-auto grid max-w-[1200px] items-center gap-[clamp(40px,6vw,88px)] lg:grid-cols-[1.05fr_0.95fr]">
+        {/* Copy */}
+        <div>
+          <h1
+            id="hero-title"
+            className={`${display} m-0 text-balance text-[clamp(2.6rem,6.4vw,5rem)] font-bold leading-none tracking-[-0.035em]`}>
+            {headline}
+          </h1>
+          <p className="mt-7 max-w-[34em] text-[#4a5a70]">{subhead}</p>
+
+          <div className="mt-9 flex flex-wrap gap-3.5">
+            <a
+              href={primaryCta.href}
+              className={`inline-flex min-h-[52px] w-full items-center justify-center rounded-[10px] border-2 border-transparent bg-[#2441e0] px-6 text-[17px] font-semibold text-white transition-colors hover:bg-[#1a31b8] motion-reduce:transition-none sm:w-auto ${focusRing}`}>
+              {primaryCta.label}
+            </a>
+            <a
+              href={secondaryCta.href}
+              className={`inline-flex min-h-[52px] w-full items-center justify-center rounded-[10px] border-2 border-[#17233a] px-6 text-[17px] font-semibold text-[#17233a] transition-colors hover:bg-[#17233a] hover:text-white motion-reduce:transition-none sm:w-auto ${focusRing}`}>
+              {secondaryCta.label}
+            </a>
+          </div>
+          <p className="mt-4 text-[15px] text-[#4a5a70]">{fineprint}</p>
+        </div>
+
+        {/* Media */}
+        <div className="overflow-hidden rounded-[14px] border-2 border-[#17233a] bg-[#d5dde2] shadow-[5px_5px_0_#17233a] lg:shadow-[8px_8px_0_#17233a]">
+          <div className="aspect-video w-full lg:aspect-[1.08/1]">
+            {isVideo ? (
+              <video
+                ref={videoRef}
+                className="h-full w-full object-cover"
+                src={media.src}
+                poster={media.poster || undefined}
+                aria-label={media.alt}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+              />
+            ) : (
+              <img
+                className="h-full w-full object-cover"
+                src={media.src}
+                alt={media.alt}
+                loading="eager"
+                fetchpriority="high"
+              />
+            )}
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

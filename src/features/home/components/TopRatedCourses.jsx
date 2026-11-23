@@ -12,7 +12,7 @@ const TopRatedCourses = ({ courses }) => {
   return (
     <section className="section-padding bg-white">
       <div className="section-container">
-        <h2 className="text-3xl font-semibold text-slate-900">
+        <h2 className="text-2xl font-medium leading-tight text-slate-900 lg:text-3xl">
           Top Rated Courses
         </h2>
 

@@ -127,8 +127,10 @@ function AllInstructors() {
                           </div>
                           {instructor.courses?.length > 0 && (
                             <button
+                              type="button"
+                              aria-expanded={expandedInstructor === instructor._id}
                               onClick={() => toggleCourses(instructor._id)}
-                              className="mt-3 text-sm text-caribbeangreen-300 hover:text-caribbeangreen-200 transition-colors"
+                              className="mt-2 inline-flex min-h-11 items-center text-left text-sm text-caribbeangreen-300 transition-colors hover:text-caribbeangreen-200"
                             >
                               {expandedInstructor === instructor._id ? "Hide Courses" : `Total created Courses (${instructor.courses.length})`}
                             </button>
